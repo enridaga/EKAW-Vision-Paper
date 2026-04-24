@@ -174,8 +174,10 @@ def lattice_to_tikz(lattice, positions, concept_id):
     concepts_list = list(lattice)
     node_name = {c: f"n{i}" for i, c in enumerate(concepts_list)}
 
-    lines = [TIKZ_PREAMBLE]
-
+    #lines = [TIKZ_PREAMBLE]
+    #lines = ["\\resizebox{\\textwidth}{!}{%\n", TIKZ_PREAMBLE]
+    lines = ["\\adjustbox{max width=\\textwidth, max totalheight=\\textheight}{%\n", TIKZ_PREAMBLE]
+    
     # ── edges first so nodes render on top ──
     lines.append("  % Hasse edges\n")
     for c in concepts_list:
@@ -197,6 +199,7 @@ def lattice_to_tikz(lattice, positions, concept_id):
         )
 
     lines.append(TIKZ_POSTAMBLE)
+    lines.append("\n}%\n")
     return "".join(lines)
 
 
@@ -299,6 +302,7 @@ def main():
     doc_lines.append("%   \\usepackage{float}       % for [H] placement of figures\n")
     doc_lines.append("%   \\usepackage{array}       % for p{} column type\n")
     doc_lines.append("%   \\usepackage{longtable}   % for page-spanning legend tables\n\n")
+    doc_lines.append("%   \\usepackage{adjustbox}   % for max width+height scaling of figures\n")
 
     for lattice_index, fname in enumerate(csv_files, start=1):
         title = os.path.splitext(fname)[0].replace("_", " ")

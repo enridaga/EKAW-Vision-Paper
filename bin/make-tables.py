@@ -39,7 +39,7 @@ def generate_latex_table(data, ordered_keywords, kgs, caption, label):
     col_spec = 'l' + 'c' * num_cols
 
     lines = []
-    lines.append(r'\begin{table}[ht]')
+    lines.append(r'\begin{table}[H]')
     lines.append(r'\centering')
     lines.append(r'\small')
     lines.append(r'\begin{tabular}{' + col_spec + r'}')

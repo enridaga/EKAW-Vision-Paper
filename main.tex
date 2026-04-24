@@ -14,6 +14,8 @@
 \usepackage{tikz}
 \usepackage{float}
 \usepackage{longtable}
+\usepackage{adjustbox}
+
 \usetikzlibrary{positioning}
 % Used for displaying a sample figure. If possible, figure files should
 % be included in EPS format.
@@ -177,6 +179,9 @@ Examples for each approach:
     \item \textbf{UniProt} has adopted RDF-Star as a more compact and performant mechanism for attaching evidence and provenance annotations to individual triples in the knowledgebase, replacing a verbose and costly reification-based approach~\cite{rdfstar,uniprot}.
     \item \textbf{Wikidata} uses a bespoke statement model in which every claim can be qualified and referenced using a dedicated meta-model of statements, qualifiers, and references, providing fine-grained provenance at the level of individual assertions~\cite{vrandevcic2014,hernandez2015}.
     \item \textbf{The European Union Open Data Portal} captures provenance of published datasets through the DCAT Application Profile (DCAT-AP), which incorporates PROV-O via \texttt{prov:qualifiedAttribution} to express agent roles and data lineage~\cite{provo,dcatap}.
+    \item \textbf{DBpedia} organises its extracted Wikipedia data into named graphs per language and dataset, using PROV-O to record dataset-level provenance metadata including the extraction process and the originating source~\cite{dbpedia}.
+    \item \textbf{Linked Open Vocabularies (LOV)} tracks the provenance of vocabulary publications and their dependencies using PROV-O, recording authors, publishers, versioning history, and the agents responsible for curation within the vocabulary ecosystem~\cite{lov}.
+    \item \textbf{Nanopublications} treat provenance as a first-class structural concern: each nanopublication consists of three named graphs --- assertion, provenance, and publication info --- with PROV-O used within the provenance graph to capture authorship, temporal information, and the epistemic status of scientific claims~\cite{nanopub}.
 \end{itemize}
 
 
@@ -237,12 +242,14 @@ TBD
 
 % \subsubsection{\discintname} Conflicts
 \end{credits}
+
 %
 % ---- Bibliography ----
 %
 % BibTeX users should specify bibliography style 'splncs04'.
 % References will then be sorted and formatted in the correct style.
 %
+\clearpage
 \bibliographystyle{splncs04}
 \bibliography{main}
 %

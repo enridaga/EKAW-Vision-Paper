@@ -6,12 +6,14 @@
 %   \usepackage{array}       % for p{} column type
 %   \usepackage{longtable}   % for page-spanning legend tables
 
+%   \usepackage{adjustbox}   % for max width+height scaling of figures
 % ────────────────────────────────────────────────────────────
 % pragmatic affordances
 % ────────────────────────────────────────────────────────────
 \begin{figure}[H]
   \centering
-  \begin{tikzpicture}[
+  \adjustbox{max width=\textwidth, max totalheight=\textheight}{%
+\begin{tikzpicture}[
     concept/.style={circle, draw, fill=white, inner sep=4pt, minimum size=16pt,
                     font=\small\bfseries},
     lbl/.style={font=\small}
@@ -84,6 +86,8 @@
   \node[concept] (n22) at (2.500,14.000) {(w1)};
   \node[concept] (n23) at (0.000,16.000) {(x1)};
 \end{tikzpicture}
+}%
+
   \caption{FCA lattice: pragmatic affordances. See Table~\ref{tab:fca-pragmatic_affordances} for concept legend.}
   \label{fig:fca-pragmatic_affordances}
 \end{figure}
@@ -138,7 +142,8 @@
 % ────────────────────────────────────────────────────────────
 \begin{figure}[H]
   \centering
-  \begin{tikzpicture}[
+  \adjustbox{max width=\textwidth, max totalheight=\textheight}{%
+\begin{tikzpicture}[
     concept/.style={circle, draw, fill=white, inner sep=4pt, minimum size=16pt,
                     font=\small\bfseries},
     lbl/.style={font=\small}
@@ -171,6 +176,8 @@
   \node[concept] (n8) at (1.250,4.000) {(i2)};
   \node[concept] (n9) at (0.000,6.000) {(j2)};
 \end{tikzpicture}
+}%
+
   \caption{FCA lattice: pragmatic properties. See Table~\ref{tab:fca-pragmatic_properties} for concept legend.}
   \label{fig:fca-pragmatic_properties}
 \end{figure}
@@ -211,7 +218,8 @@
 % ────────────────────────────────────────────────────────────
 \begin{figure}[H]
   \centering
-  \begin{tikzpicture}[
+  \adjustbox{max width=\textwidth, max totalheight=\textheight}{%
+\begin{tikzpicture}[
     concept/.style={circle, draw, fill=white, inner sep=4pt, minimum size=16pt,
                     font=\small\bfseries},
     lbl/.style={font=\small}
@@ -289,6 +297,8 @@
   \node[concept] (n23) at (0.000,10.000) {(x3)};
   \node[concept] (n24) at (0.000,12.000) {(y3)};
 \end{tikzpicture}
+}%
+
   \caption{FCA lattice: semantic affordances. See Table~\ref{tab:fca-semantic_affordances} for concept legend.}
   \label{fig:fca-semantic_affordances}
 \end{figure}
@@ -344,7 +354,8 @@
 % ────────────────────────────────────────────────────────────
 \begin{figure}[H]
   \centering
-  \begin{tikzpicture}[
+  \adjustbox{max width=\textwidth, max totalheight=\textheight}{%
+\begin{tikzpicture}[
     concept/.style={circle, draw, fill=white, inner sep=4pt, minimum size=16pt,
                     font=\small\bfseries},
     lbl/.style={font=\small}
@@ -439,6 +450,8 @@
   \node[concept] (n28) at (2.500,10.000) {(ac4)};
   \node[concept] (n29) at (0.000,12.000) {(ad4)};
 \end{tikzpicture}
+}%
+
   \caption{FCA lattice: semantic properties. See Table~\ref{tab:fca-semantic_properties} for concept legend.}
   \label{fig:fca-semantic_properties}
 \end{figure}

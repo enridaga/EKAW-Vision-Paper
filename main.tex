@@ -63,14 +63,15 @@ Knowledge graphs have become the primary vehicle for data integration and are cr
     \item KGs have become the primary vehicle for data integration and are critical to trustworthy AI.
     \item Neuro-symbolic AI needs agile, transformable KG content to bridge neural and symbolic components.
     \item GenAI and LLMs offer unprecedented capability to automate KG reengineering tasks --- enabling agents that can reason step-by-step through reengineering decisions with a degree of autonomy. % [NEW]
-    \item Yet both forces operate without a principled understanding of the space they are navigating.
+    \item This agentic turn is already underway: emerging work on autonomous knowledge engineering agents --- systems that decompose, plan, and execute KG engineering tasks with minimal human intervention --- makes the absence of a principled map of the KG space particularly acute. An agent navigating reengineering decisions without such a map is forced to treat the KG ecosystem as an undifferentiated black box, with no principled basis for choosing transformations, estimating their cost, or explaining its choices. % [NEW]
+	\item Yet both forces operate without a principled understanding of the space they are navigating.
     \item The KG ecosystem is diverse by nature, and this diversity is healthy --- but it comes at a cost: adapting content is still an expensive and difficult task.
     \item The dominant response has been structural harmonisation — thirty years of mapping, aligning, and merging — yet cross-KG reuse remains expensive and brittle in practice. The right question is not "how similar is KG A to KG B?" but "does KG A afford what community C needs for task T?" — a question current approaches, and their quality metrics, entirely miss. % [NEW]
     \item What is missing is a flexible and comprehensive conceptualisation of how diverse modelling practices interplay --- one that integrates both the semantic dimension (domain meanings) and the pragmatic dimension (what a KG affords to whom, for which task). % [NEW]
     \item Work such as Fa\c{c}ade-X already demonstrates what a pragmatics-aware approach looks like in practice; what is missing is the overarching conceptualisation that generalises and grounds such approaches. % [NEW]
     This direction is gaining traction beyond individual tools: the W3C Data Façades Community Group is actively developing standards in this space, signalling that pragmatics-aware KG access is becoming a community-level concern.
-    \item We introduce the ontological continuum as that missing conceptualisation.
-    \item The contribution of this paper is conceptual and terminological: we define the meta-model of the continuum along its semantic and pragmatic dimensions, as a foundation for a theory to be developed by the community, and we propose the vocabulary to present the continuum and the possible transformation between its points. We should clarify that whilst we present this space as a continuum, this is  % [NEW]
+	\item We introduce the ontological continuum as that missing conceptualisation.
+	\item The contribution of this paper is conceptual and terminological: we define the meta-model of the continuum along its semantic and pragmatic dimensions, as a foundation for a theory to be developed by the community, and we propose the vocabulary to describe positions within it and the transformations between them. We use the term \emph{continuum} in a conceptual, not a mathematical sense: it is not a space that exists a priori, populated by infinitely many independent points, but one that is constructed for a specific operational need --- derived empirically from representative KGs, and organised through the relationships among their observable properties and affordances. % [NEW]
     \item We call on the community to develop it as a shared research agenda.
 \end{itemize}
 
@@ -81,8 +82,8 @@ The KG ecosystem is rich and diverse --- from lightweight vocabularies to richly
 \begin{itemize}
     \item The KG ecosystem spans from lightweight vocabularies (Dublin Core, Schema.org) to richly axiomatised ontologies (Gene Ontology, SNOMED CT).
     \item Different communities have developed different formalisms, governance practices, and modelling methodologies, each fit for purpose.
-    \item \textit{Knowledge and ontology engineering:} methodologies (NeOn, LOT, MOMO) provide guidance but assume a one-size-fits-all approach; reuse practices are poorly understood and underspecified.
-    \item \textit{KG construction, interoperability, and alignment:} mapping languages (R2RML, RML), ontology alignment systems (LogMap, AML), and modularisation techniques enable integration but fall short of addressing diversity in a unified way.
+    \item \textit{Knowledge and ontology engineering:} methodologies (NeOn, LOT, MOMO) provide guidance but assume a one-size-fits-all approach; reuse practices are poorly understood and underspecified. Diversity runs deeper than formalisms: foundational ontology choices --- BFO, DOLCE, UFO --- create incompatibilities at the level of the conceptual model, with real downstream consequences. For example, antipatterns defined within a UFO-based validation framework cannot be straightforwardly applied in a DOLCE-based setting; bridging them requires explicit mappings, operationalised as SPARQL negative competency questions --- a form of ad hoc pragmatic adaptation that the field currently has no principled framework to support. % [NEW]
+	\item \textit{KG construction, interoperability, and alignment:} mapping languages (R2RML, RML), ontology alignment systems (LogMap, AML), and modularisation techniques enable integration but fall short of addressing diversity in a unified way. A further blind spot is the implicit assumption that alignment must be complete: evaluation benchmarks and quality metrics consistently reward full coverage, yet fit-for-purpose reuse requires only the fragments relevant to a given task --- not a complete mapping to a target schema. The continuum makes this distinction explicit, replacing completeness as a quality criterion with task-relative coverage. % [NEW]
     \item \textit{Partial pragmatic predecessors:} pay-as-you-go approaches and ontology modularisation have partially addressed the question of fit-for-purpose reuse, but without an explicit affordance framing --- they remain task-agnostic and community-agnostic. % [NEW]
     \item \textit{GenAI and LLMs for KE:} a growing body of work --- including systematic surveys --- applies LLMs to ontology design, competency question engineering, SPARQL generation, and schema induction; powerful, but all sharing the same blind spot: they operate without a principled model of the KG space they are navigating. % [NEW]
     \item \textit{A cautionary precedent:} semantic web services (OWL-S and related work) modelled the semantic layer well but left the pragmatic layer --- how resources are composed and used in practice --- unaddressed; the initiative collapsed under that weight, a lesson that neglecting pragmatics has real consequences. % [NEW]
@@ -97,10 +98,12 @@ The KG ecosystem is rich and diverse --- from lightweight vocabularies to richly
     \item The ontological continuum is organised around two axes: semantics $\leftrightarrow$ pragmatics, and properties $\leftrightarrow$ affordances; together these define a 2$\times$2 conceptual space that is the core vocabulary of the framework. % [NEW]
     \item \textit{Semantic properties} capture meanings relevant to domains of interest; \textit{semantic affordances} capture meanings applicable to specific downstream tasks and communities --- what a KG means is inseparable from what it is used for. % [NEW]
     \item \textit{Pragmatic properties} capture the meta-models used to represent statements (RDF, OWL, RDF-Star, Wikidata model); \textit{pragmatic affordances} capture specific ways of exploiting those meta-models in practice --- for example, efficient path traversal or aggregation queries in SPARQL, class subsumption or property chain inference in OWL, constraint validation in SHACL, or reification patterns in RDF-Star. % [NEW]
-    \item These four categories are not independent: a semantic commitment shapes which pragmatic affordances are available, and a pragmatic choice constrains what semantic properties can be expressed; the continuum makes these dependencies explicit. % [NEW]
+    %\item These four categories are not independent: a semantic commitment shapes which pragmatic affordances are available, and a pragmatic choice constrains what semantic properties can be expressed; the continuum makes these dependencies explicit. % [NEW]
+	\item These four categories are not independent: a semantic commitment shapes which pragmatic affordances are available, and a pragmatic choice constrains what semantic properties can be expressed. For example, if the required semantic affordance is attribution, this determines which pragmatic properties must be present in the KG to support it; conversely, choosing RDF-Star as a pragmatic property opens certain SPARQL affordances while foreclosing others. The continuum makes these dependencies explicit --- and formalising them, including the directionality and transitivity of cross-dimension constraints, is itself a core research challenge for the community to address. % [NEW]
     \item A key ambition of the continuum is to replace the blurred notion of ``community'' with a formal set of dimensions: rather than saying a KG is fit for a given community, we can say it exhibits a specific combination of semantic and pragmatic properties and affordances --- making fitness for purpose operational and measurable. % [NEW]
-    \item The 2$\times$2 space is a starting generalisation; the concrete properties and affordances that populate each quadrant are not assumed but derived --- through empirical analysis of real-world KGs, downstream applications, and community practices. % [NEW]
-    \item The methodological stance is descriptive: the continuum aims to be a theory of the existent --- of what KG engineering practices are --- rather than a normative theory of what they should be; this distinguishes it from prescriptive methodology work and upper ontology efforts. % [NEW]
+%    \item The 2$\times$2 space is a starting generalisation; the concrete properties and affordances that populate each quadrant are not assumed but derived --- through empirical analysis of real-world KGs, downstream applications, and community practices. % [NEW]
+    \item The 2$\times$2 space is a starting generalisation; the concrete properties and affordances that populate each quadrant are not assumed but derived --- through empirical analysis of real-world KGs, downstream applications, and community practices. The methodology is iterative: representative KGs are analysed one by one, keywords are assigned per dimension, existing terms are reused wherever possible, and new ones are introduced only when necessary --- with retrospective verification across previously analysed KGs to ensure consistency. The resulting keyword-attribute matrix can then be projected into a mathematically ordered space: Formal Concept Analysis (FCA) is one well-suited choice, producing a concept lattice that gives the continuum its ordered structure; other projections are possible and may be preferable depending on the task. % [NEW]
+	\item The methodological stance is descriptive: the continuum aims to be a theory of the existent --- of what KG engineering practices are --- rather than a normative theory of what they should be; this distinguishes it from prescriptive methodology work and upper ontology efforts. % [NEW]
     \item The continuum does not prescribe a single modelling approach --- it provides a vocabulary to describe, compare, navigate, and transform KGs across the spectrum.
     \item Transformations along the continuum are characterised explicitly by what they cost and what they lose: some are lossless, some reduce expressivity, some require augmenting knowledge; making this explicit is what distinguishes principled reengineering from ad hoc adaptation. % [NEW]
     \item The continuum enables GenAI agents to navigate reengineering decisions step-by-step, exploring dimensions autonomously --- in the limit, given only a characterisation of input and output, an agent can identify and perform the right transformations without human intervention. % [NEW]
@@ -120,6 +123,8 @@ The KG ecosystem is rich and diverse --- from lightweight vocabularies to richly
 \end{itemize}
 
 Methodology for populating the continuum:
+
+The following procedure is presented not as a definitive taxonomy of provenance approaches, but as a demonstration that the dimensions of the ontological continuum can be characterised empirically --- that existing KGs can be positioned within this space, and that the resulting structure, when projected through FCA or similar techniques, yields a principled ordering. The keywords and attributes produced are illustrative; a different analyst, or a different task, would produce a different but equally valid instantiation of the continuum.
 
 \begin{enumerate}
     \item Select a set of real-world KGs of interest, each representing a distinct approach to the concern under study (here: provenance).
@@ -171,11 +176,12 @@ Examples for each approach:
     \item \textbf{The European Union Open Data Portal} captures provenance of published datasets through the DCAT Application Profile (DCAT-AP), which incorporates PROV-O via \texttt{prov:qualifiedAttribution} to express agent roles and data lineage~\cite{provo,dcatap}.
 \end{itemize}
 
-[TODO: revise pragmatic affordances and add OWL, DL, ...]
+% TODO: Revise pragmatic affordances in the tables as follows: (a) limit to language-level affordances (SPARQL, SHACL, OWL/DL profiles); (b) remove fine-grained SPARQL-over-specific-vocabulary mappings, which conflate high-level affordances with derived ones; (c) add OWL DL profile support where applicable. This revision is pending the expanded KG population (see below).
+% TODO: Expand the KG population to include additional examples that share pragmatic properties with existing ones, so that the FCA lattice exhibits meaningful overlap. Current population is one-per-method, which produces a sparse lattice.
 
-Discussion:
-
-Semantic seems easier then pragmatics
+%Discussion:
+%
+%Semantic seems easier then pragmatics
 
 \section{Research Challenges for the Community}
 
@@ -186,23 +192,30 @@ Semantic seems easier then pragmatics
         \item Defining community-relative fitness metrics: given a task, what combination of dimensions does a KG need to exhibit, and how can this be measured precisely? % [NEW]
         \item Replacing the informal notion of ``community'' with a formal, operational characterisation in terms of continuum dimensions. % [NEW]
     \end{itemize}
-
-    \item \textbf{Challenge 2:} Enabling modular, context-aware reuse across the spectrum --- how can ontological fragments be extracted, aligned, and applied across KGs with different commitments?
+	\item \textbf{Challenge 2:} Formalising the dependencies between continuum dimensions --- how do choices in one dimension constrain or determine options in others?
+    \begin{itemize}
+        \item Identifying the directionality and transitivity of cross-dimension constraints: for example, which semantic affordances entail specific pragmatic properties, and which pragmatic choices foreclose certain semantic commitments. % [NEW]
+        \item Developing a formal account of these dependencies that can be used to guide transformations --- so that when a target affordance is specified, the required properties in all four dimensions can be derived systematically. % [NEW]
+        \item Understanding how foundational ontology choices (BFO, DOLCE, UFO) propagate through the dimensions: an upper-level commitment is not merely a semantic property but one that cascades into pragmatic affordances, validation strategies, and alignment compatibility. % [NEW]
+    \end{itemize}
+	
+    \item \textbf{Challenge 3:} Enabling modular, context-aware reuse across the spectrum --- how can ontological fragments be extracted, aligned, and applied across KGs with different commitments?
     \begin{itemize}
         \item Developing adaptive query mechanisms that are dimension-aware --- translating user intent into KG-specific queries without requiring schema alignment, taking into account the semantic and pragmatic constraints imposed by each KG. % [NEW]
         \item Estimating the cost of adaptation: what is lost at each transformation step, what effort is required to bring a KG to the affordance level a task requires, and how can this be made explicit and manageable? % [NEW]
     \end{itemize}
 
-    \item \textbf{Challenge 3:} Supporting the co-evolution of interdependent KG engineering artefacts --- how do changes in one artefact (schema, mapping, query, documentation) propagate across the ecosystem?
+    \item \textbf{Challenge 4:} Supporting the co-evolution of interdependent KG engineering artefacts --- how do changes in one artefact (schema, mapping, query, documentation) propagate across the ecosystem?
     \begin{itemize}
         \item Developing a ``What if'' analysis framework: for every semantic choice, making the pragmatic consequences explicit, and vice versa --- so that design decisions are informed by their downstream effects across the continuum. % [NEW]
     \end{itemize}
-
-    \item \textbf{Challenge 4:} Developing human-in-the-loop strategies that make reengineering accessible to users with varying expertise --- how can GenAI reduce cognitive load while maintaining quality?
-    \begin{itemize}
-        \item Deriving implications for KG engineering practice from the affordance framing: if pragmatics comes first, how should KGs be designed, published, and maintained so that their affordances are explicit and reusable? % [NEW]
-        \item Supporting bidirectional design: helping users navigate the trade-offs between semantic expressivity and pragmatic accessibility, with GenAI acting as an informed guide through the continuum. % [NEW]
-    \end{itemize}
+	
+	\item \textbf{Challenge 5:} Developing human-in-the-loop strategies that make reengineering accessible to users with varying expertise --- how can GenAI reduce cognitive load while maintaining quality?
+	    \begin{itemize}
+	        \item Deriving implications for KG engineering practice from the affordance framing: if pragmatics comes first, how should KGs be designed, published, and maintained so that their affordances are explicit and reusable? % [NEW]
+	        \item Supporting bidirectional design: helping users navigate the trade-offs between semantic expressivity and pragmatic accessibility, with GenAI acting as an informed guide through the continuum. % [NEW]
+	        \item Supporting agentic KE: as autonomous agents begin to perform KE tasks with some degree of discretion, the continuum provides the reference framework they need to make reengineering decisions that are not merely executable but explainable --- every transformation choice can be grounded in continuum dimensions, its cost made explicit, and its provenance recorded. Without such a framework, agent decisions remain opaque, undermining trust and making troubleshooting impossible. % [NEW]
+	    \end{itemize}
 \end{itemize}
 
 \section{Conclusion}

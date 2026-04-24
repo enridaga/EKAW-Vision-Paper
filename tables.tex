@@ -6,19 +6,19 @@
 \toprule
  & \rotatebox{90}{\textbf{Europeana}} & \rotatebox{90}{\textbf{Google Data Commons}} & \rotatebox{90}{\textbf{Bio2RDF}} & \rotatebox{90}{\textbf{British Museum ResearchSpace}} & \rotatebox{90}{\textbf{UniProt}} & \rotatebox{90}{\textbf{Wikidata}} & \rotatebox{90}{\textbf{EU ODP}} \\
 \midrule
-\textit{temporal information} &  &  & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\
-\textit{data provider} & $\times$ & $\times$ & $\times$ &  &  & $\times$ & $\times$ \\
 \textit{authorship} & $\times$ &  &  & $\times$ & $\times$ & $\times$ & $\times$ \\
+\textit{data provider} & $\times$ & $\times$ & $\times$ &  &  & $\times$ & $\times$ \\
+\textit{temporal information} &  &  & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\
 \textit{dataset-level lineage} & $\times$ & $\times$ & $\times$ &  &  &  & $\times$ \\
 \textit{epistemic status} &  &  &  & $\times$ & $\times$ & $\times$ &  \\
 \textit{triple-level lineage} &  & $\times$ &  &  & $\times$ & $\times$ &  \\
 \textit{licensing} & $\times$ &  & $\times$ &  &  &  &  \\
 \textit{evidence type} &  &  &  &  & $\times$ & $\times$ &  \\
+\textit{conversion process} &  &  & $\times$ &  &  &  &  \\
+\textit{scholarly assertion} &  &  &  & $\times$ &  &  &  \\
+\textit{source organisation} &  & $\times$ &  &  &  &  &  \\
 \textit{aggregation chain} & $\times$ &  &  &  &  &  &  \\
 \textit{agent roles} &  &  &  &  &  &  & $\times$ \\
-\textit{conversion process} &  &  & $\times$ &  &  &  &  \\
-\textit{source organisation} &  & $\times$ &  &  &  &  &  \\
-\textit{scholarly assertion} &  &  &  & $\times$ &  &  &  \\
 \bottomrule
 \end{tabular}
 \caption{Semantic properties of provenance across knowledge graphs.}
@@ -36,13 +36,13 @@
 \textit{attribution} & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\
 \textit{source tracking} &  & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ &  \\
 \textit{data discovery} & $\times$ & $\times$ & $\times$ &  &  &  & $\times$ \\
-\textit{reproducibility} &  &  & $\times$ &  & $\times$ &  & $\times$ \\
 \textit{rights management} & $\times$ &  & $\times$ &  &  &  & $\times$ \\
-\textit{data quality evaluation} &  &  &  &  & $\times$ & $\times$ &  \\
-\textit{cross-dataset integration} &  & $\times$ &  &  &  & $\times$ &  \\
-\textit{knowledge curation} &  &  &  & $\times$ &  & $\times$ &  \\
-\textit{cross-portal interoperability} & $\times$ &  &  &  &  &  & $\times$ \\
+\textit{reproducibility} &  &  & $\times$ &  & $\times$ &  & $\times$ \\
 \textit{scholarly citation} &  &  &  & $\times$ &  & $\times$ &  \\
+\textit{knowledge curation} &  &  &  & $\times$ &  & $\times$ &  \\
+\textit{cross-dataset integration} &  & $\times$ &  &  &  & $\times$ &  \\
+\textit{cross-portal interoperability} & $\times$ &  &  &  &  &  & $\times$ \\
+\textit{data quality evaluation} &  &  &  &  & $\times$ & $\times$ &  \\
 \bottomrule
 \end{tabular}
 \caption{Semantic affordances of provenance across knowledge graphs.}
@@ -57,13 +57,13 @@
 \toprule
  & \rotatebox{90}{\textbf{Europeana}} & \rotatebox{90}{\textbf{Google Data Commons}} & \rotatebox{90}{\textbf{Bio2RDF}} & \rotatebox{90}{\textbf{British Museum ResearchSpace}} & \rotatebox{90}{\textbf{UniProt}} & \rotatebox{90}{\textbf{Wikidata}} & \rotatebox{90}{\textbf{EU ODP}} \\
 \midrule
-\textit{OAI-ORE aggregation} & $\times$ &  &  &  &  &  &  \\
-\textit{PROV-O} &  &  &  &  &  &  & $\times$ \\
-\textit{RDF reification} &  &  &  & $\times$ &  &  &  \\
-\textit{RDF-Star} &  &  &  &  & $\times$ &  &  \\
-\textit{Wikidata model} &  &  &  &  &  & $\times$ &  \\
-\textit{named graphs} &  &  & $\times$ &  &  &  &  \\
 \textit{Schema.org markup} &  & $\times$ &  &  &  &  &  \\
+\textit{PROV-O} &  &  &  &  &  &  & $\times$ \\
+\textit{Wikidata model} &  &  &  &  &  & $\times$ &  \\
+\textit{RDF-Star} &  &  &  &  & $\times$ &  &  \\
+\textit{named graphs} &  &  & $\times$ &  &  &  &  \\
+\textit{OAI-ORE aggregation} & $\times$ &  &  &  &  &  &  \\
+\textit{RDF reification} &  &  &  & $\times$ &  &  &  \\
 \bottomrule
 \end{tabular}
 \caption{Pragmatic properties of provenance across knowledge graphs.}
@@ -85,12 +85,12 @@
 \textit{multilingual access} & $\times$ &  &  &  &  & $\times$ & $\times$ \\
 \textit{natural language query} &  & $\times$ &  &  &  &  &  \\
 \textit{SPARQL over PROV-O terms} &  &  &  &  &  &  & $\times$ \\
+\textit{SPARQL over reified statements} &  &  &  & $\times$ &  &  &  \\
 \textit{SPARQL-Star} &  &  &  &  & $\times$ &  &  \\
 \textit{SPARQL over OAI-ORE terms} & $\times$ &  &  &  &  &  &  \\
-\textit{SPARQL over Wikibase model} &  &  &  &  &  & $\times$ &  \\
-\textit{SPARQL over Schema.org terms} &  & $\times$ &  &  &  &  &  \\
-\textit{SPARQL over reified statements} &  &  &  & $\times$ &  &  &  \\
 \textit{SPARQL over named graphs} &  &  & $\times$ &  &  &  &  \\
+\textit{SPARQL over Schema.org terms} &  & $\times$ &  &  &  &  &  \\
+\textit{SPARQL over Wikibase model} &  &  &  &  &  & $\times$ &  \\
 \bottomrule
 \end{tabular}
 \caption{Pragmatic affordances of provenance across knowledge graphs.}

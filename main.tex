@@ -9,7 +9,10 @@
 % so please use T1 fonts in your manuscript whenever possible.
 % Other font encondings may result in incorrect characters.
 %
+\usepackage{booktabs}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
 % Used for displaying a sample figure. If possible, figure files should
 % be included in EPS format.
 %
@@ -116,6 +119,49 @@ The KG ecosystem is rich and diverse --- from lightweight vocabularies to richly
     \item The case study demonstrates the practical value of the continuum and its relevance to real-world KG engineering challenges.
 \end{itemize}
 
+Methodology:
+
+We make lists of KG of interest, we define the 4 dimensions, we instruct to populate each one of them, incrementally, for each one of the cases, with list of keywords. We instruct to reuse keywords when possible and create new ones if necessary. We ask to define keywords that are not obvious. We do this one by one, reviewing the output and asking for clarifications. We do not produce/force any keyword. When a new keyword is produced, we ask to verify that past example don't have that as well, or add it.
+We review the list of keywords and harmonise them if meaningful.
+
+\subsection{Zooming into provenance}
+
+\begin{itemize}
+    \item \textbf{Simple metadata annotations}: Dublin Core terms such as \texttt{dc:creator} and \texttt{dc:date} are widely used to attach provenance metadata at the dataset or document level, as in DBpedia dataset descriptions~\cite{dcterms}.
+    \item \textbf{Named graphs}: Provenance metadata can be associated with sets of triples by grouping them into named graphs, as adopted in Wikidata to attach references to groups of statements~\cite{wikidata}.
+    \item \textbf{RDF reification}: The standard RDF reification vocabulary (\texttt{rdf:Statement}) allows metadata to be attached to individual triples, and was widely used in early Linked Data deployments~\cite{rdf11}.
+    \item \textbf{RDF-Star}: A more compact mechanism for annotating individual triples by embedding a triple as the subject of another triple, now gaining adoption in newer KG deployments~\cite{rdfstar}.
+    \item \textbf{Wikidata model}: A bespoke meta-model using qualifiers and references attached to statements, representing a community-driven pragmatic solution distinct from standard RDF mechanisms~\cite{wikidata}.
+    \item \textbf{PROV-O}: A full ontological model of provenance, capturing agents, activities, entities and their relationships, adopted in scientific workflows and open science practices~\cite{provo}.
+    \item \textbf{Schema.org markup}: A lightweight, web-scale vocabulary used to annotate entities and datasets with provenance metadata such as source, creator, and licence, as adopted by Google Data Commons, which extends Schema.org to attach a provenance property to every triple in the graph~\cite{datacommons,schemaorg}.
+\end{itemize}
+
+Ontological continuum dimensions in context:
+
+\begin{itemize}
+    \item \textbf{Semantic properties}: What provenance meaning is captured --- e.g.\ authorship, temporal information, lineage, trust, process descriptions.
+    \item \textbf{Semantic affordances}: What downstream tasks the provenance representation supports --- e.g.\ trust assessment, data quality evaluation, reproducibility, audit trails, attribution.
+    \item \textbf{Pragmatic properties}: The representational mechanism used --- simple metadata annotations, named graphs, RDF reification, RDF-Star, Wikidata model, PROV-O.
+    \item \textbf{Pragmatic affordances}: What interaction methods are supported --- e.g.\ SPARQL querying, SHACL validation, OWL reasoning.
+\end{itemize}
+
+Examples for each approach:
+
+\begin{itemize}
+    \item \textbf{Europeana} uses the Europeana Data Model (EDM), which captures provenance through OAI-ORE Aggregations, recording the original data provider, intermediaries, and Europeana itself as aggregator, with Dublin Core elements at the core of the descriptive metadata~\cite{haslhofer2011}.
+    \item \textbf{Google Data Commons} extends the Schema.org vocabulary to attach a provenance property to every triple in the graph, recording the URL of the originating data provider as a first-class element of the data model~\cite{datacommons,schemaorg}.
+    \item \textbf{Bio2RDF} stores provenance metadata for each dataset in a dedicated named graph per SPARQL endpoint, using VoID, PROV, and Dublin Core to describe the date of conversion, licensing, and the script used to generate the dataset~\cite{callahan2013}.
+    \item \textbf{The British Museum ResearchSpace} platform uses RDF reification patterns grounded in the CIDOC Conceptual Reference Model (CRM) to capture the provenance of scholarly assertions about cultural heritage objects~\cite{researchspace}.
+    \item \textbf{UniProt} has adopted RDF-Star as a more compact and performant mechanism for attaching evidence and provenance annotations to individual triples in the knowledgebase, replacing a verbose and costly reification-based approach~\cite{rdfstar,uniprot}.
+    \item \textbf{Wikidata} uses a bespoke statement model in which every claim can be qualified and referenced using a dedicated meta-model of statements, qualifiers, and references, providing fine-grained provenance at the level of individual assertions~\cite{vrandevcic2014,hernandez2015}.
+    \item \textbf{The European Union Open Data Portal} captures provenance of published datasets through the DCAT Application Profile (DCAT-AP), which incorporates PROV-O via \texttt{prov:qualifiedAttribution} to express agent roles and data lineage~\cite{provo,dcatap}.
+\end{itemize}
+
+
+Discussion:
+
+Semantic seems easier then pragmatics
+
 \section{Research Challenges for the Community}
 
 \begin{itemize}
@@ -172,4 +218,10 @@ The KG ecosystem is rich and diverse --- from lightweight vocabularies to richly
 \bibliography{main}
 %
 
+\section*{Appendix: Provenance in the Continuum}
+
+\subsection*{Tables}
+\input{tables.tex}
+\subsection*{FCA Lattices}
+\input{fca.tex}
 \end{document}

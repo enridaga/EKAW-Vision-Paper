@@ -1,0 +1,30 @@
+\section*{EKAW2026:  The Pragmatics-First Manifesto}
+
+\subsection*{Core point}
+
+KG reuse research has been obsessed with alignment  finding perfect correspondences between schemas. But real-world users don't need perfect alignment; they need good-enough access to knowledge they didn't build. This paper makes the case for a pragmatics-first approach to KG reuse: adapting queries to KGs rather than KGs to queries, and treating "fit for purpose" as a community-relative, task-dependent property rather than a universal standard.
+
+\subsection*{Main Claim}
+
+The dominant paradigm in KG reuse research assumes that interoperability requires structural harmonisation — mapping, aligning, or merging KG schemas. This paper argues this is the wrong goal. Real KG reuse is *pragmatic*: users have tasks, KGs have affordances, and the question is whether a KG's affordances are sufficient for the task — not whether it can be perfectly aligned with any other KG. This reframing suggests a different research agenda: characterising KG affordances, developing adaptive query mechanisms, and building tools that meet users where they are rather than requiring them to harmonise everything first.
+
+\subsection*{What Makes It Original}
+
+The philosophical literature on affordances (Gibson 1979; Norman 1988) has been applied extensively in HCI and design but barely touched KG engineering. Bringing this framing into the KG space provides a principled way to talk about *use-relative* properties — properties that depend on who is using the KG and for what — and to explain why the "one alignment to rule them all" approach has consistently underperformed in practice.
+
+Crucially, this paper is not purely argumentative: the team has already built a working example of a pragmatics-first approach. Façade-X (Asprino, Daga, Gangemi \& Mulholland 2023) constructs *de facto* knowledge graphs over heterogeneous non-RDF data sources via SPARQL, without requiring the underlying data to be transformed or mapped to a common schema. This is exactly what pragmatics-first looks like in practice — meet users where their data already is, rather than requiring them to harmonise it first. Having a concrete published system as the paper's central motivating example significantly strengthens the argument and distinguishes it from a purely theoretical position paper.
+
+\subsection*{Proposed Structure}
+
+Section 1: The Alignment Imperative and Its Limits. The history of KG interoperability research as a series of attempts to achieve alignment: from DAML+OIL mappings through OWL ontology matching through current LLM-based alignment. Despite thirty years of effort and impressive technical progress, cross-KG reuse remains expensive and brittle in practice. Why?
+
+Section 2: A Pragmatic Turn. Introduce the affordance framing: a KG's value is not intrinsic but relational,  it depends on what a user (or user community) needs it to do. This means the right question is not "how similar is KG A to KG B?" but "does KG A afford what community C needs for task T?" Survey how this question has been partially addressed in ontology engineering (e.g., pay-as-you-go approaches, ontology modularisation) and where it has not been addressed at all.
+
+Section 3: A Pragmatics-First Approach in Practice. Ground the argument in concrete work. Façade-X [Asprino, Daga, Gangemi \& Mulholland 2023] is presented as the leading working example of a pragmatics-first tool: it enables SPARQL querying of heterogeneous, non-RDF data without schema harmonisation, generating *de facto* KGs whose characteristics are determined by the query needs of the user, not by the data's native structure. This section generalises from Façade-X to define semantic affordances (meanings relevant to specific domains), pragmatic affordances (interaction methods the KG supports), and — in brief — emerging agentic affordances (what AI agents can do with the KG without human mediation). The cultural heritage domain provides a second running example throughout: institutions such as museums hold rich legacy collections that need to be published as Linked Data under multiple overlapping standards (Linked Art, EODEM, CIDOC-CRM), a textbook case of where pragmatics-first tools are needed because no harmonisation is feasible. Note that characterising affordances requires describing the user community as well as the KG — a point current quality metrics entirely miss.
+
+Section 4: What a Pragmatics-First Agenda Looks Like Sketch three research directions that follow from the affordance framing: (1) community-relative KG fitness metrics — how do we formally specify what a community needs a KG to afford?; (2) adaptive query mechanisms that translate user intent into KG-specific queries without requiring schema alignment, building on the façade and query rewriting tradition; (3) methods for estimating the cost of adaptation, how much effort is required to bring a KG to the affordance level a community needs? Each direction is illustrated with an open problem and a pointer to relevant existing work.
+
+Section 5: Implications for KG Engineering Practice.
+How does a pragmatics-first view change the way we should build, publish, and maintain KGs? Argue for affordance-driven KG design: build KGs with explicit documentation of what they afford to whom, rather than striving for universal reusability.
+
+

@@ -15,82 +15,121 @@
     attr/.style={font=\small, text=red!70!black}
 ]
   % Hasse edges
-  \draw (0.000,0.000) -- (-7.500,2.000);
-  \draw (0.000,0.000) -- (-5.000,2.000);
-  \draw (0.000,0.000) -- (-2.500,2.000);
-  \draw (0.000,0.000) -- (0.000,2.000);
-  \draw (0.000,0.000) -- (2.500,2.000);
-  \draw (0.000,0.000) -- (5.000,2.000);
-  \draw (0.000,0.000) -- (7.500,2.000);
-  \draw (-7.500,2.000) -- (0.000,4.000);
-  \draw (-5.000,2.000) -- (-2.500,6.000);
-  \draw (-2.500,2.000) -- (0.000,6.000);
-  \draw (0.000,2.000) -- (2.500,6.000);
-  \draw (2.500,2.000) -- (-2.500,6.000);
-  \draw (5.000,2.000) -- (0.000,4.000);
-  \draw (7.500,2.000) -- (0.000,4.000);
-  \draw (0.000,4.000) -- (0.000,6.000);
-  \draw (0.000,4.000) -- (2.500,6.000);
-  \draw (0.000,4.000) -- (-2.500,6.000);
-  \draw (0.000,6.000) -- (-2.500,8.000);
-  \draw (0.000,6.000) -- (0.000,8.000);
-  \draw (2.500,6.000) -- (-2.500,8.000);
-  \draw (2.500,6.000) -- (2.500,8.000);
-  \draw (-2.500,6.000) -- (0.000,8.000);
-  \draw (-2.500,6.000) -- (2.500,8.000);
-  \draw (-2.500,8.000) -- (0.000,10.000);
+  \draw (0.000,0.000) -- (-3.750,2.000);
+  \draw (0.000,0.000) -- (-1.250,2.000);
+  \draw (0.000,0.000) -- (1.250,2.000);
+  \draw (0.000,0.000) -- (3.750,2.000);
+  \draw (-3.750,2.000) -- (-3.750,12.000);
+  \draw (-1.250,2.000) -- (-2.500,6.000);
+  \draw (1.250,2.000) -- (-3.750,4.000);
+  \draw (1.250,2.000) -- (-1.250,4.000);
+  \draw (3.750,2.000) -- (1.250,4.000);
+  \draw (3.750,2.000) -- (-3.750,4.000);
+  \draw (3.750,2.000) -- (3.750,4.000);
+  \draw (1.250,4.000) -- (0.000,6.000);
+  \draw (1.250,4.000) -- (-2.500,10.000);
+  \draw (-3.750,4.000) -- (2.500,6.000);
+  \draw (-1.250,4.000) -- (-2.500,6.000);
+  \draw (-1.250,4.000) -- (2.500,6.000);
+  \draw (3.750,4.000) -- (0.000,6.000);
+  \draw (3.750,4.000) -- (0.000,10.000);
+  \draw (0.000,6.000) -- (-1.250,12.000);
+  \draw (-2.500,6.000) -- (2.500,10.000);
+  \draw (2.500,6.000) -- (0.000,8.000);
+  \draw (0.000,8.000) -- (-2.500,10.000);
+  \draw (0.000,8.000) -- (2.500,10.000);
   \draw (0.000,8.000) -- (0.000,10.000);
-  \draw (2.500,8.000) -- (0.000,10.000);
+  \draw (-2.500,10.000) -- (1.250,12.000);
+  \draw (-2.500,10.000) -- (-1.250,12.000);
+  \draw (2.500,10.000) -- (-3.750,12.000);
+  \draw (2.500,10.000) -- (1.250,12.000);
+  \draw (2.500,10.000) -- (3.750,12.000);
+  \draw (-3.750,12.000) -- (-2.500,14.000);
+  \draw (-3.750,12.000) -- (0.000,14.000);
+  \draw (0.000,10.000) -- (-1.250,12.000);
+  \draw (0.000,10.000) -- (3.750,12.000);
+  \draw (1.250,12.000) -- (-2.500,14.000);
+  \draw (1.250,12.000) -- (2.500,14.000);
+  \draw (-2.500,14.000) -- (0.000,16.000);
+  \draw (-1.250,12.000) -- (2.500,14.000);
+  \draw (3.750,12.000) -- (0.000,14.000);
+  \draw (3.750,12.000) -- (2.500,14.000);
+  \draw (0.000,14.000) -- (0.000,16.000);
+  \draw (2.500,14.000) -- (0.000,16.000);
   % Concept nodes
   \node[concept] (n0) at (0.000,0.000) {};
-  \node[concept] (n1) at (-7.500,2.000) {};
-  \node[concept] (n2) at (-5.000,2.000) {};
-  \node[concept] (n3) at (-2.500,2.000) {};
-  \node[concept] (n4) at (0.000,2.000) {};
-  \node[concept] (n5) at (2.500,2.000) {};
-  \node[concept] (n6) at (5.000,2.000) {};
-  \node[concept] (n7) at (7.500,2.000) {};
-  \node[concept] (n8) at (0.000,4.000) {};
+  \node[concept] (n1) at (-3.750,2.000) {};
+  \node[concept] (n2) at (-1.250,2.000) {};
+  \node[concept] (n3) at (1.250,2.000) {};
+  \node[concept] (n4) at (3.750,2.000) {};
+  \node[concept] (n5) at (1.250,4.000) {};
+  \node[concept] (n6) at (-3.750,4.000) {};
+  \node[concept] (n7) at (-1.250,4.000) {};
+  \node[concept] (n8) at (3.750,4.000) {};
   \node[concept] (n9) at (0.000,6.000) {};
-  \node[concept] (n10) at (2.500,6.000) {};
-  \node[concept] (n11) at (-2.500,6.000) {};
-  \node[concept] (n12) at (-2.500,8.000) {};
-  \node[concept] (n13) at (0.000,8.000) {};
-  \node[concept] (n14) at (2.500,8.000) {};
-  \node[concept] (n15) at (0.000,10.000) {};
+  \node[concept] (n10) at (-2.500,6.000) {};
+  \node[concept] (n11) at (2.500,6.000) {};
+  \node[concept] (n12) at (0.000,8.000) {};
+  \node[concept] (n13) at (-2.500,10.000) {};
+  \node[concept] (n14) at (2.500,10.000) {};
+  \node[concept] (n15) at (-3.750,12.000) {};
+  \node[concept] (n16) at (0.000,10.000) {};
+  \node[concept] (n17) at (1.250,12.000) {};
+  \node[concept] (n18) at (-2.500,14.000) {};
+  \node[concept] (n19) at (-1.250,12.000) {};
+  \node[concept] (n20) at (3.750,12.000) {};
+  \node[concept] (n21) at (0.000,14.000) {};
+  \node[concept] (n22) at (2.500,14.000) {};
+  \node[concept] (n23) at (0.000,16.000) {};
   % Object labels (above)
-  \node[obj, above=2pt of n1, align=center] {\begin{tabular}{c}Europeana\end{tabular}};
-  \node[obj, above=2pt of n2, align=center] {\begin{tabular}{c}Google Data Commons\end{tabular}};
-  \node[obj, above=2pt of n3, align=center] {\begin{tabular}{c}Bio2RDF\end{tabular}};
-  \node[obj, above=2pt of n4, align=center] {\begin{tabular}{c}British Museum ResearchSpace\end{tabular}};
-  \node[obj, above=2pt of n5, align=center] {\begin{tabular}{c}UniProt\end{tabular}};
-  \node[obj, above=2pt of n6, align=center] {\begin{tabular}{c}Wikidata\end{tabular}};
-  \node[obj, above=2pt of n7, align=center] {\begin{tabular}{c}EU ODP\end{tabular}};
-  \node[obj, above=2pt of n8, align=center] {\begin{tabular}{c}Europeana \\ Wikidata \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n9, align=center] {\begin{tabular}{c}Europeana \\ Bio2RDF \\ Wikidata \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n10, align=center] {\begin{tabular}{c}Europeana \\ British Museum ResearchSpace \\ Wikidata \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n11, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ UniProt \\ Wikidata \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n12, align=center] {\begin{tabular}{c}Europeana \\ Bio2RDF \\ British Museum ResearchSpace \\ Wikidata \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n13, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ Bio2RDF \\ UniProt \\ Wikidata \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n14, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ British Museum ResearchSpace \\ UniProt \\ Wikidata \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n15, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ Bio2RDF \\ British Museum ResearchSpace \\ UniProt \\ Wikidata \\ EU ODP\end{tabular}};
+  \node[obj, above=2pt of n1, align=center] {\begin{tabular}{c}Google Data Commons\end{tabular}};
+  \node[obj, above=2pt of n2, align=center] {\begin{tabular}{c}UniProt\end{tabular}};
+  \node[obj, above=2pt of n3, align=center] {\begin{tabular}{c}Wikidata\end{tabular}};
+  \node[obj, above=2pt of n4, align=center] {\begin{tabular}{c}EU ODP\end{tabular}};
+  \node[obj, above=2pt of n5, align=center] {\begin{tabular}{c}British Museum ResearchSpace \\ EU ODP\end{tabular}};
+  \node[obj, above=2pt of n6, align=center] {\begin{tabular}{c}Wikidata \\ EU ODP\end{tabular}};
+  \node[obj, above=2pt of n7, align=center] {\begin{tabular}{c}Wikidata \\ DBpedia\end{tabular}};
+  \node[obj, above=2pt of n8, align=center] {\begin{tabular}{c}EU ODP \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n9, align=center] {\begin{tabular}{c}British Museum ResearchSpace \\ EU ODP \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n10, align=center] {\begin{tabular}{c}UniProt \\ Wikidata \\ DBpedia\end{tabular}};
+  \node[obj, above=2pt of n11, align=center] {\begin{tabular}{c}Europeana \\ Wikidata \\ EU ODP \\ DBpedia\end{tabular}};
+  \node[obj, above=2pt of n12, align=center] {\begin{tabular}{c}Europeana \\ Wikidata \\ EU ODP \\ DBpedia \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n13, align=center] {\begin{tabular}{c}Europeana \\ British Museum ResearchSpace \\ Wikidata \\ EU ODP \\ DBpedia \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n14, align=center] {\begin{tabular}{c}Europeana \\ UniProt \\ Wikidata \\ EU ODP \\ DBpedia \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n15, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ UniProt \\ Wikidata \\ EU ODP \\ DBpedia \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n16, align=center] {\begin{tabular}{c}Europeana \\ Bio2RDF \\ Wikidata \\ EU ODP \\ DBpedia \\ LOV \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n17, align=center] {\begin{tabular}{c}Europeana \\ British Museum ResearchSpace \\ UniProt \\ Wikidata \\ EU ODP \\ DBpedia \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n18, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ British Museum ResearchSpace \\ UniProt \\ Wikidata \\ EU ODP \\ DBpedia \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n19, align=center] {\begin{tabular}{c}Europeana \\ Bio2RDF \\ British Museum ResearchSpace \\ Wikidata \\ EU ODP \\ DBpedia \\ LOV \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n20, align=center] {\begin{tabular}{c}Europeana \\ Bio2RDF \\ UniProt \\ Wikidata \\ EU ODP \\ DBpedia \\ LOV \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n21, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ Bio2RDF \\ UniProt \\ Wikidata \\ EU ODP \\ DBpedia \\ LOV \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n22, align=center] {\begin{tabular}{c}Europeana \\ Bio2RDF \\ British Museum ResearchSpace \\ UniProt \\ Wikidata \\ EU ODP \\ DBpedia \\ LOV \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n23, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ Bio2RDF \\ British Museum ResearchSpace \\ UniProt \\ Wikidata \\ EU ODP \\ DBpedia \\ LOV \\ Nanopublications\end{tabular}};
   % Attribute labels (below)
-  \node[attr, below=2pt of n0, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL over OAI-ORE terms \\ REST API \\ linked data browsing \\ bulk download \\ multilingual access \\ SPARQL over Schema.org terms \\ natural language query \\ SPARQL over named graphs \\ SPARQL over reified statements \\ SPARQL-Star \\ SPARQL over Wikibase model \\ SPARQL over PROV-O terms\end{tabular}};
-  \node[attr, below=2pt of n1, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL over OAI-ORE terms \\ REST API \\ linked data browsing \\ bulk download \\ multilingual access\end{tabular}};
-  \node[attr, below=2pt of n2, align=center] {\begin{tabular}{c}SPARQL \\ REST API \\ bulk download \\ SPARQL over Schema.org terms \\ natural language query\end{tabular}};
-  \node[attr, below=2pt of n3, align=center] {\begin{tabular}{c}SPARQL \\ linked data browsing \\ bulk download \\ SPARQL over named graphs\end{tabular}};
-  \node[attr, below=2pt of n4, align=center] {\begin{tabular}{c}SPARQL \\ REST API \\ linked data browsing \\ SPARQL over reified statements\end{tabular}};
-  \node[attr, below=2pt of n5, align=center] {\begin{tabular}{c}SPARQL \\ REST API \\ bulk download \\ SPARQL-Star\end{tabular}};
-  \node[attr, below=2pt of n6, align=center] {\begin{tabular}{c}SPARQL \\ REST API \\ linked data browsing \\ bulk download \\ multilingual access \\ SPARQL over Wikibase model\end{tabular}};
-  \node[attr, below=2pt of n7, align=center] {\begin{tabular}{c}SPARQL \\ REST API \\ linked data browsing \\ bulk download \\ multilingual access \\ SPARQL over PROV-O terms\end{tabular}};
-  \node[attr, below=2pt of n8, align=center] {\begin{tabular}{c}SPARQL \\ REST API \\ linked data browsing \\ bulk download \\ multilingual access\end{tabular}};
-  \node[attr, below=2pt of n9, align=center] {\begin{tabular}{c}SPARQL \\ linked data browsing \\ bulk download\end{tabular}};
-  \node[attr, below=2pt of n10, align=center] {\begin{tabular}{c}SPARQL \\ REST API \\ linked data browsing\end{tabular}};
-  \node[attr, below=2pt of n11, align=center] {\begin{tabular}{c}SPARQL \\ REST API \\ bulk download\end{tabular}};
-  \node[attr, below=2pt of n12, align=center] {\begin{tabular}{c}SPARQL \\ linked data browsing\end{tabular}};
-  \node[attr, below=2pt of n13, align=center] {\begin{tabular}{c}SPARQL \\ bulk download\end{tabular}};
-  \node[attr, below=2pt of n14, align=center] {\begin{tabular}{c}SPARQL \\ REST API\end{tabular}};
-  \node[attr, below=2pt of n15, align=center] {\begin{tabular}{c}SPARQL\end{tabular}};
+  \node[attr, below=2pt of n0, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint \\ REST API \\ linked data browsing \\ bulk download \\ multilingual access \\ natural language query \\ OWL DL reasoning \\ SPARQL-Star \\ SPARQL federation \\ SHACL\end{tabular}};
+  \node[attr, below=2pt of n1, align=center] {\begin{tabular}{c}SPARQL \\ REST API \\ bulk download \\ natural language query\end{tabular}};
+  \node[attr, below=2pt of n2, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint \\ REST API \\ bulk download \\ SPARQL-Star \\ SPARQL federation\end{tabular}};
+  \node[attr, below=2pt of n3, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint \\ REST API \\ linked data browsing \\ bulk download \\ multilingual access \\ SPARQL federation \\ SHACL\end{tabular}};
+  \node[attr, below=2pt of n4, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint \\ REST API \\ linked data browsing \\ bulk download \\ multilingual access \\ OWL DL reasoning \\ SHACL\end{tabular}};
+  \node[attr, below=2pt of n5, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint \\ REST API \\ linked data browsing \\ OWL DL reasoning\end{tabular}};
+  \node[attr, below=2pt of n6, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint \\ REST API \\ linked data browsing \\ bulk download \\ multilingual access \\ SHACL\end{tabular}};
+  \node[attr, below=2pt of n7, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint \\ REST API \\ linked data browsing \\ bulk download \\ multilingual access \\ SPARQL federation\end{tabular}};
+  \node[attr, below=2pt of n8, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint \\ linked data browsing \\ bulk download \\ OWL DL reasoning\end{tabular}};
+  \node[attr, below=2pt of n9, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint \\ linked data browsing \\ OWL DL reasoning\end{tabular}};
+  \node[attr, below=2pt of n10, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint \\ REST API \\ bulk download \\ SPARQL federation\end{tabular}};
+  \node[attr, below=2pt of n11, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint \\ REST API \\ linked data browsing \\ bulk download \\ multilingual access\end{tabular}};
+  \node[attr, below=2pt of n12, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint \\ REST API \\ linked data browsing \\ bulk download\end{tabular}};
+  \node[attr, below=2pt of n13, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint \\ REST API \\ linked data browsing\end{tabular}};
+  \node[attr, below=2pt of n14, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint \\ REST API \\ bulk download\end{tabular}};
+  \node[attr, below=2pt of n15, align=center] {\begin{tabular}{c}SPARQL \\ REST API \\ bulk download\end{tabular}};
+  \node[attr, below=2pt of n16, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint \\ linked data browsing \\ bulk download\end{tabular}};
+  \node[attr, below=2pt of n17, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint \\ REST API\end{tabular}};
+  \node[attr, below=2pt of n18, align=center] {\begin{tabular}{c}SPARQL \\ REST API\end{tabular}};
+  \node[attr, below=2pt of n19, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint \\ linked data browsing\end{tabular}};
+  \node[attr, below=2pt of n20, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint \\ bulk download\end{tabular}};
+  \node[attr, below=2pt of n21, align=center] {\begin{tabular}{c}SPARQL \\ bulk download\end{tabular}};
+  \node[attr, below=2pt of n22, align=center] {\begin{tabular}{c}SPARQL \\ SPARQL endpoint\end{tabular}};
+  \node[attr, below=2pt of n23, align=center] {\begin{tabular}{c}SPARQL\end{tabular}};
 \end{tikzpicture}
   \caption{FCA lattice: pragmatic affordances}
   \label{fig:fca-pragmatic_affordances}
@@ -108,48 +147,52 @@
     attr/.style={font=\small, text=red!70!black}
 ]
   % Hasse edges
-  \draw (0.000,0.000) -- (-7.500,2.000);
-  \draw (0.000,0.000) -- (-5.000,2.000);
-  \draw (0.000,0.000) -- (-2.500,2.000);
-  \draw (0.000,0.000) -- (0.000,2.000);
-  \draw (0.000,0.000) -- (2.500,2.000);
-  \draw (0.000,0.000) -- (5.000,2.000);
-  \draw (0.000,0.000) -- (7.500,2.000);
-  \draw (-7.500,2.000) -- (0.000,4.000);
-  \draw (-5.000,2.000) -- (0.000,4.000);
-  \draw (-2.500,2.000) -- (0.000,4.000);
-  \draw (0.000,2.000) -- (0.000,4.000);
-  \draw (2.500,2.000) -- (0.000,4.000);
-  \draw (5.000,2.000) -- (0.000,4.000);
-  \draw (7.500,2.000) -- (0.000,4.000);
+  \draw (0.000,0.000) -- (-6.250,2.000);
+  \draw (0.000,0.000) -- (-3.750,2.000);
+  \draw (0.000,0.000) -- (-1.250,2.000);
+  \draw (0.000,0.000) -- (1.250,2.000);
+  \draw (0.000,0.000) -- (3.750,2.000);
+  \draw (0.000,0.000) -- (6.250,2.000);
+  \draw (-6.250,2.000) -- (0.000,6.000);
+  \draw (-3.750,2.000) -- (0.000,6.000);
+  \draw (-1.250,2.000) -- (0.000,6.000);
+  \draw (1.250,2.000) -- (0.000,6.000);
+  \draw (3.750,2.000) -- (0.000,6.000);
+  \draw (6.250,2.000) -- (-1.250,4.000);
+  \draw (6.250,2.000) -- (1.250,4.000);
+  \draw (-1.250,4.000) -- (0.000,6.000);
+  \draw (1.250,4.000) -- (0.000,6.000);
   % Concept nodes
   \node[concept] (n0) at (0.000,0.000) {};
-  \node[concept] (n1) at (-7.500,2.000) {};
-  \node[concept] (n2) at (-5.000,2.000) {};
-  \node[concept] (n3) at (-2.500,2.000) {};
-  \node[concept] (n4) at (0.000,2.000) {};
-  \node[concept] (n5) at (2.500,2.000) {};
-  \node[concept] (n6) at (5.000,2.000) {};
-  \node[concept] (n7) at (7.500,2.000) {};
-  \node[concept] (n8) at (0.000,4.000) {};
+  \node[concept] (n1) at (-6.250,2.000) {};
+  \node[concept] (n2) at (-3.750,2.000) {};
+  \node[concept] (n3) at (-1.250,2.000) {};
+  \node[concept] (n4) at (1.250,2.000) {};
+  \node[concept] (n5) at (3.750,2.000) {};
+  \node[concept] (n6) at (6.250,2.000) {};
+  \node[concept] (n7) at (-1.250,4.000) {};
+  \node[concept] (n8) at (1.250,4.000) {};
+  \node[concept] (n9) at (0.000,6.000) {};
   % Object labels (above)
   \node[obj, above=2pt of n1, align=center] {\begin{tabular}{c}Europeana\end{tabular}};
   \node[obj, above=2pt of n2, align=center] {\begin{tabular}{c}Google Data Commons\end{tabular}};
-  \node[obj, above=2pt of n3, align=center] {\begin{tabular}{c}Bio2RDF\end{tabular}};
-  \node[obj, above=2pt of n4, align=center] {\begin{tabular}{c}British Museum ResearchSpace\end{tabular}};
-  \node[obj, above=2pt of n5, align=center] {\begin{tabular}{c}UniProt\end{tabular}};
-  \node[obj, above=2pt of n6, align=center] {\begin{tabular}{c}Wikidata\end{tabular}};
-  \node[obj, above=2pt of n7, align=center] {\begin{tabular}{c}EU ODP\end{tabular}};
-  \node[obj, above=2pt of n8, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ Bio2RDF \\ British Museum ResearchSpace \\ UniProt \\ Wikidata \\ EU ODP\end{tabular}};
+  \node[obj, above=2pt of n3, align=center] {\begin{tabular}{c}British Museum ResearchSpace\end{tabular}};
+  \node[obj, above=2pt of n4, align=center] {\begin{tabular}{c}UniProt\end{tabular}};
+  \node[obj, above=2pt of n5, align=center] {\begin{tabular}{c}Wikidata\end{tabular}};
+  \node[obj, above=2pt of n6, align=center] {\begin{tabular}{c}DBpedia \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n7, align=center] {\begin{tabular}{c}Bio2RDF \\ DBpedia \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n8, align=center] {\begin{tabular}{c}EU ODP \\ DBpedia \\ LOV \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n9, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ Bio2RDF \\ British Museum ResearchSpace \\ UniProt \\ Wikidata \\ EU ODP \\ DBpedia \\ LOV \\ Nanopublications\end{tabular}};
   % Attribute labels (below)
   \node[attr, below=2pt of n0, align=center] {\begin{tabular}{c}OAI-ORE aggregation \\ Schema.org markup \\ named graphs \\ RDF reification \\ RDF-Star \\ Wikidata model \\ PROV-O\end{tabular}};
   \node[attr, below=2pt of n1, align=center] {\begin{tabular}{c}OAI-ORE aggregation\end{tabular}};
   \node[attr, below=2pt of n2, align=center] {\begin{tabular}{c}Schema.org markup\end{tabular}};
-  \node[attr, below=2pt of n3, align=center] {\begin{tabular}{c}named graphs\end{tabular}};
-  \node[attr, below=2pt of n4, align=center] {\begin{tabular}{c}RDF reification\end{tabular}};
-  \node[attr, below=2pt of n5, align=center] {\begin{tabular}{c}RDF-Star\end{tabular}};
-  \node[attr, below=2pt of n6, align=center] {\begin{tabular}{c}Wikidata model\end{tabular}};
-  \node[attr, below=2pt of n7, align=center] {\begin{tabular}{c}PROV-O\end{tabular}};
+  \node[attr, below=2pt of n3, align=center] {\begin{tabular}{c}RDF reification\end{tabular}};
+  \node[attr, below=2pt of n4, align=center] {\begin{tabular}{c}RDF-Star\end{tabular}};
+  \node[attr, below=2pt of n5, align=center] {\begin{tabular}{c}Wikidata model\end{tabular}};
+  \node[attr, below=2pt of n6, align=center] {\begin{tabular}{c}named graphs \\ PROV-O\end{tabular}};
+  \node[attr, below=2pt of n7, align=center] {\begin{tabular}{c}named graphs\end{tabular}};
+  \node[attr, below=2pt of n8, align=center] {\begin{tabular}{c}PROV-O\end{tabular}};
 \end{tikzpicture}
   \caption{FCA lattice: pragmatic properties}
   \label{fig:fca-pragmatic_properties}
@@ -157,110 +200,6 @@
 
 % ────────────────────────────────────────────────────────────
 % semantic affordances
-% ────────────────────────────────────────────────────────────
-\begin{figure}[htbp]
-  \centering
-  \begin{tikzpicture}[
-    concept/.style={circle, draw, fill=white, inner sep=2pt, minimum size=6pt},
-    lbl/.style={font=\small},
-    obj/.style={font=\small\itshape, text=blue!70!black},
-    attr/.style={font=\small, text=red!70!black}
-]
-  % Hasse edges
-  \draw (0.000,0.000) -- (-5.000,2.000);
-  \draw (0.000,0.000) -- (-2.500,2.000);
-  \draw (0.000,0.000) -- (0.000,2.000);
-  \draw (0.000,0.000) -- (2.500,2.000);
-  \draw (0.000,0.000) -- (5.000,2.000);
-  \draw (-5.000,2.000) -- (-7.500,4.000);
-  \draw (-5.000,2.000) -- (-5.000,4.000);
-  \draw (-2.500,2.000) -- (-7.500,4.000);
-  \draw (-2.500,2.000) -- (-2.500,4.000);
-  \draw (-2.500,2.000) -- (0.000,4.000);
-  \draw (0.000,2.000) -- (-2.500,4.000);
-  \draw (0.000,2.000) -- (2.500,4.000);
-  \draw (2.500,2.000) -- (-5.000,4.000);
-  \draw (2.500,2.000) -- (5.000,4.000);
-  \draw (2.500,2.000) -- (2.500,4.000);
-  \draw (5.000,2.000) -- (7.500,4.000);
-  \draw (5.000,2.000) -- (0.000,4.000);
-  \draw (7.500,4.000) -- (-2.500,6.000);
-  \draw (-7.500,4.000) -- (0.000,8.000);
-  \draw (-7.500,4.000) -- (0.000,6.000);
-  \draw (-5.000,4.000) -- (0.000,6.000);
-  \draw (-2.500,4.000) -- (2.500,6.000);
-  \draw (-2.500,4.000) -- (0.000,6.000);
-  \draw (0.000,4.000) -- (-2.500,6.000);
-  \draw (0.000,4.000) -- (2.500,6.000);
-  \draw (5.000,4.000) -- (0.000,6.000);
-  \draw (2.500,4.000) -- (0.000,6.000);
-  \draw (-2.500,6.000) -- (0.000,8.000);
-  \draw (2.500,6.000) -- (0.000,10.000);
-  \draw (0.000,8.000) -- (0.000,10.000);
-  \draw (0.000,6.000) -- (0.000,10.000);
-  % Concept nodes
-  \node[concept] (n0) at (0.000,0.000) {};
-  \node[concept] (n1) at (-5.000,2.000) {};
-  \node[concept] (n2) at (-2.500,2.000) {};
-  \node[concept] (n3) at (0.000,2.000) {};
-  \node[concept] (n4) at (2.500,2.000) {};
-  \node[concept] (n5) at (5.000,2.000) {};
-  \node[concept] (n6) at (7.500,4.000) {};
-  \node[concept] (n7) at (-7.500,4.000) {};
-  \node[concept] (n8) at (-5.000,4.000) {};
-  \node[concept] (n9) at (-2.500,4.000) {};
-  \node[concept] (n10) at (0.000,4.000) {};
-  \node[concept] (n11) at (5.000,4.000) {};
-  \node[concept] (n12) at (2.500,4.000) {};
-  \node[concept] (n13) at (-2.500,6.000) {};
-  \node[concept] (n14) at (2.500,6.000) {};
-  \node[concept] (n15) at (0.000,8.000) {};
-  \node[concept] (n16) at (0.000,6.000) {};
-  \node[concept] (n17) at (0.000,10.000) {};
-  % Object labels (above)
-  \node[obj, above=2pt of n1, align=center] {\begin{tabular}{c}Google Data Commons\end{tabular}};
-  \node[obj, above=2pt of n2, align=center] {\begin{tabular}{c}Bio2RDF\end{tabular}};
-  \node[obj, above=2pt of n3, align=center] {\begin{tabular}{c}UniProt\end{tabular}};
-  \node[obj, above=2pt of n4, align=center] {\begin{tabular}{c}Wikidata\end{tabular}};
-  \node[obj, above=2pt of n5, align=center] {\begin{tabular}{c}EU ODP\end{tabular}};
-  \node[obj, above=2pt of n6, align=center] {\begin{tabular}{c}Europeana \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n7, align=center] {\begin{tabular}{c}Google Data Commons \\ Bio2RDF\end{tabular}};
-  \node[obj, above=2pt of n8, align=center] {\begin{tabular}{c}Google Data Commons \\ Wikidata\end{tabular}};
-  \node[obj, above=2pt of n9, align=center] {\begin{tabular}{c}Bio2RDF \\ UniProt\end{tabular}};
-  \node[obj, above=2pt of n10, align=center] {\begin{tabular}{c}Bio2RDF \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n11, align=center] {\begin{tabular}{c}British Museum ResearchSpace \\ Wikidata\end{tabular}};
-  \node[obj, above=2pt of n12, align=center] {\begin{tabular}{c}UniProt \\ Wikidata\end{tabular}};
-  \node[obj, above=2pt of n13, align=center] {\begin{tabular}{c}Europeana \\ Bio2RDF \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n14, align=center] {\begin{tabular}{c}Bio2RDF \\ UniProt \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n15, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ Bio2RDF \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n16, align=center] {\begin{tabular}{c}Google Data Commons \\ Bio2RDF \\ British Museum ResearchSpace \\ UniProt \\ Wikidata\end{tabular}};
-  \node[obj, above=2pt of n17, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ Bio2RDF \\ British Museum ResearchSpace \\ UniProt \\ Wikidata \\ EU ODP\end{tabular}};
-  % Attribute labels (below)
-  \node[attr, below=2pt of n0, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ rights management \\ cross-portal interoperability \\ source tracking \\ cross-dataset integration \\ reproducibility \\ scholarly citation \\ knowledge curation \\ data quality evaluation\end{tabular}};
-  \node[attr, below=2pt of n1, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ source tracking \\ cross-dataset integration\end{tabular}};
-  \node[attr, below=2pt of n2, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ rights management \\ source tracking \\ reproducibility\end{tabular}};
-  \node[attr, below=2pt of n3, align=center] {\begin{tabular}{c}attribution \\ source tracking \\ reproducibility \\ data quality evaluation\end{tabular}};
-  \node[attr, below=2pt of n4, align=center] {\begin{tabular}{c}attribution \\ source tracking \\ cross-dataset integration \\ scholarly citation \\ knowledge curation \\ data quality evaluation\end{tabular}};
-  \node[attr, below=2pt of n5, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ rights management \\ cross-portal interoperability \\ reproducibility\end{tabular}};
-  \node[attr, below=2pt of n6, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ rights management \\ cross-portal interoperability\end{tabular}};
-  \node[attr, below=2pt of n7, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ source tracking\end{tabular}};
-  \node[attr, below=2pt of n8, align=center] {\begin{tabular}{c}attribution \\ source tracking \\ cross-dataset integration\end{tabular}};
-  \node[attr, below=2pt of n9, align=center] {\begin{tabular}{c}attribution \\ source tracking \\ reproducibility\end{tabular}};
-  \node[attr, below=2pt of n10, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ rights management \\ reproducibility\end{tabular}};
-  \node[attr, below=2pt of n11, align=center] {\begin{tabular}{c}attribution \\ source tracking \\ scholarly citation \\ knowledge curation\end{tabular}};
-  \node[attr, below=2pt of n12, align=center] {\begin{tabular}{c}attribution \\ source tracking \\ data quality evaluation\end{tabular}};
-  \node[attr, below=2pt of n13, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ rights management\end{tabular}};
-  \node[attr, below=2pt of n14, align=center] {\begin{tabular}{c}attribution \\ reproducibility\end{tabular}};
-  \node[attr, below=2pt of n15, align=center] {\begin{tabular}{c}attribution \\ data discovery\end{tabular}};
-  \node[attr, below=2pt of n16, align=center] {\begin{tabular}{c}attribution \\ source tracking\end{tabular}};
-  \node[attr, below=2pt of n17, align=center] {\begin{tabular}{c}attribution\end{tabular}};
-\end{tikzpicture}
-  \caption{FCA lattice: semantic affordances}
-  \label{fig:fca-semantic_affordances}
-\end{figure}
-
-% ────────────────────────────────────────────────────────────
-% semantic properties
 % ────────────────────────────────────────────────────────────
 \begin{figure}[htbp]
   \centering
@@ -279,41 +218,43 @@
   \draw (0.000,0.000) -- (6.250,2.000);
   \draw (-6.250,2.000) -- (-6.250,4.000);
   \draw (-6.250,2.000) -- (-3.750,4.000);
+  \draw (-6.250,2.000) -- (-7.500,6.000);
   \draw (-3.750,2.000) -- (-1.250,4.000);
   \draw (-3.750,2.000) -- (-5.000,6.000);
-  \draw (-1.250,2.000) -- (-6.250,4.000);
   \draw (-1.250,2.000) -- (1.250,4.000);
-  \draw (1.250,2.000) -- (-2.500,6.000);
-  \draw (3.750,2.000) -- (-1.250,4.000);
-  \draw (3.750,2.000) -- (3.750,4.000);
-  \draw (3.750,2.000) -- (6.250,4.000);
-  \draw (6.250,2.000) -- (-3.750,4.000);
-  \draw (6.250,2.000) -- (1.250,4.000);
+  \draw (-1.250,2.000) -- (-6.250,4.000);
+  \draw (1.250,2.000) -- (3.750,4.000);
+  \draw (1.250,2.000) -- (-3.750,4.000);
+  \draw (3.750,2.000) -- (-2.500,6.000);
+  \draw (3.750,2.000) -- (0.000,6.000);
+  \draw (3.750,2.000) -- (-2.500,8.000);
   \draw (6.250,2.000) -- (6.250,4.000);
-  \draw (-6.250,4.000) -- (-5.000,6.000);
+  \draw (6.250,2.000) -- (-1.250,4.000);
+  \draw (1.250,4.000) -- (-2.500,6.000);
+  \draw (1.250,4.000) -- (2.500,6.000);
+  \draw (3.750,4.000) -- (-5.000,6.000);
+  \draw (3.750,4.000) -- (0.000,6.000);
+  \draw (-6.250,4.000) -- (2.500,6.000);
+  \draw (-6.250,4.000) -- (0.000,8.000);
+  \draw (-3.750,4.000) -- (2.500,6.000);
   \draw (-3.750,4.000) -- (0.000,6.000);
-  \draw (-3.750,4.000) -- (-5.000,6.000);
-  \draw (-1.250,4.000) -- (2.500,6.000);
-  \draw (-1.250,4.000) -- (-1.250,8.000);
-  \draw (1.250,4.000) -- (5.000,6.000);
-  \draw (1.250,4.000) -- (-5.000,6.000);
-  \draw (3.750,4.000) -- (2.500,6.000);
-  \draw (3.750,4.000) -- (-2.500,6.000);
-  \draw (6.250,4.000) -- (0.000,6.000);
+  \draw (6.250,4.000) -- (-7.500,6.000);
   \draw (6.250,4.000) -- (5.000,6.000);
-  \draw (6.250,4.000) -- (1.250,8.000);
-  \draw (0.000,6.000) -- (-1.250,8.000);
-  \draw (0.000,6.000) -- (-1.250,10.000);
-  \draw (2.500,6.000) -- (0.000,12.000);
-  \draw (5.000,6.000) -- (-1.250,8.000);
-  \draw (5.000,6.000) -- (1.250,10.000);
-  \draw (-2.500,6.000) -- (1.250,8.000);
-  \draw (-5.000,6.000) -- (-1.250,8.000);
-  \draw (1.250,8.000) -- (-1.250,10.000);
-  \draw (1.250,8.000) -- (1.250,10.000);
-  \draw (-1.250,8.000) -- (0.000,12.000);
-  \draw (-1.250,10.000) -- (0.000,12.000);
-  \draw (1.250,10.000) -- (0.000,12.000);
+  \draw (-1.250,4.000) -- (7.500,6.000);
+  \draw (-1.250,4.000) -- (5.000,6.000);
+  \draw (-2.500,6.000) -- (2.500,8.000);
+  \draw (-5.000,6.000) -- (0.000,10.000);
+  \draw (-7.500,6.000) -- (0.000,8.000);
+  \draw (-7.500,6.000) -- (0.000,10.000);
+  \draw (7.500,6.000) -- (-2.500,8.000);
+  \draw (5.000,6.000) -- (0.000,10.000);
+  \draw (2.500,6.000) -- (2.500,8.000);
+  \draw (0.000,6.000) -- (2.500,8.000);
+  \draw (0.000,6.000) -- (0.000,10.000);
+  \draw (0.000,8.000) -- (0.000,12.000);
+  \draw (-2.500,8.000) -- (0.000,10.000);
+  \draw (2.500,8.000) -- (0.000,12.000);
+  \draw (0.000,10.000) -- (0.000,12.000);
   % Concept nodes
   \node[concept] (n0) at (0.000,0.000) {};
   \node[concept] (n1) at (-6.250,2.000) {};
@@ -322,68 +263,240 @@
   \node[concept] (n4) at (1.250,2.000) {};
   \node[concept] (n5) at (3.750,2.000) {};
   \node[concept] (n6) at (6.250,2.000) {};
-  \node[concept] (n7) at (-6.250,4.000) {};
-  \node[concept] (n8) at (-3.750,4.000) {};
-  \node[concept] (n9) at (-1.250,4.000) {};
-  \node[concept] (n10) at (1.250,4.000) {};
-  \node[concept] (n11) at (3.750,4.000) {};
-  \node[concept] (n12) at (6.250,4.000) {};
-  \node[concept] (n13) at (0.000,6.000) {};
-  \node[concept] (n14) at (2.500,6.000) {};
+  \node[concept] (n7) at (1.250,4.000) {};
+  \node[concept] (n8) at (3.750,4.000) {};
+  \node[concept] (n9) at (-6.250,4.000) {};
+  \node[concept] (n10) at (-3.750,4.000) {};
+  \node[concept] (n11) at (6.250,4.000) {};
+  \node[concept] (n12) at (-1.250,4.000) {};
+  \node[concept] (n13) at (-2.500,6.000) {};
+  \node[concept] (n14) at (-5.000,6.000) {};
+  \node[concept] (n15) at (-7.500,6.000) {};
+  \node[concept] (n16) at (7.500,6.000) {};
+  \node[concept] (n17) at (5.000,6.000) {};
+  \node[concept] (n18) at (2.500,6.000) {};
+  \node[concept] (n19) at (0.000,6.000) {};
+  \node[concept] (n20) at (0.000,8.000) {};
+  \node[concept] (n21) at (-2.500,8.000) {};
+  \node[concept] (n22) at (2.500,8.000) {};
+  \node[concept] (n23) at (0.000,10.000) {};
+  \node[concept] (n24) at (0.000,12.000) {};
+  % Object labels (above)
+  \node[obj, above=2pt of n1, align=center] {\begin{tabular}{c}Bio2RDF\end{tabular}};
+  \node[obj, above=2pt of n2, align=center] {\begin{tabular}{c}Wikidata\end{tabular}};
+  \node[obj, above=2pt of n3, align=center] {\begin{tabular}{c}EU ODP\end{tabular}};
+  \node[obj, above=2pt of n4, align=center] {\begin{tabular}{c}DBpedia\end{tabular}};
+  \node[obj, above=2pt of n5, align=center] {\begin{tabular}{c}LOV\end{tabular}};
+  \node[obj, above=2pt of n6, align=center] {\begin{tabular}{c}Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n7, align=center] {\begin{tabular}{c}Europeana \\ EU ODP\end{tabular}};
+  \node[obj, above=2pt of n8, align=center] {\begin{tabular}{c}Google Data Commons \\ DBpedia\end{tabular}};
+  \node[obj, above=2pt of n9, align=center] {\begin{tabular}{c}Bio2RDF \\ EU ODP\end{tabular}};
+  \node[obj, above=2pt of n10, align=center] {\begin{tabular}{c}Bio2RDF \\ DBpedia\end{tabular}};
+  \node[obj, above=2pt of n11, align=center] {\begin{tabular}{c}UniProt \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n12, align=center] {\begin{tabular}{c}Wikidata \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n13, align=center] {\begin{tabular}{c}Europeana \\ EU ODP \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n14, align=center] {\begin{tabular}{c}Google Data Commons \\ Wikidata \\ DBpedia\end{tabular}};
+  \node[obj, above=2pt of n15, align=center] {\begin{tabular}{c}Bio2RDF \\ UniProt \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n16, align=center] {\begin{tabular}{c}British Museum ResearchSpace \\ Wikidata \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n17, align=center] {\begin{tabular}{c}UniProt \\ Wikidata \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n18, align=center] {\begin{tabular}{c}Europeana \\ Bio2RDF \\ EU ODP \\ DBpedia\end{tabular}};
+  \node[obj, above=2pt of n19, align=center] {\begin{tabular}{c}Google Data Commons \\ Bio2RDF \\ DBpedia \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n20, align=center] {\begin{tabular}{c}Bio2RDF \\ UniProt \\ EU ODP \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n21, align=center] {\begin{tabular}{c}British Museum ResearchSpace \\ Wikidata \\ LOV \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n22, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ Bio2RDF \\ EU ODP \\ DBpedia \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n23, align=center] {\begin{tabular}{c}Google Data Commons \\ Bio2RDF \\ British Museum ResearchSpace \\ UniProt \\ Wikidata \\ DBpedia \\ LOV \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n24, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ Bio2RDF \\ British Museum ResearchSpace \\ UniProt \\ Wikidata \\ EU ODP \\ DBpedia \\ LOV \\ Nanopublications\end{tabular}};
+  % Attribute labels (below)
+  \node[attr, below=2pt of n0, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ rights management \\ cross-portal interoperability \\ source tracking \\ cross-dataset integration \\ reproducibility \\ scholarly citation \\ knowledge curation \\ data quality evaluation\end{tabular}};
+  \node[attr, below=2pt of n1, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ rights management \\ source tracking \\ reproducibility\end{tabular}};
+  \node[attr, below=2pt of n2, align=center] {\begin{tabular}{c}attribution \\ source tracking \\ cross-dataset integration \\ scholarly citation \\ knowledge curation \\ data quality evaluation\end{tabular}};
+  \node[attr, below=2pt of n3, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ rights management \\ cross-portal interoperability \\ reproducibility\end{tabular}};
+  \node[attr, below=2pt of n4, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ rights management \\ source tracking \\ cross-dataset integration\end{tabular}};
+  \node[attr, below=2pt of n5, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ cross-portal interoperability \\ source tracking \\ knowledge curation\end{tabular}};
+  \node[attr, below=2pt of n6, align=center] {\begin{tabular}{c}attribution \\ source tracking \\ reproducibility \\ scholarly citation \\ knowledge curation \\ data quality evaluation\end{tabular}};
+  \node[attr, below=2pt of n7, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ rights management \\ cross-portal interoperability\end{tabular}};
+  \node[attr, below=2pt of n8, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ source tracking \\ cross-dataset integration\end{tabular}};
+  \node[attr, below=2pt of n9, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ rights management \\ reproducibility\end{tabular}};
+  \node[attr, below=2pt of n10, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ rights management \\ source tracking\end{tabular}};
+  \node[attr, below=2pt of n11, align=center] {\begin{tabular}{c}attribution \\ source tracking \\ reproducibility \\ data quality evaluation\end{tabular}};
+  \node[attr, below=2pt of n12, align=center] {\begin{tabular}{c}attribution \\ source tracking \\ scholarly citation \\ knowledge curation \\ data quality evaluation\end{tabular}};
+  \node[attr, below=2pt of n13, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ cross-portal interoperability\end{tabular}};
+  \node[attr, below=2pt of n14, align=center] {\begin{tabular}{c}attribution \\ source tracking \\ cross-dataset integration\end{tabular}};
+  \node[attr, below=2pt of n15, align=center] {\begin{tabular}{c}attribution \\ source tracking \\ reproducibility\end{tabular}};
+  \node[attr, below=2pt of n16, align=center] {\begin{tabular}{c}attribution \\ source tracking \\ scholarly citation \\ knowledge curation\end{tabular}};
+  \node[attr, below=2pt of n17, align=center] {\begin{tabular}{c}attribution \\ source tracking \\ data quality evaluation\end{tabular}};
+  \node[attr, below=2pt of n18, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ rights management\end{tabular}};
+  \node[attr, below=2pt of n19, align=center] {\begin{tabular}{c}attribution \\ data discovery \\ source tracking\end{tabular}};
+  \node[attr, below=2pt of n20, align=center] {\begin{tabular}{c}attribution \\ reproducibility\end{tabular}};
+  \node[attr, below=2pt of n21, align=center] {\begin{tabular}{c}attribution \\ source tracking \\ knowledge curation\end{tabular}};
+  \node[attr, below=2pt of n22, align=center] {\begin{tabular}{c}attribution \\ data discovery\end{tabular}};
+  \node[attr, below=2pt of n23, align=center] {\begin{tabular}{c}attribution \\ source tracking\end{tabular}};
+  \node[attr, below=2pt of n24, align=center] {\begin{tabular}{c}attribution\end{tabular}};
+\end{tikzpicture}
+  \caption{FCA lattice: semantic affordances}
+  \label{fig:fca-semantic_affordances}
+\end{figure}
+
+% ────────────────────────────────────────────────────────────
+% semantic properties
+% ────────────────────────────────────────────────────────────
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+    concept/.style={circle, draw, fill=white, inner sep=2pt, minimum size=6pt},
+    lbl/.style={font=\small},
+    obj/.style={font=\small\itshape, text=blue!70!black},
+    attr/.style={font=\small, text=red!70!black}
+]
+  % Hasse edges
+  \draw (0.000,0.000) -- (-7.500,2.000);
+  \draw (0.000,0.000) -- (-5.000,2.000);
+  \draw (0.000,0.000) -- (-2.500,2.000);
+  \draw (0.000,0.000) -- (0.000,2.000);
+  \draw (0.000,0.000) -- (2.500,2.000);
+  \draw (0.000,0.000) -- (5.000,2.000);
+  \draw (0.000,0.000) -- (7.500,2.000);
+  \draw (-7.500,2.000) -- (-7.500,4.000);
+  \draw (-5.000,2.000) -- (-5.000,4.000);
+  \draw (-5.000,2.000) -- (-3.750,8.000);
+  \draw (-2.500,2.000) -- (-2.500,4.000);
+  \draw (-2.500,2.000) -- (0.000,4.000);
+  \draw (0.000,2.000) -- (-5.000,4.000);
+  \draw (0.000,2.000) -- (2.500,4.000);
+  \draw (0.000,2.000) -- (-7.500,6.000);
+  \draw (2.500,2.000) -- (-2.500,4.000);
+  \draw (5.000,2.000) -- (-7.500,4.000);
+  \draw (5.000,2.000) -- (0.000,4.000);
+  \draw (5.000,2.000) -- (5.000,4.000);
+  \draw (7.500,2.000) -- (7.500,4.000);
+  \draw (7.500,2.000) -- (2.500,4.000);
+  \draw (7.500,2.000) -- (-5.000,6.000);
+  \draw (-7.500,4.000) -- (-2.500,6.000);
+  \draw (-7.500,4.000) -- (0.000,6.000);
+  \draw (-5.000,4.000) -- (2.500,6.000);
+  \draw (-5.000,4.000) -- (-2.500,10.000);
+  \draw (-2.500,4.000) -- (0.000,6.000);
+  \draw (0.000,4.000) -- (5.000,6.000);
+  \draw (0.000,4.000) -- (0.000,6.000);
+  \draw (7.500,4.000) -- (7.500,6.000);
+  \draw (5.000,4.000) -- (-2.500,6.000);
+  \draw (5.000,4.000) -- (5.000,6.000);
+  \draw (5.000,4.000) -- (-7.500,6.000);
+  \draw (5.000,4.000) -- (-5.000,6.000);
+  \draw (-2.500,6.000) -- (-1.250,8.000);
+  \draw (-2.500,6.000) -- (-3.750,8.000);
+  \draw (5.000,6.000) -- (1.250,8.000);
+  \draw (5.000,6.000) -- (-3.750,8.000);
+  \draw (2.500,4.000) -- (2.500,6.000);
+  \draw (2.500,4.000) -- (7.500,6.000);
+  \draw (-7.500,6.000) -- (-1.250,8.000);
+  \draw (-7.500,6.000) -- (1.250,8.000);
+  \draw (-7.500,6.000) -- (3.750,8.000);
+  \draw (-5.000,6.000) -- (3.750,8.000);
+  \draw (0.000,6.000) -- (-3.750,8.000);
+  \draw (-1.250,8.000) -- (-2.500,10.000);
+  \draw (-1.250,8.000) -- (0.000,10.000);
+  \draw (2.500,6.000) -- (0.000,12.000);
+  \draw (1.250,8.000) -- (-2.500,10.000);
+  \draw (1.250,8.000) -- (2.500,10.000);
+  \draw (7.500,6.000) -- (3.750,8.000);
+  \draw (-3.750,8.000) -- (-2.500,10.000);
+  \draw (3.750,8.000) -- (0.000,10.000);
+  \draw (3.750,8.000) -- (2.500,10.000);
+  \draw (-2.500,10.000) -- (0.000,12.000);
+  \draw (0.000,10.000) -- (0.000,12.000);
+  \draw (2.500,10.000) -- (0.000,12.000);
+  % Concept nodes
+  \node[concept] (n0) at (0.000,0.000) {};
+  \node[concept] (n1) at (-7.500,2.000) {};
+  \node[concept] (n2) at (-5.000,2.000) {};
+  \node[concept] (n3) at (-2.500,2.000) {};
+  \node[concept] (n4) at (0.000,2.000) {};
+  \node[concept] (n5) at (2.500,2.000) {};
+  \node[concept] (n6) at (5.000,2.000) {};
+  \node[concept] (n7) at (7.500,2.000) {};
+  \node[concept] (n8) at (-7.500,4.000) {};
+  \node[concept] (n9) at (-5.000,4.000) {};
+  \node[concept] (n10) at (-2.500,4.000) {};
+  \node[concept] (n11) at (0.000,4.000) {};
+  \node[concept] (n12) at (7.500,4.000) {};
+  \node[concept] (n13) at (5.000,4.000) {};
+  \node[concept] (n14) at (-2.500,6.000) {};
   \node[concept] (n15) at (5.000,6.000) {};
-  \node[concept] (n16) at (-2.500,6.000) {};
-  \node[concept] (n17) at (-5.000,6.000) {};
-  \node[concept] (n18) at (1.250,8.000) {};
-  \node[concept] (n19) at (-1.250,8.000) {};
-  \node[concept] (n20) at (-1.250,10.000) {};
-  \node[concept] (n21) at (1.250,10.000) {};
-  \node[concept] (n22) at (0.000,12.000) {};
+  \node[concept] (n16) at (2.500,4.000) {};
+  \node[concept] (n17) at (-7.500,6.000) {};
+  \node[concept] (n18) at (-5.000,6.000) {};
+  \node[concept] (n19) at (0.000,6.000) {};
+  \node[concept] (n20) at (-1.250,8.000) {};
+  \node[concept] (n21) at (2.500,6.000) {};
+  \node[concept] (n22) at (1.250,8.000) {};
+  \node[concept] (n23) at (7.500,6.000) {};
+  \node[concept] (n24) at (-3.750,8.000) {};
+  \node[concept] (n25) at (3.750,8.000) {};
+  \node[concept] (n26) at (-2.500,10.000) {};
+  \node[concept] (n27) at (0.000,10.000) {};
+  \node[concept] (n28) at (2.500,10.000) {};
+  \node[concept] (n29) at (0.000,12.000) {};
   % Object labels (above)
   \node[obj, above=2pt of n1, align=center] {\begin{tabular}{c}Europeana\end{tabular}};
   \node[obj, above=2pt of n2, align=center] {\begin{tabular}{c}Google Data Commons\end{tabular}};
   \node[obj, above=2pt of n3, align=center] {\begin{tabular}{c}Bio2RDF\end{tabular}};
-  \node[obj, above=2pt of n4, align=center] {\begin{tabular}{c}British Museum ResearchSpace\end{tabular}};
-  \node[obj, above=2pt of n5, align=center] {\begin{tabular}{c}Wikidata\end{tabular}};
-  \node[obj, above=2pt of n6, align=center] {\begin{tabular}{c}EU ODP\end{tabular}};
-  \node[obj, above=2pt of n7, align=center] {\begin{tabular}{c}Europeana \\ Bio2RDF\end{tabular}};
-  \node[obj, above=2pt of n8, align=center] {\begin{tabular}{c}Europeana \\ EU ODP\end{tabular}};
+  \node[obj, above=2pt of n4, align=center] {\begin{tabular}{c}Wikidata\end{tabular}};
+  \node[obj, above=2pt of n5, align=center] {\begin{tabular}{c}DBpedia\end{tabular}};
+  \node[obj, above=2pt of n6, align=center] {\begin{tabular}{c}LOV\end{tabular}};
+  \node[obj, above=2pt of n7, align=center] {\begin{tabular}{c}Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n8, align=center] {\begin{tabular}{c}Europeana \\ LOV\end{tabular}};
   \node[obj, above=2pt of n9, align=center] {\begin{tabular}{c}Google Data Commons \\ Wikidata\end{tabular}};
-  \node[obj, above=2pt of n10, align=center] {\begin{tabular}{c}Bio2RDF \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n11, align=center] {\begin{tabular}{c}UniProt \\ Wikidata\end{tabular}};
-  \node[obj, above=2pt of n12, align=center] {\begin{tabular}{c}Wikidata \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n13, align=center] {\begin{tabular}{c}Europeana \\ Wikidata \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n14, align=center] {\begin{tabular}{c}Google Data Commons \\ UniProt \\ Wikidata\end{tabular}};
-  \node[obj, above=2pt of n15, align=center] {\begin{tabular}{c}Bio2RDF \\ Wikidata \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n16, align=center] {\begin{tabular}{c}British Museum ResearchSpace \\ UniProt \\ Wikidata\end{tabular}};
-  \node[obj, above=2pt of n17, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ Bio2RDF \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n18, align=center] {\begin{tabular}{c}British Museum ResearchSpace \\ UniProt \\ Wikidata \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n19, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ Bio2RDF \\ Wikidata \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n20, align=center] {\begin{tabular}{c}Europeana \\ British Museum ResearchSpace \\ UniProt \\ Wikidata \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n21, align=center] {\begin{tabular}{c}Bio2RDF \\ British Museum ResearchSpace \\ UniProt \\ Wikidata \\ EU ODP\end{tabular}};
-  \node[obj, above=2pt of n22, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ Bio2RDF \\ British Museum ResearchSpace \\ UniProt \\ Wikidata \\ EU ODP\end{tabular}};
+  \node[obj, above=2pt of n10, align=center] {\begin{tabular}{c}Bio2RDF \\ DBpedia\end{tabular}};
+  \node[obj, above=2pt of n11, align=center] {\begin{tabular}{c}Bio2RDF \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n12, align=center] {\begin{tabular}{c}British Museum ResearchSpace \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n13, align=center] {\begin{tabular}{c}EU ODP \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n14, align=center] {\begin{tabular}{c}Europeana \\ EU ODP \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n15, align=center] {\begin{tabular}{c}Bio2RDF \\ EU ODP \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n16, align=center] {\begin{tabular}{c}UniProt \\ Wikidata \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n17, align=center] {\begin{tabular}{c}Wikidata \\ EU ODP \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n18, align=center] {\begin{tabular}{c}EU ODP \\ LOV \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n19, align=center] {\begin{tabular}{c}Europeana \\ Bio2RDF \\ DBpedia \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n20, align=center] {\begin{tabular}{c}Europeana \\ Wikidata \\ EU ODP \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n21, align=center] {\begin{tabular}{c}Google Data Commons \\ UniProt \\ Wikidata \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n22, align=center] {\begin{tabular}{c}Bio2RDF \\ Wikidata \\ EU ODP \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n23, align=center] {\begin{tabular}{c}British Museum ResearchSpace \\ UniProt \\ Wikidata \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n24, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ Bio2RDF \\ EU ODP \\ DBpedia \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n25, align=center] {\begin{tabular}{c}British Museum ResearchSpace \\ UniProt \\ Wikidata \\ EU ODP \\ LOV \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n26, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ Bio2RDF \\ Wikidata \\ EU ODP \\ DBpedia \\ LOV\end{tabular}};
+  \node[obj, above=2pt of n27, align=center] {\begin{tabular}{c}Europeana \\ British Museum ResearchSpace \\ UniProt \\ Wikidata \\ EU ODP \\ LOV \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n28, align=center] {\begin{tabular}{c}Bio2RDF \\ British Museum ResearchSpace \\ UniProt \\ Wikidata \\ EU ODP \\ LOV \\ Nanopublications\end{tabular}};
+  \node[obj, above=2pt of n29, align=center] {\begin{tabular}{c}Europeana \\ Google Data Commons \\ Bio2RDF \\ British Museum ResearchSpace \\ UniProt \\ Wikidata \\ EU ODP \\ DBpedia \\ LOV \\ Nanopublications\end{tabular}};
   % Attribute labels (below)
-  \node[attr, below=2pt of n0, align=center] {\begin{tabular}{c}authorship \\ data provider \\ aggregation chain \\ licensing \\ dataset-level lineage \\ source organisation \\ triple-level lineage \\ conversion process \\ temporal information \\ scholarly assertion \\ epistemic status \\ evidence type \\ agent roles\end{tabular}};
+  \node[attr, below=2pt of n0, align=center] {\begin{tabular}{c}authorship \\ data provider \\ aggregation chain \\ licensing \\ dataset-level lineage \\ source organisation \\ triple-level lineage \\ conversion process \\ temporal information \\ scholarly assertion \\ epistemic status \\ evidence type \\ agent roles \\ multilinguality\end{tabular}};
   \node[attr, below=2pt of n1, align=center] {\begin{tabular}{c}authorship \\ data provider \\ aggregation chain \\ licensing \\ dataset-level lineage\end{tabular}};
   \node[attr, below=2pt of n2, align=center] {\begin{tabular}{c}data provider \\ dataset-level lineage \\ source organisation \\ triple-level lineage\end{tabular}};
   \node[attr, below=2pt of n3, align=center] {\begin{tabular}{c}data provider \\ licensing \\ dataset-level lineage \\ conversion process \\ temporal information\end{tabular}};
-  \node[attr, below=2pt of n4, align=center] {\begin{tabular}{c}authorship \\ temporal information \\ scholarly assertion \\ epistemic status\end{tabular}};
-  \node[attr, below=2pt of n5, align=center] {\begin{tabular}{c}authorship \\ data provider \\ triple-level lineage \\ temporal information \\ epistemic status \\ evidence type\end{tabular}};
-  \node[attr, below=2pt of n6, align=center] {\begin{tabular}{c}authorship \\ data provider \\ dataset-level lineage \\ temporal information \\ agent roles\end{tabular}};
-  \node[attr, below=2pt of n7, align=center] {\begin{tabular}{c}data provider \\ licensing \\ dataset-level lineage\end{tabular}};
-  \node[attr, below=2pt of n8, align=center] {\begin{tabular}{c}authorship \\ data provider \\ dataset-level lineage\end{tabular}};
+  \node[attr, below=2pt of n4, align=center] {\begin{tabular}{c}authorship \\ data provider \\ triple-level lineage \\ temporal information \\ epistemic status \\ evidence type\end{tabular}};
+  \node[attr, below=2pt of n5, align=center] {\begin{tabular}{c}data provider \\ licensing \\ dataset-level lineage \\ conversion process \\ multilinguality\end{tabular}};
+  \node[attr, below=2pt of n6, align=center] {\begin{tabular}{c}authorship \\ data provider \\ licensing \\ dataset-level lineage \\ temporal information \\ agent roles\end{tabular}};
+  \node[attr, below=2pt of n7, align=center] {\begin{tabular}{c}authorship \\ triple-level lineage \\ temporal information \\ scholarly assertion \\ epistemic status \\ evidence type \\ agent roles\end{tabular}};
+  \node[attr, below=2pt of n8, align=center] {\begin{tabular}{c}authorship \\ data provider \\ licensing \\ dataset-level lineage\end{tabular}};
   \node[attr, below=2pt of n9, align=center] {\begin{tabular}{c}data provider \\ triple-level lineage\end{tabular}};
-  \node[attr, below=2pt of n10, align=center] {\begin{tabular}{c}data provider \\ dataset-level lineage \\ temporal information\end{tabular}};
-  \node[attr, below=2pt of n11, align=center] {\begin{tabular}{c}authorship \\ triple-level lineage \\ temporal information \\ epistemic status \\ evidence type\end{tabular}};
-  \node[attr, below=2pt of n12, align=center] {\begin{tabular}{c}authorship \\ data provider \\ temporal information\end{tabular}};
-  \node[attr, below=2pt of n13, align=center] {\begin{tabular}{c}authorship \\ data provider\end{tabular}};
-  \node[attr, below=2pt of n14, align=center] {\begin{tabular}{c}triple-level lineage\end{tabular}};
-  \node[attr, below=2pt of n15, align=center] {\begin{tabular}{c}data provider \\ temporal information\end{tabular}};
-  \node[attr, below=2pt of n16, align=center] {\begin{tabular}{c}authorship \\ temporal information \\ epistemic status\end{tabular}};
-  \node[attr, below=2pt of n17, align=center] {\begin{tabular}{c}data provider \\ dataset-level lineage\end{tabular}};
-  \node[attr, below=2pt of n18, align=center] {\begin{tabular}{c}authorship \\ temporal information\end{tabular}};
-  \node[attr, below=2pt of n19, align=center] {\begin{tabular}{c}data provider\end{tabular}};
-  \node[attr, below=2pt of n20, align=center] {\begin{tabular}{c}authorship\end{tabular}};
-  \node[attr, below=2pt of n21, align=center] {\begin{tabular}{c}temporal information\end{tabular}};
+  \node[attr, below=2pt of n10, align=center] {\begin{tabular}{c}data provider \\ licensing \\ dataset-level lineage \\ conversion process\end{tabular}};
+  \node[attr, below=2pt of n11, align=center] {\begin{tabular}{c}data provider \\ licensing \\ dataset-level lineage \\ temporal information\end{tabular}};
+  \node[attr, below=2pt of n12, align=center] {\begin{tabular}{c}authorship \\ temporal information \\ scholarly assertion \\ epistemic status\end{tabular}};
+  \node[attr, below=2pt of n13, align=center] {\begin{tabular}{c}authorship \\ data provider \\ dataset-level lineage \\ temporal information \\ agent roles\end{tabular}};
+  \node[attr, below=2pt of n14, align=center] {\begin{tabular}{c}authorship \\ data provider \\ dataset-level lineage\end{tabular}};
+  \node[attr, below=2pt of n15, align=center] {\begin{tabular}{c}data provider \\ dataset-level lineage \\ temporal information\end{tabular}};
+  \node[attr, below=2pt of n16, align=center] {\begin{tabular}{c}authorship \\ triple-level lineage \\ temporal information \\ epistemic status \\ evidence type\end{tabular}};
+  \node[attr, below=2pt of n17, align=center] {\begin{tabular}{c}authorship \\ data provider \\ temporal information\end{tabular}};
+  \node[attr, below=2pt of n18, align=center] {\begin{tabular}{c}authorship \\ temporal information \\ agent roles\end{tabular}};
+  \node[attr, below=2pt of n19, align=center] {\begin{tabular}{c}data provider \\ licensing \\ dataset-level lineage\end{tabular}};
+  \node[attr, below=2pt of n20, align=center] {\begin{tabular}{c}authorship \\ data provider\end{tabular}};
+  \node[attr, below=2pt of n21, align=center] {\begin{tabular}{c}triple-level lineage\end{tabular}};
+  \node[attr, below=2pt of n22, align=center] {\begin{tabular}{c}data provider \\ temporal information\end{tabular}};
+  \node[attr, below=2pt of n23, align=center] {\begin{tabular}{c}authorship \\ temporal information \\ epistemic status\end{tabular}};
+  \node[attr, below=2pt of n24, align=center] {\begin{tabular}{c}data provider \\ dataset-level lineage\end{tabular}};
+  \node[attr, below=2pt of n25, align=center] {\begin{tabular}{c}authorship \\ temporal information\end{tabular}};
+  \node[attr, below=2pt of n26, align=center] {\begin{tabular}{c}data provider\end{tabular}};
+  \node[attr, below=2pt of n27, align=center] {\begin{tabular}{c}authorship\end{tabular}};
+  \node[attr, below=2pt of n28, align=center] {\begin{tabular}{c}temporal information\end{tabular}};
 \end{tikzpicture}
   \caption{FCA lattice: semantic properties}
   \label{fig:fca-semantic_properties}

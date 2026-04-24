@@ -1,35 +1,58 @@
 Europeana, SPARQL
-Europeana, SPARQL over OAI-ORE terms
+Europeana, SPARQL endpoint
 Europeana, REST API
 Europeana, linked data browsing
 Europeana, bulk download
 Europeana, multilingual access
 Google Data Commons, SPARQL
-Google Data Commons, SPARQL over Schema.org terms
 Google Data Commons, REST API
 Google Data Commons, natural language query
 Google Data Commons, bulk download
 Bio2RDF, SPARQL
-Bio2RDF, SPARQL over named graphs
+Bio2RDF, SPARQL endpoint
 Bio2RDF, linked data browsing
 Bio2RDF, bulk download
 British Museum ResearchSpace, SPARQL
-British Museum ResearchSpace, SPARQL over reified statements
-British Museum ResearchSpace, linked data browsing
+British Museum ResearchSpace, SPARQL endpoint
+British Museum ResearchSpace, OWL DL reasoning
 British Museum ResearchSpace, REST API
+British Museum ResearchSpace, linked data browsing
 UniProt, SPARQL
+UniProt, SPARQL endpoint
 UniProt, SPARQL-Star
+UniProt, SPARQL federation
 UniProt, REST API
 UniProt, bulk download
 Wikidata, SPARQL
-Wikidata, SPARQL over Wikibase model
+Wikidata, SPARQL endpoint
+Wikidata, SPARQL federation
+Wikidata, SHACL
 Wikidata, REST API
 Wikidata, linked data browsing
 Wikidata, bulk download
 Wikidata, multilingual access
 EU ODP, SPARQL
-EU ODP, SPARQL over PROV-O terms
+EU ODP, SPARQL endpoint
+EU ODP, OWL DL reasoning
+EU ODP, SHACL
 EU ODP, REST API
 EU ODP, linked data browsing
 EU ODP, bulk download
 EU ODP, multilingual access
+DBpedia, SPARQL
+DBpedia, SPARQL endpoint
+DBpedia, SPARQL federation
+DBpedia, REST API
+DBpedia, linked data browsing
+DBpedia, bulk download
+DBpedia, multilingual access
+LOV, SPARQL
+LOV, SPARQL endpoint
+LOV, REST API
+LOV, linked data browsing
+LOV, bulk download
+Nanopublications, SPARQL
+Nanopublications, SPARQL endpoint
+Nanopublications, OWL DL reasoning
+Nanopublications, linked data browsing
+Nanopublications, bulk download

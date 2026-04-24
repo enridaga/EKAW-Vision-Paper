@@ -32,3 +32,21 @@ EU ODP, authorship
 EU ODP, dataset-level lineage
 EU ODP, agent roles
 EU ODP, temporal information
+DBpedia, data provider
+DBpedia, dataset-level lineage
+DBpedia, conversion process
+DBpedia, multilinguality
+DBpedia, licensing
+LOV, data provider
+LOV, authorship
+LOV, temporal information
+LOV, dataset-level lineage
+LOV, agent roles
+LOV, licensing
+Nanopublications, authorship
+Nanopublications, temporal information
+Nanopublications, epistemic status
+Nanopublications, evidence type
+Nanopublications, scholarly assertion
+Nanopublications, triple-level lineage
+Nanopublications, agent roles

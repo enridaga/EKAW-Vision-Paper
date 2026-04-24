@@ -119,10 +119,24 @@ The KG ecosystem is rich and diverse --- from lightweight vocabularies to richly
     \item The case study demonstrates the practical value of the continuum and its relevance to real-world KG engineering challenges.
 \end{itemize}
 
-Methodology:
+Methodology for populating the continuum:
 
-We make lists of KG of interest, we define the 4 dimensions, we instruct to populate each one of them, incrementally, for each one of the cases, with list of keywords. We instruct to reuse keywords when possible and create new ones if necessary. We ask to define keywords that are not obvious. We do this one by one, reviewing the output and asking for clarifications. We do not produce/force any keyword. When a new keyword is produced, we ask to verify that past example don't have that as well, or add it.
-We review the list of keywords and harmonise them if meaningful.
+\begin{enumerate}
+    \item Select a set of real-world KGs of interest, each representing a distinct approach to the concern under study (here: provenance).
+    \item Define the four dimensions of the ontological continuum: semantic properties, semantic affordances, pragmatic properties, and pragmatic affordances.
+    \item For each dimension, provide a contextualised definition grounded in the concern under study.
+    \item For each KG, populate each dimension with a list of keywords, one KG at a time, reviewing the output before moving to the next.
+    \item Reuse existing keywords whenever possible; introduce new keywords only when necessary.
+    \item When a new keyword is introduced, define it explicitly if its meaning is not obvious.
+    \item When a new keyword is introduced, verify retrospectively whether it applies to previously analysed KGs, and update those if necessary.
+    \item Review the full keyword lists periodically to harmonise terminology --- collapsing synonyms, resolving ambiguities, and ensuring consistency across KGs.
+    \item Produce the final keyword lists as \texttt{KG,keyword} pairs, one per dimension, ready for further analysis and visualisation.
+\end{enumerate}
+
+Open questions:
+
+What are the dependencies across the attributes in each dimension (sem prop <-> sem aff, sem prop <-> prag prop, etc...)?
+
 
 \subsection{Zooming into provenance}
 
@@ -157,6 +171,7 @@ Examples for each approach:
     \item \textbf{The European Union Open Data Portal} captures provenance of published datasets through the DCAT Application Profile (DCAT-AP), which incorporates PROV-O via \texttt{prov:qualifiedAttribution} to express agent roles and data lineage~\cite{provo,dcatap}.
 \end{itemize}
 
+[TODO: revise pragmatic affordances and add OWL, DL, ...]
 
 Discussion:
 
@@ -222,6 +237,7 @@ Semantic seems easier then pragmatics
 
 \subsection*{Tables}
 \input{tables.tex}
+
 \subsection*{FCA Lattices}
 \input{fca.tex}
 \end{document}

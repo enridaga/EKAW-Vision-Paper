@@ -1,0 +1,124 @@
+% 
+% If column width is tight, change \small to \footnotesize.
+%
+
+% ------------------------------------------------------------------
+% TABLE A — Semantic affordances
+% ------------------------------------------------------------------
+\begin{table}[t]
+\caption{Semantic affordances of upper-level ontologies for semantic
+         interoperability through ontology reuse and alignment.
+         $\times$ denotes presence of the affordance.}
+\label{tab:upper-semaff}
+\centering
+\small
+\begin{tabular}{lccccc}
+\hline
+\textbf{Attribute}
+  & \textbf{BFO}
+  & \textbf{DOLCE}
+  & \textbf{UFO}
+  & \textbf{Gist}
+  & \textbf{Schema.org} \\
+\hline
+cross-domain concept alignment
+  & $\times$ & $\times$ & $\times$ & $\times$ & \\
+lexical / NLP resource alignment
+  & & $\times$ & & & $\times$ \\
+role--type distinction and modelling guidance
+  & $\times$ & $\times$ & $\times$ & & \\
+temporal reasoning
+  & $\times$ & $\times$ & $\times$ & & \\
+mereological reasoning
+  & $\times$ & $\times$ & $\times$ & $\times$ & \\
+social structure and agency modelling
+  & & $\times$ & $\times$ & $\times$ & $\times$ \\
+antipattern detection
+  & & & $\times$ & & \\
+bridge ontology availability
+  & $\times$ & $\times$ & & & \\
+scientific domain interoperability
+  & $\times$ & $\times$ & & & \\
+enterprise domain interoperability
+  & & $\times$ & $\times$ & $\times$ & $\times$ \\
+modular fragment reuse across domains
+  & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\
+regulatory compliance interoperability
+  & $\times$ & & & & \\
+\hline
+\end{tabular}
+\\[4pt]
+\raggedright\footnotesize
+\textit{Notes.}
+DOLCE's scientific domain interoperability cell reflects general
+applicability rather than community adoption at the scale of the OBO
+Foundry; verify before submission~\cite{keet2011}.
+Gist's antipattern detection cell is blank: Gist has no formal
+role--type theory equivalent to UFO's, though its SHACL profiles
+may serve a related function~\cite{semanticarts}.
+Schema.org's community tooling ecosystem (Table~\ref{tab:upper-pragaff})
+reflects the web development community rather than the knowledge
+engineering community.
+Cross-domain alignment and mereological reasoning rows are grounded
+in~\cite{khan2013}.
+\end{table}
+
+% ------------------------------------------------------------------
+% TABLE B — Pragmatic affordances
+% ------------------------------------------------------------------
+\begin{table}[t]
+\caption{Pragmatic affordances of upper-level ontologies for semantic
+         interoperability through ontology reuse and alignment.
+         $\times$ denotes presence of the affordance.}
+\label{tab:upper-pragaff}
+\centering
+\small
+\begin{tabular}{lccccc}
+\hline
+\textbf{Attribute}
+  & \textbf{BFO}
+  & \textbf{DOLCE}
+  & \textbf{UFO}
+  & \textbf{Gist}
+  & \textbf{Schema.org} \\
+\hline
+OWL DL reasoning
+  & $\times$ & $\times$ & $\times$ & $\times$ & \\
+OBO toolchain (\textsc{robot}, OntoBee)
+  & $\times$ & & & & \\
+OntoUML\,/\,gUFO verification tooling
+  & & & $\times$ & & \\
+ISO~21838 standardisation
+  & $\times$ & & & & \\
+SPARQL querying
+  & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\
+ontology alignment tools (LogMap, AML)
+  & $\times$ & $\times$ & $\times$ & $\times$ & \\
+SHACL constraint validation
+  & & & $\times$ & $\times$ & \\
+ontology design pattern library
+  & $\times$ & $\times$ & $\times$ & & \\
+modular OWL import
+  & $\times$ & $\times$ & $\times$ & $\times$ & \\
+community tooling ecosystem
+  & $\times$ & $\times$ & $\times$ & & $\times$ \\
+cross-upper-level bridge axioms
+  & $\times$ & $\times$ & & & \\
+web\,/\,JSON-LD integration
+  & & & & & $\times$ \\
+\hline
+\end{tabular}
+\\[4pt]
+\raggedright\footnotesize
+\textit{Notes.}
+ISO~21838 cell: BFO is published as ISO/IEC~21838-2:2021~\cite{iso21838};
+DOLCE is at Committee Draft stage (ISO/IEC~21838-3) and does not yet
+carry this affordance.
+OBO toolchain row cites~\cite{jackson2019}.
+OntoUML\,/\,gUFO verification tooling row cites~\cite{almeida2021}.
+Bridge axioms row (BFO--DOLCE): cite Oberle et al.\ (2007) or more
+recent alignment work; no published BFO--UFO or DOLCE--UFO bridge
+ontology is known to the authors.
+Design pattern library row for DOLCE cites~\cite{gangemi2009}.
+\end{table}
+

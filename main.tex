@@ -38,9 +38,11 @@
 %%%%%%% EKAW SHORT vs ARXIV LONG
 \usepackage{etoolbox}
 \usepackage{comment}
+
+%%% SET extended TO TRUE/FALSE
 \newtoggle{extended}
-%\toggletrue{extended} % or 
-\togglefalse{extended}
+\toggletrue{extended} % or 
+%\togglefalse{extended}
 
 % Content only in extended version
 \iftoggle{extended}{
@@ -118,7 +120,7 @@ Emerging work on autonomous knowledge engineering agents~\cite{garijo2024llms} (
 \begin{inboth}
 The dominant response to KG diversity has been structural harmonisation: thirty years of ontology mapping, aligning, and merging, premised on the assumption that the right answer to heterogeneity is convergence~\cite{hertling2023olala,portisch2024background}. % Enrico: this is a strong statement, which I am not sure sure an ontology mapping person would agree with.
 Yet cross-KG reuse remains expensive and brittle in practice, and the premise deserves scrutiny. 
-We pose that a better question to ``how similar is KG A to KG B?'' is instead ''does KG A afford what community C needs for task T?''; a question that structural harmonisation cannot answer, and that current quality metrics do not formulate~\cite{wilson2023conceptual}.
+We pose that a better question to ``how similar is KG A to KG B?'' is instead ''does KG A afford what community C needs for task T?''; a question that structural harmonisation cannot answer, and that current quality metrics do not formulate~\cite{wilson2023conceptual}.\todo{What about "what would it take for KG A to afford what community C needs for task T?" and "How to achieve that?" Not disagreeing, but what I feel missing is reuse as a transformation from KG source to KG target, justifying the FCA exercise. If we only have one KG, the whole method is pointless...}
 What is missing is a principled account of how diverse KG modelling practices interplay, one that integrates both the \emph{semantic dimension}, i.e. the domain meanings a KG encodes and the \emph{pragmatic dimension}, i.e. what it affords to whom, for which task. 
 We propose the \emph{ontological continuum} as that missing conceptualisation.
 
@@ -186,6 +188,7 @@ The ontological continuum extends the same insight to knowledge engineering oper
 %%%%%%%%%%%%%
 \section{The Ontological Continuum: A Vision\ppinfo{ends at p5: 1.5}}
 
+We conceptualise reuse as the problem of, given one (or more) KGs, transforming it into one relevant to the task at hand.\todo{I think we need to clarify this, thus the idea of putting all KGs in the continuum.}
 \begin{onlyshort}
 [the continuum as a theoretical construct placehoder]
 \end{onlyshort}
@@ -211,39 +214,45 @@ This is a defining difference from prescriptive ontology methodologies: the cont
 \begin{onlyextended}
 \subsection{Dimensions of the Continuum}
 Describing a KG's position in the continuum requires a vocabulary structured according to the same axes that give the continuum its form: two orthogonal axes, each capturing a fundamental distinction in what we can say about a KG.
-The first one distinguishes \emph{semantic} from \emph{pragmatic} features. Semantic features concern the meanings that a KG encodes, i.e. the domain knowledge it makes explicit, the concepts it commits to, the relations it asserts. Pragmatic features concern the mechanisms by which a KG is represented and operated on, i.e. the meta-models used to structure its statements, the interfaces through which it is queried, validated, or reasoned over.
 
-The second axis distinguishes properties from affordances. Properties are features intrinsic to the KG as an artefact: they are present regardless of who uses the KG or for what purpose. Affordances, by contrast, are relational: they are constituted by the relationship between the KG, a community, and a task. Formally, an affordance is a three-place predicate: affords$(KG, community, task)$, that holds when a KG makes a particular kind of use possible for a particular community pursuing a particular task. This framing draws on the notion of affordance, developed in ecological psychology (Gibson) and design theory (Norman), as a relational property of an agent–environment pair, and extends it to the context of KG engineering: an affordance is not a feature of the KG alone, nor of the community alone, but of their meeting. The implication is significant: the same KG may afford different things to different communities, and characterising it fully requires naming not just its intrinsic properties but its use-relative possibilities.
-The two axes together define four characterisation dimensions.
+The first axes distinguishes \emph{semantic} from \emph{pragmatic} features. 
+Semantic features concern the meanings that a KG encodes, i.e. the domain knowledge it makes explicit, the concepts it commits to, the relations it asserts. 
+Pragmatic features concern the mechanisms by which a KG is represented and operated on, i.e. the meta-models used to structure its statements, the interfaces through which it is queried, validated, or reasoned over.
 
-\emph{Semantic properties} capture the domain meanings encoded by a KG: the factual, assertional, or inferential content that constitutes its knowledge about a domain. In the context of provenance, semantic properties include authorship, temporal information, data lineage, epistemic status, and agent roles.
+The second axis distinguishes \textit{properties} from \textit{affordances}. 
+Properties are features intrinsic to the KG as an artefact: they are present regardless of who uses the KG or for what purpose. 
+Affordances, by contrast, are relational: they are constituted by the relationship between the KG, a \textit{community}, and a \textit{task}. 
+Formally, an affordance is a three-place predicate: \textit{affords}$(KG, community, task)$, that holds when a KG makes a particular kind of use possible for a particular community pursuing a particular task. 
+This framing draws on the notion of affordance, developed in ecological psychology (Gibson~\cite{gibson1977theory}) and design theory (Norman~\cite{norman1999affordance}), as a relational property of an agent–environment pair, and extends it to the context of KG engineering: an affordance is not a feature of the KG alone, nor of the community alone, but of their meeting. 
+Crucially, the same KG may afford different things to different communities, and characterising it fully requires naming not just its intrinsic properties but its \textit{use-relative possibilities}.
+The two axes together define four characterisation dimensions, which we introduce.
 
-\emph{Semantic affordances} capture what a KG's semantic content makes possible for specific communities pursuing specific tasks; what downstream uses the encoded meanings support, relative to the agents who can interpret and exploit them. These are not features of the KG in isolation but of the KG relative to its interpreters: attribution, reproducibility, scholarly citation, and rights management are semantic affordances in the provenance context, enabled by the semantic properties a KG exhibits, but affordances only relative to communities that can and do exploit them.
+\emph{Semantic properties} capture the meanings encoded by a KG: the factual, assertional, or inferential content that constitutes its knowledge about a domain. 
+For example, in the context of provenance, semantic properties include authorship, temporal information, data lineage, epistemic status, and agent roles.
 
-\emph{Pragmatic properties} capture the representational mechanisms used to structure the KG's statements: the meta-models (RDF, OWL, RDF-Star), the Wikidata statement model, OAI-ORE aggregation, PROV-O, that determine how knowledge is encoded and made accessible. Pragmatic properties include the representational choices that constrain expressivity and interoperability: the adoption of named graphs, reification strategies, schema languages, and the degree of alignment to standard vocabularies.
+\emph{Semantic affordances} capture what a KG's semantic content makes possible for specific communities pursuing specific tasks; what downstream uses the encoded meanings support, relative to the agents who can interpret and exploit them. 
+These are not features of the KG in isolation but of the KG relative to its interpreters: attribution, reproducibility, scholarly citation, and rights management are semantic affordances in the provenance context, enabled by the semantic properties a KG exhibits, but affordances only relative to communities that can and do exploit them.
 
-\emph{Pragmatic affordances} capture the interaction methods that the KG's representational mechanisms make available to communities: SPARQL querying, SHACL constraint validation, OWL DL reasoning, bulk download, REST API access, SPARQL federation. Like semantic affordances, these are relational: SPARQL federation is only an affordance relative to a community that has the infrastructure and expertise to exploit it; OWL DL reasoning is only an affordance relative to a task that requires it.
+\emph{Pragmatic properties} capture the representational mechanisms used to structure the KG's statements: the meta-models (RDF, OWL, RDF-Star), the Wikidata statement model, OAI-ORE aggregation, PROV-O, that determine how knowledge is encoded and made accessible. 
+Pragmatic properties include the representational choices that constrain expressivity and interoperability: the adoption of named graphs, reification strategies, schema languages, and the degree of alignment to standard vocabularies.
 
-These four dimensions are not independent. Semantic commitments shape which pragmatic affordances are available: a KG that models provenance using PROV-O opens OWL reasoning as a pragmatic affordance while foreclosing some SPARQL-Star interaction patterns. Conversely, pragmatic choices constrain what semantic properties can be expressed: the adoption of the Wikidata statement model enables fine-grained triple-level provenance but embeds it in a bespoke meta-model not directly interoperable with PROV-O. The continuum makes these cross-dimension dependencies explicit; formalising their directionality and transitivity is itself a core research challenge (Challenge 2, Section 6). A key ambition of the framework is to replace the informal notion of ``community suitability'' with an operational one: rather than saying a KG is fit for a given community, we can say it exhibits a specific combination of semantic and pragmatic properties and affords a specific set of uses, thus making fitness for purpose measurable rather than assumed.
+\begin{sloppypar}\emph{Pragmatic affordances} capture the interaction methods that the KG's representational mechanisms make available to communities: SPARQL querying, SHACL constraint validation, OWL DL reasoning, bulk download, REST API access, SPARQL federation. 
+Like semantic affordances, these are relational: SPARQL federation is only an affordance relative to a community that has the infrastructure and expertise to exploit it; OWL DL reasoning is only an affordance relative to a task that requires it.\end{sloppypar}
 \end{onlyextended}
-
-% Enrico: Commented to keep the content but it is a repetition from the related work (we may reprise in the discussion, if useful).
-% \add{It is worth noting that recently, a paper by Celino also proposes the notion of \emph{knowledge affordances}. Celino argues the utility of affordance-based characterisation within the information-seeking domain; the ontological continuum extends the same insight to knowledge engineering operations, where interoperability is constituted not by the ability to answer a query but by the operations that the formalisation, the conceptual model, and the upper-level commitment make available to a community. Information seeking is one affordance class the continuum supports; it is not the continuum framework's primary motivation or scope.
-% }
-
 \begin{onlyshort}
 [projection in the continuum]  
 \end{onlyshort}
 \begin{onlyextended}
-\subsection{Discrete Projection via Formal Concept Analysis
+\subsection{Discrete Projection in the Continuum}
 The ontological continuum is a theoretical construct; any operational analysis of such continuum needs to necessarily be a projection onto a finite, discrete structure. 
-The characterisation framework in Section 3.2 provides the vocabulary; applying that vocabulary to a sample of real-world KGs produces a binary feature matrix for each of the four dimensions: objects (KGs) crossed with attributes (characterisation keywords). 
+With the four dimensions defined, we can analyse the features of each source KG as well as the target, desired KG, to produce a task-specific list, organised under those dimensions.
+%The characterisation framework provides the vocabulary; applying that vocabulary to a sample of real-world KGs produces
+The result would be a binary feature matrix for each of the four dimensions: objects (KGs) crossed with attributes (dimension features). 
 Formal Concept Analysis (FCA) \cite{ganter1999formal} provides a principled method for projecting these matrices into a mathematically ordered space.
 Given a binary attribute table, FCA derives a concept lattice: a partial order of formal concepts, each defined by a maximal set of objects sharing a common attribute set. 
-In our setting, each dimension yields a lattice that orders KGs by the richness of their characterisation profile: KGs at the bottom of the lattice share the densest, most specific attribute sets; those toward the top are characterised by fewer, more general features. The lattice is not the continuum: it is a discrete projection of it, sampling a finite population of KGs with binary feature judgements. 
-It approximates the structure of the continuum in a principled way: the partial order reflects the actual co-occurrence structure of characterisation features across real-world KGs, derived bottom-up from observation rather than imposed top-down from a prior taxonomy. Other projection methods are possible and may be preferable for different tasks; FCA is our choice here because it makes the ordering explicit and interpretable.
-Two properties of the projection are worth stating explicitly, because they bear on the scope of the contribution. 
-First, the projection is finite: the lattices reflect only the KGs analysed and the features they exhibit; new KGs or new features may alter the structure, and the methodology (Section 4) is designed to accommodate iterative extension. Second, the projection is domain-relative: the lattice produced for a provenance-focused analysis differs from one produced for bioinformatics or cultural heritage, because different domain practices give rise to different feature distributions. The continuum itself is intended as a domain-general theoretical construct; its discrete projections are always domain-specific instantiations. This is a feature of the approach, not a limitation: it means the framework can be instantiated for any domain by following the empirical procedure described in Section 4, producing a lattice that reflects the actual structure of that domain's KG engineering practices rather than an abstract ideal.
+In our setting, each dimension yields a lattice that orders KGs by the richness of their characterisation profile: KGs at the bottom of the lattice share the densest, most specific attribute sets; those toward the top are characterised by fewer, more general features. 
+Similarly, we can produce a unified lattice, by grouping all features together.
+
 \end{onlyextended}
 
 
@@ -322,11 +331,27 @@ Examples for each approach:
 \end{itemize}
 
 
-\section{Discussion}
+\section{Discussion}\label{sec:discussion}
 
-TBD
+\begin{onlyextended}
+The lattice is not the continuum: it is a discrete projection of it, sampling a finite population of KGs with binary feature judgements. 
+It approximates the structure of the continuum in a principled way: the partial order reflects the actual co-occurrence structure of characterisation features across real-world KGs, derived bottom-up from observation rather than imposed top-down from a prior taxonomy. 
+Other projection methods are possible and may be preferable for different tasks; FCA is our choice here because it makes the ordering explicit and interpretable.
 
-\section{Research Challenges for the Community}
+Two properties of the projection are worth stating explicitly. 
+First, the projection is finite: the lattices reflect only the KGs analysed and the features they exhibit; new KGs or new features may alter the structure, and the methodology is designed to accommodate iterative extension. Second, the projection is domain-relative: the lattice produced for a provenance-focused analysis differs from one produced for bioinformatics or cultural heritage, because different domain practices give rise to different feature distributions. The continuum itself is intended as a domain-general theoretical construct; its discrete projections are always domain-specific instantiations. This is a feature of the approach, not a limitation: it means the framework can be instantiated for any domain by following the empirical procedure described in Section 4, producing a lattice that reflects the actual structure of that domain's KG engineering practices rather than an abstract ideal.
+
+These four dimensions are interdependent.\todo{Enrico: move this paragraph to the discussion?}
+Semantic commitments shape which pragmatic affordances are available: a KG that models provenance using PROV-O opens OWL reasoning as a pragmatic affordance while foreclosing some SPARQL-Star interaction patterns. 
+Conversely, pragmatic choices constrain what semantic properties can be expressed: the adoption of the Wikidata statement model enables fine-grained triple-level provenance but embeds it in a bespoke meta-model not directly interoperable with PROV-O. 
+One of the goals of the continuum is to make these cross-dimension dependencies explicit; formalising their directionality and transitivity is itself a core research challenge (Challenge 2, Section~\ref{sec:challenges}). A key ambition of the framework is to replace the informal notion of \textit{``community suitability''} with an operational one: rather than saying a KG is fit for a given community, we can say it exhibits a specific combination of semantic and pragmatic properties and affords a specific set of uses, thus making fitness for purpose measurable rather than assumed.
+\end{onlyextended}
+
+% Enrico: Commented to keep the content but it is a repetition from the related work (we may reprise in the discussion, if useful).
+% \add{It is worth noting that recently, a paper by Celino also proposes the notion of \emph{knowledge affordances}. Celino argues the utility of affordance-based characterisation within the information-seeking domain; the ontological continuum extends the same insight to knowledge engineering operations, where interoperability is constituted not by the ability to answer a query but by the operations that the formalisation, the conceptual model, and the upper-level commitment make available to a community. Information seeking is one affordance class the continuum supports; it is not the continuum framework's primary motivation or scope.
+% }
+
+\section{Research Challenges for the Community}\label{sec:challenges}
 
 \begin{itemize}
     \item \textbf{Challenge 1:} Characterising and formalising the dimensions of diversity in KG modelling practices --- what are the relevant dimensions, and how can they be operationalised?

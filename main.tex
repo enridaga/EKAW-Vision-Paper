@@ -38,11 +38,12 @@
 \usepackage{etoolbox}
 \usepackage{comment}
 \newtoggle{extended}
-\toggletrue{extended} % or \togglefalse{extended}
+%\toggletrue{extended} % or 
+\togglefalse{extended}
 
 % Content only in extended version
 \iftoggle{extended}{
-  \newenvironment{onlyextended}{}{}
+  \newenvironment{onlyextended}{\ignorespaces}{\ignorespacesafterend}
 }{
   \excludecomment{onlyextended}
 }
@@ -51,7 +52,7 @@
 \iftoggle{extended}{
   \excludecomment{onlyshort}
 }{
-  \newenvironment{onlyshort}{}{}
+  \newenvironment{onlyshort}{\ignorespaces}{\ignorespacesafterend}
 }
 
 % Content in both (a no-op, but useful for explicitness)
@@ -59,7 +60,9 @@
 
 \begin{document}
 %
-\title{Knowledge Graph Re-engineering Along the Ontological Continuum}
+\title{Knowledge Graph Re-engineering Along the Ontological Continuum\iftoggle{extended}{
+\\{\normalfont(Extended version)}
+}{}}
 %
 %\titlerunning{Abbreviated paper title}
 % If the paper title is too long for the running head, you can set
@@ -87,28 +90,48 @@ The methodological stance is empirical: rather than prescribing how KGs should b
 We ground the vision through two case studies: one on provenance knowledge, showing how a single concern manifests differently across the continuum; and one on upper-level ontological commitment, showing how an early foundational choice cascades through the characterisation dimensions to determine downstream tooling and interoperability affordances. 
 We articulate five open research challenges and invite the community to develop the ontological continuum as a shared research agenda.
 \end{abstract}
-
 %
 %
 %
 \section{Introduction}
 
 \begin{inboth}
-Knowledge graphs have become critical for data integration across scientific, governmental, and commercial domains. The diversity of KG modelling practices, ranging from lightweight vocabularies (e.g. Schema.org, Dublin Core) to richly axiomatised ontologies (e.g. Gene Ontology, SNOMED CT), reflects the breadth of problems and communities they serve.
+Knowledge graphs have become critical for data integration across scientific, governmental, and commercial domains. 
+The diversity of KG modelling practices, ranging from lightweight vocabularies (e.g. Schema.org, Dublin Core) to richly axiomatised ontologies (e.g. Gene Ontology, SNOMED CT), reflects the breadth of problems and communities they serve.
 
-This diversity is an asset rather than a weakness or a hindrance: different communities~\footnote{A community is a group of agents with shared practices, expertise, and tasks: \emph{who} uses the knowledge and \emph{how}} and tasks genuinely require different representational choices, thus creating a rich and varied KG ecosystem. The cost of this diversity, however, is real. Adapting KG content across communities and tasks, e.g. repurposing a provenance model built for scientific workflows in an open data portal, integrating a statistical dataset with a CIDOC-CRM-based knowledge base, reusing ontological fragments defined under one foundational ontology in a setting aligned to another, remains expensive, brittle, and poorly understood.
-Two convergent forces are making this cost acutely felt. Neuro-symbolic AI requires the ability to bridge neural and symbolic components whose KG requirements frequently differ: what a neural component needs as input is rarely structured in the same way as what a symbolic reasoner expects, and mediating between them demands principled and automated re-engineering. GenAI and large language models, meanwhile, offer the unprecedented capability to automate KG engineering tasks. However, without a principled map of the space they are navigating, such automation remains conceptually ungrounded. Emerging work on autonomous knowledge engineering agents (systems that decompose, plan, and execute re-engineering decisions with minimal human intervention) makes this gap particularly acute: an agent navigating the KG ecosystem without a principled framework is forced to treat it as a black box, with no basis for choosing transformations, estimating their cost, or explaining its choices.
-
-The dominant response to KG diversity has been structural harmonisation: thirty years of ontology mapping, aligning, and merging, premised on the assumption that the right answer to heterogeneity is convergence. Yet cross-KG reuse remains expensive and brittle in practice, and the premise deserves scrutiny. The right question is not ``how similar is KG A to KG B?'' but ''does KG A afford what community C needs for task T?''; a question that structural harmonisation cannot answer, and that current quality metrics do not even pose.
-
-What is missing is not a technique but a conceptualisation: a principled account of how diverse KG modelling practices interplay, one that integrates both the \emph{semantic dimension}, i.e. the domain meanings a KG encodes and the \emph{pragmatic dimension}, i.e. what it affords to whom, for which task. We propose the \emph{ontological continuum} as that missing conceptualisation.
-
-The contribution of this paper is conceptual and terminological. We define the meta-model of the continuum: a characterisation framework, organised around two axes, \emph{semantics versus pragmatics}, and \emph{properties versus affordances}, that provides a vocabulary for describing, comparing, navigating, and transforming KGs across the full range of modelling practices. 
-We ground the vision through two case studies: one on provenance knowledge, showing how a single concern manifests differently across the continuum; and one on upper-level ontological commitment, showing how an early foundational choice cascades through the characterisation dimensions to determine downstream tooling and interoperability affordances and that the structure of those positions can be made explicit and formally ordered through rigorous formal frameworks, e.g.Formal Concept Analysis. We articulate open research challenges and we discuss what these entail for the definition of the continuum.
+This diversity is an asset rather than a weakness or a hindrance: different communities~\footnote{A community is a group of agents with shared practices, expertise, and tasks: \emph{who} uses the knowledge and \emph{how}} and tasks genuinely require different representational choices, thus creating a rich and varied KG ecosystem. 
+The cost of this diversity, however, is real. 
+Adapting KG content across communities and tasks, e.g. repurposing a provenance model built for scientific workflows in an open data portal, integrating a statistical dataset with a CIDOC-CRM-based knowledge base, reusing ontological fragments defined under one foundational ontology in a setting aligned to another, remains expensive, brittle, and poorly understood.
+%Two convergent forces are making this cost acutely felt. 
+%Neuro-symbolic AI requires the ability to bridge neural and symbolic components whose KG requirements frequently differ: what a neural component needs as input is rarely structured in the same way as what a symbolic reasoner expects, and mediating between them demands principled and automated re-engineering. 
+On the one hand, neuro-symbolic methods bring novel tasks, which require the adaptation of existing KGs.
+On the other hand, large language models offer the unprecedented capability to automate KG engineering at scale~\cite{garijo2024llms}. 
+However, without a principled map of the space they are navigating, such automation remains conceptually ungrounded. 
 \end{inboth}
-\begin{onlyshort}
-The paper is structured as follows. Section 2 surveys related work. Section 3 introduces the ontological continuum: first as a theoretical construct (Section 3.1), then as a characterisation framework (Section 3.2), and finally as an empirically-derived discrete projection (Section 3.3). Section 4 presents the provenance case study. Section 5 discusses implications. Section 6 articulates open research challenges. Section 7 concludes.\end{onlyshort}
-\begin{onlyextended}Details on the case studies, including tables and diagrams of the FCA, are provided in the appendices.
+\begin{onlyextended}
+Emerging work on autonomous knowledge engineering agents~\cite{garijo2024llms} (systems that decompose, plan, and execute re-engineering decisions with minimal human intervention) makes this gap particularly acute: an agent navigating the KG ecosystem without a principled framework is forced to treat it as a black box, with no basis for choosing transformations, estimating their cost, or explaining its choices.
+\end{onlyextended}
+
+\begin{inboth}
+The dominant response to KG diversity has been structural harmonisation: thirty years of ontology mapping, aligning, and merging, premised on the assumption that the right answer to heterogeneity is convergence~\cite{hertling2023olala,portisch2024background}. % Enrico: this is a strong statement, which I am not sure sure an ontology mapping person would agree with.
+Yet cross-KG reuse remains expensive and brittle in practice, and the premise deserves scrutiny. 
+We pose that a better question to ``how similar is KG A to KG B?'' is instead ''does KG A afford what community C needs for task T?''; a question that structural harmonisation cannot answer, and that current quality metrics do not formulate~\cite{wilson2023conceptual}.
+What is missing is a principled account of how diverse KG modelling practices interplay, one that integrates both the \emph{semantic dimension}, i.e. the domain meanings a KG encodes and the \emph{pragmatic dimension}, i.e. what it affords to whom, for which task. 
+We propose the \emph{ontological continuum} as that missing conceptualisation.
+
+The contribution of this paper is conceptual and terminological. 
+We define the meta-model of the continuum: a characterisation framework, organised around two axes, \emph{semantics versus pragmatics}, and \emph{properties versus affordances}, that provides a vocabulary for describing, comparing, navigating, and transforming KGs across the full range of modelling practices. 
+We ground the vision through two case studies: one on provenance knowledge, showing how a single concern manifests differently across the continuum; and one on upper-level ontological commitment, showing how an early foundational choice cascades through the characterisation dimensions to determine downstream tooling and interoperability affordances and that the structure of those positions can be made explicit and formally ordered through rigorous methods, e.g. Formal Concept Analysis (FCA)~\cite{fca}. 
+We articulate open research challenges and we discuss what these entail for the definition of the continuum.
+\end{inboth}
+\begin{inboth}
+The paper is structured as follows. 
+Section 2 surveys related work. Section 3 introduces the ontological continuum: first as a theoretical construct (Section 3.1), then as a characterisation framework (Section 3.2), and finally as an empirically-derived discrete projection (Section 3.3). Section 4 presents the provenance case study. 
+Section 5 discusses implications. Section 6 articulates open research challenges. 
+Section 7 concludes.
+\end{inboth}
+\begin{onlyextended}
+Details on the case studies, including tables and diagrams of the FCA, are provided in the appendices.
 \end{onlyextended}
 
 \section{Background and Related Work}

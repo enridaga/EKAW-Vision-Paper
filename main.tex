@@ -41,8 +41,8 @@
 
 %%% SET extended TO TRUE/FALSE
 \newtoggle{extended}
-\toggletrue{extended} % or 
-%\togglefalse{extended}
+%\toggletrue{extended} % or 
+\togglefalse{extended}
 
 % Content only in extended version
 \iftoggle{extended}{
@@ -190,7 +190,16 @@ The ontological continuum extends the same insight to knowledge engineering oper
 
 We conceptualise reuse as the problem of, given one (or more) KGs, transforming it into one relevant to the task at hand.\todo{I think we need to clarify this, thus the idea of putting all KGs in the continuum.}
 \begin{onlyshort}
-[the continuum as a theoretical construct placehoder]
+We introduce the ontological continuum as a theoretical construct to drive transformations: a connected space of possible KG engineering positions with no sharp divisions between them.
+What varies across the continuum is the degree and nature of a KG's ontological commitment, understood broadly to encompass not only the degree of axiomatisation and alignment to foundational ontologies (e.g.\ BFO, DOLCE, UFO), but the full range of choices that determine what a KG can mean and what it can do.
+At one end lie KGs with minimal schema conventions and broad applicability: lightweight vocabularies that impose few constraints, carry few ontological assumptions, and can be queried and integrated with minimal domain knowledge.
+At the other end lie KGs with rich axiomatic structure, explicit upper-ontology commitments, and tightly scoped deployment contexts: they express more, but require more to be used.
+Between these extremes lies a continuous and densely populated range.
+
+We use the term continuum in a conceptual, not a mathematical, sense.
+The continuum is built empirically: it is derived from observation of real-world KG engineering practices, and it exists relative to an operational need --- the need to describe, compare, navigate, and transform KGs in principled ways.
+What makes it a continuum is the claim that positions within it are not discrete types but points in a connected space: any two KGs, however different, can in principle be connected by a sequence of incremental transformations, each moving along one or more of its \emph{dimensions}.
+%This is a defining difference from prescriptive ontology methodologies: the continuum is a \emph{descriptive theory}, an account of what KG engineering practices are, rather than what they should be.
 \end{onlyshort}
 \begin{onlyextended}
 \subsection{The Continuum as a Theoretical Construct}
@@ -206,9 +215,25 @@ We introduce these dimensions in the next section.
 The \textit{population} of the continuum is not given in advance; it is constructed from the properties and affordances that KGs actually exhibit, and it is therefore open to revision as practices evolve. 
 This is a defining difference from prescriptive ontology methodologies: the continuum aims to be a \emph{descriptive theory}, account of what KG engineering practices are rather than rather than a normative account of what they should be.
 \end{onlyextended}
+% 
 
 \begin{onlyshort}
-[Dimensions of the continuum]    
+Describing a KG's position in the continuum requires a vocabulary structured along two orthogonal axes, each capturing a fundamental distinction in what we can say about a KG.
+The \textbf{first axis} distinguishes \emph{semantic} from \emph{pragmatic} features.
+Semantic features concern the meanings a KG encodes: the domain knowledge it makes explicit, the concepts it commits to, the relations it asserts.
+Pragmatic features concern the mechanisms by which a KG is represented and operated on: the meta-models used to structure its statements (e.g.\ RDF, OWL, RDF-Star, the Wikidata model), and the interfaces through which it is queried, validated, or reasoned over.
+The \textbf{second axis} distinguishes \emph{properties} from \emph{affordances}.
+Properties are features intrinsic to the KG as an artefact: they are present regardless of who uses the KG or for what purpose.
+Affordances, by contrast, are relational: they are constituted by the relationship between a KG, a \emph{community}, and a \emph{task}.
+%Formally, an affordance is a three-place predicate $\textit{affords}(KG, community, task)$, which holds when a KG makes a particular kind of use possible for a particular community pursuing a particular task.
+This framing draws on the notion of affordance from ecological psychology~\cite{gibson1977theory} and design theory~\cite{norman1999affordance}, and extends it to KG engineering: an affordance is not a feature of the KG alone, nor of the community alone, but of their meeting.
+%The same KG may therefore afford different things to different communities, and characterising it fully requires naming not just its intrinsic properties but its use-relative possibilities.
+
+The two axes together define four characterisation dimensions.
+\emph{Semantic properties} capture the factual, assertional, or inferential content that constitutes a KG's domain knowledge --- for example, in the provenance context: authorship, temporal information, data lineage, and epistemic status.
+\emph{Semantic affordances} capture what a KG's semantic content makes possible for specific communities and tasks: attribution, reproducibility, audit trails, and rights management are semantic affordances enabled by provenance-rich semantic properties, but only relative to communities that can exploit them.
+\emph{Pragmatic properties} capture the representational mechanisms used to encode the KG's statements: the choice of named graphs, reification strategies, schema languages, and degree of alignment to standard vocabularies.
+\emph{Pragmatic affordances} capture the interaction methods that those representational mechanisms make available: SPARQL querying, SHACL validation, OWL DL reasoning, or bulk download --- again, relational, since SPARQL federation is only an affordance relative to a community with the infrastructure and expertise to exploit it.
 \end{onlyshort}
 
 \begin{onlyextended}
@@ -239,9 +264,15 @@ Pragmatic properties include the representational choices that constrain express
 \begin{sloppypar}\emph{Pragmatic affordances} capture the interaction methods that the KG's representational mechanisms make available to communities: SPARQL querying, SHACL constraint validation, OWL DL reasoning, bulk download, REST API access, SPARQL federation. 
 Like semantic affordances, these are relational: SPARQL federation is only an affordance relative to a community that has the infrastructure and expertise to exploit it; OWL DL reasoning is only an affordance relative to a task that requires it.\end{sloppypar}
 \end{onlyextended}
+
 \begin{onlyshort}
-[projection in the continuum]  
+The ontological continuum is a theoretical construct; any operational analysis requires a projection onto a finite, discrete structure.
+With the four dimensions defined, the features of each KG under analysis can be recorded per dimension, producing a binary feature matrix: objects (KGs) crossed with attributes (dimension features).
+Formal Concept Analysis (FCA)~\cite{ganter1999formal} provides a principled method for projecting these matrices into a mathematically ordered space.
+Given a binary attribute table, FCA derives a concept lattice: a partial order of formal concepts, each defined by a maximal set of objects sharing a common attribute set.
+In our setting, each dimension yields a lattice that orders KGs by the richness of their characterisation profile: KGs at the bottom share the densest, most specific attribute sets; those toward the top are characterised by fewer, more general features.
 \end{onlyshort}
+
 \begin{onlyextended}
 \subsection{Discrete Projection in the Continuum}
 The ontological continuum is a theoretical construct; any operational analysis of such continuum needs to necessarily be a projection onto a finite, discrete structure. 

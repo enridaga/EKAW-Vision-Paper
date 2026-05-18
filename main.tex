@@ -397,38 +397,79 @@ A key ambition of the continuum is to make these cross-dimension dependencies ex
 \end{onlyshort}
 
 We propose the following challenges for the community:
-\begin{itemize}
-    \item \textbf{Challenge 1:} Characterising and formalising the dimensions of diversity in KG modelling practices --- what are the relevant dimensions, and how can they be operationalised?
-    \begin{itemize}
-        \item Deriving the concrete semantic and pragmatic properties and affordances that populate the 2$\times$2 space, through empirical analysis of real-world KGs and community practices. % [NEW]
-        \item Defining community-relative fitness metrics: given a task, what combination of dimensions does a KG need to exhibit, and how can this be measured precisely? % [NEW]
-        \item Replacing the informal notion of ``community'' with a formal, operational characterisation in terms of continuum dimensions. % [NEW]
-    \end{itemize}
-	\item \textbf{Challenge 2:} Formalising the dependencies between continuum dimensions --- how do choices in one dimension constrain or determine options in others?
-    \begin{itemize}
-        \item Identifying the directionality and transitivity of cross-dimension constraints: for example, which semantic affordances entail specific pragmatic properties, and which pragmatic choices foreclose certain semantic commitments. % [NEW]
-        \item Developing a formal account of these dependencies that can be used to guide transformations --- so that when a target affordance is specified, the required properties in all four dimensions can be derived systematically. % [NEW]
-        \item Understanding how foundational ontology choices (BFO, DOLCE, UFO) propagate through the dimensions: an upper-level commitment is not merely a semantic property but one that cascades into pragmatic affordances, validation strategies, and alignment compatibility. % [NEW]
-    \end{itemize}
-	
-    \item \textbf{Challenge 3:} Enabling modular, context-aware reuse across the spectrum --- how can ontological fragments be extracted, aligned, and applied across KGs with different commitments?
-    \begin{itemize}
-        \item Developing adaptive query mechanisms that are dimension-aware --- translating user intent into KG-specific queries without requiring schema alignment, taking into account the semantic and pragmatic constraints imposed by each KG. % [NEW]
-        \item Estimating the cost of adaptation: what is lost at each transformation step, what effort is required to bring a KG to the affordance level a task requires, and how can this be made explicit and manageable? % [NEW]
-    \end{itemize}
 
-    \item \textbf{Challenge 4:} Supporting the co-evolution of interdependent KG engineering artefacts --- how do changes in one artefact (schema, mapping, query, documentation) propagate across the ecosystem?
-    \begin{itemize}
-        \item Developing a ``What if'' analysis framework: for every semantic choice, making the pragmatic consequences explicit, and vice versa --- so that design decisions are informed by their downstream effects across the continuum. % [NEW]
-    \end{itemize}
-	
-	\item \textbf{Challenge 5:} Developing human-in-the-loop strategies that make reengineering accessible to users with varying expertise --- how can GenAI reduce cognitive load while maintaining quality?
-	    \begin{itemize}
-	        \item Deriving implications for KG engineering practice from the affordance framing: if pragmatics comes first, how should KGs be designed, published, and maintained so that their affordances are explicit and reusable? % [NEW]
-	        \item Supporting bidirectional design: helping users navigate the trade-offs between semantic expressivity and pragmatic accessibility, with GenAI acting as an informed guide through the continuum. % [NEW]
-	        \item Supporting agentic KE: as autonomous agents begin to perform KE tasks with some degree of discretion, the continuum provides the reference framework they need to make reengineering decisions that are not merely executable but explainable --- every transformation choice can be grounded in continuum dimensions, its cost made explicit, and its provenance recorded. Without such a framework, agent decisions remain opaque, undermining trust and making troubleshooting impossible. % [NEW]
-	    \end{itemize}
+\paragraph{\textbf{Challenge 1: Characterising and formalising the dimensions}.}
+The concrete semantic and pragmatic properties and affordances that populate the $2\times2$ space must be derived empirically from real-world KGs and community practices.
+\begin{itemize}
+    \item What are the relevant dimensions, and how can they be operationalised across diverse domains?
+    \item How can community-relative fitness metrics be defined: given a task, what combination of features does a KG need to exhibit?
+    \item How can the informal notion of ``community'' be replaced with a formal, operational characterisation?
 \end{itemize}
+
+\paragraph{\textbf{Challenge 2: Formalising the dependencies across the continuum}.}
+Semantic commitments shape which pragmatic affordances are available, and pragmatic choices constrain what semantic properties can be expressed; making these dependencies explicit is essential for guided transformations.
+\begin{itemize}
+    \item How can the directionality and transitivity of cross-dimension constraints be identified and formalised?
+    \item How can a formal account of dependencies guide transformations --- so that a target affordance determines the required properties across the axes?
+    \item How do upper-level ontology choices (BFO, DOLCE, UFO) cascade through the dimensions into pragmatic affordances and alignment compatibility?
+\end{itemize}
+
+\paragraph{\textbf{Challenge 3: Enabling modular, context-aware reuse}.}
+Reuse requires extracting and applying fragments relevant to a given task from KGs that may differ substantially in ontological commitment, with explicit cost models for the adaptation involved.
+\begin{itemize}
+    \item How can dimension-aware query mechanisms translate user intent into KG-specific queries without full schema alignment?
+    \item How can the cost of adaptation be estimated: what is lost at each transformation step, and what effort does it require?
+\end{itemize}
+
+\paragraph{\textbf{Challenge 4: Supporting the co-evolution of interdependent KG engineering artefacts}.}
+Changes in ontological commitment propagate into mappings, queries, and documentation; the continuum provides the vocabulary to make these effects explicit, but tools are needed to act on them.
+\begin{itemize}
+    \item How do changes in one artefact propagate across the ecosystem, and how can this be tracked?
+    \item How can a ``what if'' analysis framework make the pragmatic consequences of semantic choices explicit before they are committed to?
+\end{itemize}
+
+\paragraph{\textbf{Challenge 5: Developing human-in-the-loop strategies for users with varying expertise}.}
+GenAI can bridge the gap between the continuum as an expert framework and the needs of non-expert users, but only if it can navigate the continuum in a principled, explainable way.
+\begin{itemize}
+    \item How should KGs be designed and published so that their affordances are explicit and exploitable by automated tools?
+    \item How can bidirectional design be supported, helping users navigate trade-offs between semantic expressivity and pragmatic accessibility?
+    \item Would such a theory help explainability in agentic KE, by grounding transformation decisions in continuum dimensions, making costs explicit, and recording provenance?
+\end{itemize}
+
+
+
+% \begin{itemize}
+%     \item \textbf{Challenge 1:} Characterising and formalising the dimensions of diversity in KG modelling practices --- what are the relevant dimensions, and how can they be operationalised?
+%     \begin{itemize}
+%         \item Deriving the concrete semantic and pragmatic properties and affordances that populate the 2$\times$2 space, through empirical analysis of real-world KGs and community practices. % [NEW]
+%         \item Defining community-relative fitness metrics: given a task, what combination of dimensions does a KG need to exhibit, and how can this be measured precisely? % [NEW]
+%         \item Replacing the informal notion of ``community'' with a formal, operational characterisation in terms of continuum dimensions. % [NEW]
+%     \end{itemize}
+% 	\item \textbf{Challenge 2:} Formalising the dependencies between continuum dimensions --- how do choices in one dimension constrain or determine options in others?
+%     \begin{itemize}
+%         \item Identifying the directionality and transitivity of cross-dimension constraints: for example, which semantic affordances entail specific pragmatic properties, and which pragmatic choices foreclose certain semantic commitments. % [NEW]
+%         \item Developing a formal account of these dependencies that can be used to guide transformations --- so that when a target affordance is specified, the required properties in all four dimensions can be derived systematically. % [NEW]
+%         \item Understanding how foundational ontology choices (BFO, DOLCE, UFO) propagate through the dimensions: an upper-level commitment is not merely a semantic property but one that cascades into pragmatic affordances, validation strategies, and alignment compatibility. % [NEW]
+%     \end{itemize}
+	
+%     \item \textbf{Challenge 3:} Enabling modular, context-aware reuse across the spectrum --- how can ontological fragments be extracted, aligned, and applied across KGs with different commitments?
+%     \begin{itemize}
+%         \item Developing adaptive query mechanisms that are dimension-aware --- translating user intent into KG-specific queries without requiring schema alignment, taking into account the semantic and pragmatic constraints imposed by each KG. % [NEW]
+%         \item Estimating the cost of adaptation: what is lost at each transformation step, what effort is required to bring a KG to the affordance level a task requires, and how can this be made explicit and manageable? % [NEW]
+%     \end{itemize}
+
+%     \item \textbf{Challenge 4:} Supporting the co-evolution of interdependent KG engineering artefacts --- how do changes in one artefact (schema, mapping, query, documentation) propagate across the ecosystem?
+%     \begin{itemize}
+%         \item Developing a ``What if'' analysis framework: for every semantic choice, making the pragmatic consequences explicit, and vice versa --- so that design decisions are informed by their downstream effects across the continuum. % [NEW]
+%     \end{itemize}
+	
+% 	\item \textbf{Challenge 5:} Developing human-in-the-loop strategies that make reengineering accessible to users with varying expertise --- how can GenAI reduce cognitive load while maintaining quality?
+% 	    \begin{itemize}
+% 	        \item Deriving implications for KG engineering practice from the affordance framing: if pragmatics comes first, how should KGs be designed, published, and maintained so that their affordances are explicit and reusable? % [NEW]
+% 	        \item Supporting bidirectional design: helping users navigate the trade-offs between semantic expressivity and pragmatic accessibility, with GenAI acting as an informed guide through the continuum. % [NEW]
+% 	        \item Supporting agentic KE: as autonomous agents begin to perform KE tasks with some degree of discretion, the continuum provides the reference framework they need to make reengineering decisions that are not merely executable but explainable --- every transformation choice can be grounded in continuum dimensions, its cost made explicit, and its provenance recorded. Without such a framework, agent decisions remain opaque, undermining trust and making troubleshooting impossible. % [NEW]
+% 	    \end{itemize}
+% \end{itemize}
 
 \section{Conclusion\ppinfo{0.25}}
 

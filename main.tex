@@ -287,7 +287,7 @@ Similarly, we can produce a unified lattice, by grouping all features together.
 \end{onlyextended}
 
 
-\section{Case Studies: Provenance Knowledge Across the Continuum\ppinfo{Starts at page 7, 0.5p each case study, 1}}
+\section{Case Studies: Provenance Knowledge Across the Continuum\ppinfo{Starts at page 6, 0.5 the method + 0.5p each case study, 1.5}}
 \add{Our vision of the ontological continuum is grounded empirically: its structure is derived from observation of real-world KG engineering practices rather than stipulated from first principles. We therefore present two case studies to demonstrate that the continuum's characterisation framework can be instantiated concretely, i.e. that existing artefacts can be positioned within the continuum, and that the resulting structure is principled and interpretable. Each applies the shared methodology of
 Section~\ref{ssec:methodology} to a different problem, and each
 illuminates a different aspect of the continuum.}
@@ -362,9 +362,10 @@ Examples for each approach:
 \end{itemize}
 
 
+%%%% Only extended version has the discussion separated
+\begin{onlyextended}
 \section{Discussion}\label{sec:discussion}
 
-\begin{onlyextended}
 The lattice is not the continuum: it is a discrete projection of it, sampling a finite population of KGs with binary feature judgements. 
 It approximates the structure of the continuum in a principled way: the partial order reflects the actual co-occurrence structure of characterisation features across real-world KGs, derived bottom-up from observation rather than imposed top-down from a prior taxonomy. 
 Other projection methods are possible and may be preferable for different tasks; FCA is our choice here because it makes the ordering explicit and interpretable.
@@ -382,7 +383,10 @@ One of the goals of the continuum is to make these cross-dimension dependencies 
 % \add{It is worth noting that recently, a paper by Celino also proposes the notion of \emph{knowledge affordances}. Celino argues the utility of affordance-based characterisation within the information-seeking domain; the ontological continuum extends the same insight to knowledge engineering operations, where interoperability is constituted not by the ability to answer a query but by the operations that the formalisation, the conceptual model, and the upper-level commitment make available to a community. Information seeking is one affordance class the continuum supports; it is not the continuum framework's primary motivation or scope.
 % }
 
-\section{Research Challenges for the Community}\label{sec:challenges}
+\section{\iftoggle{extended}{}{Discussion and }Research Agenda\ppinfo{starts at p7.5, 1.25}}\label{sec:challenges}
+\begin{onlyshort}
+[placeholder for short discussion]  
+\end{onlyshort}
 
 \begin{itemize}
     \item \textbf{Challenge 1:} Characterising and formalising the dimensions of diversity in KG modelling practices --- what are the relevant dimensions, and how can they be operationalised?
@@ -417,7 +421,7 @@ One of the goals of the continuum is to make these cross-dimension dependencies 
 	    \end{itemize}
 \end{itemize}
 
-\section{Conclusion}
+\section{Conclusion\ppinfo{0.25}}
 
 \begin{itemize}
     \item The ontological continuum is the missing conceptualisation for principled KG reengineering --- its concrete contribution is terminological: a vocabulary and meta-model, organised around the axes of semantics $\leftrightarrow$ pragmatics and properties $\leftrightarrow$ affordances, that the community can build on. % [NEW]
@@ -446,6 +450,7 @@ One of the goals of the continuum is to make these cross-dimension dependencies 
 \bibliographystyle{splncs04}
 \bibliography{main}
 %
+\begin{onlyextended}
 \clearpage
 \section*{Appendix: Provenance in the Continuum}
 
@@ -455,4 +460,6 @@ One of the goals of the continuum is to make these cross-dimension dependencies 
 
 \subsection*{FCA Lattices}
 \input{fca.tex}
+\end{onlyextended}
+
 \end{document}

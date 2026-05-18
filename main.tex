@@ -385,9 +385,18 @@ One of the goals of the continuum is to make these cross-dimension dependencies 
 
 \section{\iftoggle{extended}{}{Discussion and }Research Agenda\ppinfo{starts at p7.5, 1.25}}\label{sec:challenges}
 \begin{onlyshort}
-[placeholder for short discussion]  
+The concept lattice produced by FCA is not the continuum itself: it is a finite, domain-relative projection of it, sampling a specific population of KGs with binary feature judgements.
+The projection is finite by design: new KGs or new features may alter the structure, and the methodology accommodates iterative extension.
+It is also domain-relative: a lattice derived for provenance differs from one derived for bioinformatics or cultural heritage, because different communities give rise to different feature distributions.
+This is a feature of the approach rather than a limitation --- it means the framework can be instantiated for any domain by following the empirical procedure of Section~\ref{ssec:methodology}.
+
+The four characterisation dimensions are interdependent, and these dependencies have real consequences.
+Semantic commitments shape which pragmatic affordances are available: modelling provenance with PROV-O opens OWL reasoning while foreclosing some SPARQL-Star interaction patterns.
+Conversely, pragmatic choices constrain what semantic properties can be expressed: the Wikidata statement model enables fine-grained triple-level provenance but embeds it in a meta-model not directly interoperable with PROV-O.
+A key ambition of the continuum is to make these cross-dimension dependencies explicit and formalise their directionality --- replacing the informal notion of \emph{community suitability} with an operational one: rather than saying a KG is fit for a given community, we can say it exhibits a specific combination of properties and affords a specific set of uses, making fitness for purpose measurable rather than assumed.
 \end{onlyshort}
 
+We propose the following challenges for the community:
 \begin{itemize}
     \item \textbf{Challenge 1:} Characterising and formalising the dimensions of diversity in KG modelling practices --- what are the relevant dimensions, and how can they be operationalised?
     \begin{itemize}

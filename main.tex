@@ -90,7 +90,7 @@ University of Liverpool, Liverpool, United Kingdom
 \begin{abstract}
 Knowledge graphs have become the primary vehicle for data integration and are critical to the success of modern AI — but the diversity of KG modelling practices, from lightweight vocabularies to richly axiomatised ontologies, makes integration and reuse expensive and brittle. 
 This challenge is particularly acute in neuro-symbolic AI, where bridging neural and symbolic components depends on the ability to reengineer KGs to fit new requirements; GenAI now offers unprecedented automation capability, but without a principled understanding of the KG space, such automation remains conceptually ungrounded. 
-We introduce the \emph{ontological continuum} as that missing conceptualisation, a theoretical construct whose dimensions are characterised along two axes: semantics $\leftrightarrow$ pragmatics, and properties $\leftrightarrow$  affordances; together these define a vocabulary to describe, compare, navigate, and transform KGs across the full range of modelling practices. 
+We introduce the \emph{ontological continuum} as that missing conceptualisation, a theoretical construct whose dimensions are characterised along two orthogonal distinctions: semantics $\leftrightarrow$ pragmatics, and properties $\leftrightarrow$  affordances; together these define a vocabulary to describe, compare, navigate, and transform KGs across the full range of modelling practices. 
 The methodological stance is empirical: rather than prescribing how KGs should be modelled, the continuum aims to define a theory of the existent, derived from observation of real-world KG engineering practices and whose structure can be made formally explicit, for example, through Formal Concept Analysis (FCA). 
 We ground the vision through a case study on provenance knowledge, showing how a single concern manifests differently across the continuum.
 %; and one on upper-level ontological commitment, showing how an early foundational choice cascades through the characterisation dimensions to determine downstream tooling and interoperability affordances. 
@@ -131,7 +131,7 @@ We pose that the right question is not ``how similar is KG A to KG B?'' but rath
 What is missing is a principled account of how diverse KG modelling practices interplay, to integrate both the \emph{semantic dimension}, i.e. the domain meanings a KG encodes and the \emph{pragmatic dimension}, i.e. what it affords to whom, for which task.  We propose the \emph{ontological continuum} as that missing conceptualisation.
 
 The contribution of this paper is \emph{conceptual} and \emph{terminological}. 
-We define the \textit{ontological continuum}: a characterisation framework, organised around two axes, \emph{semantics versus pragmatics}, and \emph{properties versus affordances}, that provides a vocabulary for describing, comparing, navigating, and transforming KGs across the full range of modelling practices. 
+We define the \textit{ontological continuum}: a characterisation framework, organised around two orthogonal distinctions, \emph{semantics versus pragmatics}, and \emph{properties versus affordances}, that provides a vocabulary for describing, comparing, navigating, and transforming KGs across the full range of modelling practices. 
 \end{inboth}
 \begin{onlyextended}
 We ground the vision through two case studies: one on provenance knowledge, showing how a single concern manifests differently across the continuum; and one on upper-level ontological commitment, showing how an early foundational choice cascades through the characterisation dimensions to determine downstream tooling and interoperability affordances and that the structure of those positions can be made explicit and formally ordered through rigorous methods, e.g. Formal Concept Analysis (FCA)~\cite{ganter1999formal,poelmans2013formal}. 
@@ -268,7 +268,7 @@ This is a defining difference from prescriptive ontology methodologies: the cont
 
 \begin{onlyshort}
 Describing a KG's position requires a vocabulary structured along 
-two orthogonal axes. The \textbf{first axis} distinguishes 
+two orthogonal distinctions. The \textbf{first axis} distinguishes 
 \emph{semantic} from \emph{pragmatic} features. Semantic features 
 concern the meanings a KG encodes: the domain knowledge it makes 
 explicit, the concepts it commits to, the relations it asserts. 
@@ -285,7 +285,7 @@ relationship between a KG, a \emph{community}, and a
 affordances~\cite{gibson1977theory} and Norman's design 
 affordances~\cite{norman1999affordance} to KG engineering, where an affordance is not intrinsic to the KG but emerges from its relationship with a community pursuing a task.
 
-The two axes together define four characterisation dimensions. 
+The two distinctions together define four characterisation spaces. 
 \emph{Semantic properties} capture a KG's domain knowledge: in 
 the provenance context, authorship, temporal information, data 
 lineage, and epistemic status. \emph{Semantic affordances} capture 
@@ -304,9 +304,9 @@ exploit it.
 
 \begin{onlyextended}
 \subsection{Dimensions of the Continuum}
-Describing a KG's position in the continuum requires a vocabulary structured according to the same axes that give the continuum its form: two orthogonal axes, each capturing a fundamental distinction in what we can say about a KG.
+Describing a KG's position in the continuum requires a vocabulary structured according to the each dimension that give the continuum its form, made by two orthogonal distinctions, each capturing a fundamental distinction in what we can say about a KG.
 
-The first axes distinguishes \emph{semantic} from \emph{pragmatic} features. 
+The first distinction distinguishes \emph{semantic} from \emph{pragmatic} features. 
 Semantic features concern the meanings that a KG encodes, i.e. the domain knowledge it makes explicit, the concepts it commits to, the relations it asserts. 
 Pragmatic features concern the mechanisms by which a KG is represented and operated on, i.e. the meta-models used to structure its statements, the interfaces through which it is queried, validated, or reasoned over.
 
@@ -316,7 +316,7 @@ Affordances, by contrast, are relational: they are constituted by the relationsh
 Formally, an affordance is a three-place predicate: \textit{affords}$(KG, community, task)$, that holds when a KG makes a particular kind of use possible for a particular community pursuing a particular task. 
 This framing draws on the notion of affordance, developed in ecological psychology (Gibson~\cite{gibson1977theory}) and design theory (Norman~\cite{norman1999affordance}), as a relational property of an agent–environment pair, and extends it to the context of KG engineering: an affordance is not a feature of the KG alone, nor of the community alone, but of their meeting. 
 Crucially, the same KG may afford different things to different communities, and characterising it fully requires naming not just its intrinsic properties but its \textit{use-relative possibilities}.
-The two axes together define four characterisation dimensions, which we introduce.
+The two distinctions together define four characterisation dimensions, which we introduce.
 
 \emph{Semantic properties} capture the meanings encoded by a KG: the factual, assertional, or inferential content that constitutes its knowledge about a domain. 
 For example, in the context of provenance, semantic properties include authorship, temporal information, data lineage, epistemic status, and agent roles.
@@ -484,7 +484,7 @@ The concrete semantic and pragmatic properties and affordances that populate the
 Semantic commitments shape which pragmatic affordances are available, and pragmatic choices constrain what semantic properties can be expressed; making these dependencies explicit is essential for guided transformations.
 \begin{itemize}
     \item How can the directionality and transitivity of cross-dimension constraints be identified and formalised?
-    \item How can a formal account of dependencies guide transformations --- so that a target affordance determines the required properties across the axes?
+    \item How can a formal account of dependencies guide transformations, so that a target affordance determines the required properties across the dimensions?
     \item How do upper-level ontology choices (BFO, DOLCE, UFO) cascade through the dimensions into pragmatic affordances and alignment compatibility?
 \end{itemize}
 
@@ -548,7 +548,7 @@ GenAI can bridge the gap between the continuum as an expert framework and the ne
 \section{Conclusion\ppinfo{0.25}}
 
 \begin{inboth}
-The ontological continuum is the missing conceptualisation for principled KG reengineering: a vocabulary organised around two axes --- semantics versus pragmatics, and properties versus affordances --- that provides a backbone theory for describing, comparing, navigating, and transforming KGs across the full range of modelling practices.
+The ontological continuum is the missing conceptualisation for principled KG reengineering: a vocabulary organised around two distinctions --- semantics versus pragmatics, and properties versus affordances --- that provides a backbone theory for describing, comparing, navigating, and transforming KGs across the full range of modelling practices.
 The timing is right: GenAI offers the automation capability, neuro-symbolic AI creates the demand, and the diverse KG ecosystem on the web provides, for the first time, the empirical basis on which such a theory can be built.
 We invite the community to pursue this as a shared research agenda.
 \end{inboth}

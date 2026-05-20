@@ -339,7 +339,86 @@ Examples for each approach:
     \item \textbf{Linked Open Vocabularies (LOV)} tracks the provenance of vocabulary publications and their dependencies using PROV-O, recording authors, publishers, versioning history, and the agents responsible for curation within the vocabulary ecosystem~\cite{lov}.
     \item \textbf{Nanopublications} treat provenance as a first-class structural concern: each nanopublication consists of three named graphs --- assertion, provenance, and publication info --- with PROV-O used within the provenance graph to capture authorship, temporal information, and the epistemic status of scientific claims~\cite{nanopub}.
 \end{itemize}
+% %%%%%%%
+% \section{Case Study: Provenance Knowledge Across the Continuum\ppinfo{Starts at page 6, 0.5 the method + 0.5p each case study, 1.5}}
+% \add{Our vision of the ontological continuum is grounded empirically: its structure is derived from observation of real-world KG engineering practices rather than stipulated from first principles. We therefore present two case studies to demonstrate that the continuum's characterisation framework can be instantiated concretely, i.e. that existing artefacts can be positioned within the continuum, and that the resulting structure is principled and interpretable. Each applies the shared methodology of
+% Section~\ref{ssec:methodology} to a different problem, and each
+% illuminates a different aspect of the continuum.}
 
+% \add{
+% The first case study examines \emph{provenance knowledge}: how a
+% single concern manifests differently across ten real-world KGs, each of which represents a distinct approach to recording the origin, lineage, and epistemic status of data. Provenance models are genuinely diverse along all
+% four characterisation dimensions, from a single lightweight property (\texttt{dc:source}) to a full ontological model of agents, activities, and entities in PROV-O, and provenance is a concern every KG
+% must address, regardless of domain, hence it is particularly suitable to the characterisation offered by our framework.}
+ 
+% \add{The second case study examines \emph{upper-level ontological
+% commitment}: how the choice of a foundational ontology, e.g. BFO, DOLCE, UFO, Gist, or no upper level at all,  propagates through the characterisation framework and determines what semantic and pragmatic affordances are
+% available downstream. This case study focuses on two of the four
+% characterisation dimensions, semantic affordances and pragmatic
+% affordances, to illustrate the cascade effect of an early ontological commitment and to sketch the research programme that a full four-dimension analysis would require.
+% }
+
+% \add{ 
+% Together, the two case studies demonstrate the continuum's practical value from complementary directions: the first shows variation along different positions within a single domain of concern; the second shows propagation along the downstream consequences of a foundational choice that constrains all subsequent positions.}
+
+% \subsection{Shared Methodology}\label{ssec:methodology}
+% \add{
+% The characterisation underlying both case studies is empirically derived rather than stipulated from first principles. For each dimension of the
+% continuum, a set of representative artefacts is analysed one at a time: \emph{keywords} are assigned to each artefact per dimension, existing keywords are reused wherever possible, and any new keyword introduced is verified retrospectively against previously analysed artefacts to ensure terminological consistency across the full set. The result is a binary
+% feature matrix for each dimension: objects (artefacts) crossed with attributes (keywords), from which a concept lattice is derived via FCA~\cite{ganter1999formal}. The lattice gives the continuum its ordered structure along each dimension: artefacts that share the densest, most specific attribute sets cluster at the bottom; those characterised by fewer, more general features appear toward the top.}
+
+% \add{The formal context produced, i.e. the choice of objects, attributes, and the incidence relation between them, is relative to the community and task that guide the analysis: a different community, or a different task, would select different attributes, produce a different formal context, and derive a different though equally principled concept
+% lattice. The dependencies between attributes across dimensions (which semantic properties entail which pragmatic affordances, and which
+% pragmatic choices foreclose which semantic commitments) are not yet formalised; making them explicit is the substance of
+% Challenge~2 (Section~\ref{sec:challenges}). }
+
+
+
+
+% %%%%%5
+
+
+% \subsection{Zooming into provenance}
+
+% \begin{itemize}
+%     \item \textbf{Simple metadata annotations}: Dublin Core terms such as \texttt{dc:creator} and \texttt{dc:date} are widely used to attach provenance metadata at the dataset or document level, as in DBpedia dataset descriptions~\cite{dcterms}.
+%     \item \textbf{Named graphs}: Provenance metadata can be associated with sets of triples by grouping them into named graphs, as adopted in Wikidata to attach references to groups of statements~\cite{wikidata}.
+%     \item \textbf{RDF reification}: The standard RDF reification vocabulary (\texttt{rdf:Statement}) allows metadata to be attached to individual triples, and was widely used in early Linked Data deployments~\cite{rdf11}.
+%     \item \textbf{RDF-Star}: A more compact mechanism for annotating individual triples by embedding a triple as the subject of another triple, now gaining adoption in newer KG deployments~\cite{rdfstar}.
+%     \item \textbf{Wikidata model}: A bespoke meta-model using qualifiers and references attached to statements, representing a community-driven pragmatic solution distinct from standard RDF mechanisms~\cite{wikidata}.
+%     \item \textbf{PROV-O}: A full ontological model of provenance, capturing agents, activities, entities and their relationships, adopted in scientific workflows and open science practices~\cite{provo}.
+%     \item \textbf{Schema.org markup}: A lightweight, web-scale vocabulary used to annotate entities and datasets with provenance metadata such as source, creator, and licence, as adopted by Google Data Commons, which extends Schema.org to attach a provenance property to every triple in the graph~\cite{datacommons,schemaorg}.
+% \end{itemize}
+
+% Ontological continuum dimensions in context:
+
+% \begin{itemize}
+%     \item \textbf{Semantic properties}: What provenance meaning is captured --- e.g.\ authorship, temporal information, lineage, trust, process descriptions.
+%     \item \textbf{Semantic affordances}: What downstream tasks the provenance representation supports --- e.g.\ trust assessment, data quality evaluation, reproducibility, audit trails, attribution.
+%     \item \textbf{Pragmatic properties}: The representational mechanism used --- simple metadata annotations, named graphs, RDF reification, RDF-Star, Wikidata model, PROV-O.
+%     \item \textbf{Pragmatic affordances}: What interaction methods are supported --- e.g.\ SPARQL querying, SHACL validation, OWL reasoning.
+% \end{itemize}
+
+% Examples for each approach:
+
+% \begin{itemize}
+%     \item \textbf{Europeana} uses the Europeana Data Model (EDM), which captures provenance through OAI-ORE Aggregations, recording the original data provider, intermediaries, and Europeana itself as aggregator, with Dublin Core elements at the core of the descriptive metadata~\cite{haslhofer2011}.
+%     \item \textbf{Google Data Commons} extends the Schema.org vocabulary to attach a provenance property to every triple in the graph, recording the URL of the originating data provider as a first-class element of the data model~\cite{datacommons,schemaorg}.
+%     \item \textbf{Bio2RDF} stores provenance metadata for each dataset in a dedicated named graph per SPARQL endpoint, using VoID, PROV, and Dublin Core to describe the date of conversion, licensing, and the script used to generate the dataset~\cite{callahan2013}.
+%     \item \textbf{The British Museum ResearchSpace} platform uses RDF reification patterns grounded in the CIDOC Conceptual Reference Model (CRM) to capture the provenance of scholarly assertions about cultural heritage objects~\cite{researchspace}.
+%     \item \textbf{UniProt} has adopted RDF-Star as a more compact and performant mechanism for attaching evidence and provenance annotations to individual triples in the knowledgebase, replacing a verbose and costly reification-based approach~\cite{rdfstar,uniprot}.
+%     \item \textbf{Wikidata} uses a bespoke statement model in which every claim can be qualified and referenced using a dedicated meta-model of statements, qualifiers, and references, providing fine-grained provenance at the level of individual assertions~\cite{vrandevcic2014,hernandez2015}.
+%     \item \textbf{The European Union Open Data Portal} captures provenance of published datasets through the DCAT Application Profile (DCAT-AP), which incorporates PROV-O via \texttt{prov:qualifiedAttribution} to express agent roles and data lineage~\cite{provo,dcatap}.
+%     \item \textbf{DBpedia} organises its extracted Wikipedia data into named graphs per language and dataset, using PROV-O to record dataset-level provenance metadata including the extraction process and the originating source~\cite{dbpedia}.
+%     \item \textbf{Linked Open Vocabularies (LOV)} tracks the provenance of vocabulary publications and their dependencies using PROV-O, recording authors, publishers, versioning history, and the agents responsible for curation within the vocabulary ecosystem~\cite{lov}.
+%     \item \textbf{Nanopublications} treat provenance as a first-class structural concern: each nanopublication consists of three named graphs --- assertion, provenance, and publication info --- with PROV-O used within the provenance graph to capture authorship, temporal information, and the epistemic status of scientific claims~\cite{nanopub}.
+% \end{itemize}
+
+
+
+
+
+% %%%%%%%
 
 \section{Discussion}
 

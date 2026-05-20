@@ -117,7 +117,7 @@ Knowledge graphs have become critical for data integration across scientific, go
 The diversity of KG modelling practices, ranging from lightweight vocabularies (e.g. Schema.org, Dublin Core) to richly axiomatised ontologies (e.g. Gene Ontology, SNOMED CT), reflects the breadth of problems and communities they serve.
 
 This diversity is an asset rather than a weakness: different communities~\footnote{A community is a group of agents with shared practices, expertise, and tasks: \emph{who} uses the knowledge and \emph{how}} and tasks genuinely require different representational choices, thus creating a rich and varied KG ecosystem. 
-The cost of this diversity, however, is real. 
+The cost of this diversity, however, is in the reuse. 
 Adapting KG content across communities and tasks, e.g. repurposing a provenance model built for scientific workflows in an open data portal, integrating a statistical dataset with a CIDOC-CRM-based knowledge base, reusing ontological fragments defined under one foundational ontology in a setting aligned to another, remains expensive, brittle, and poorly understood.
 %Two convergent forces are making this cost acutely felt. 
 %Neuro-symbolic AI requires the ability to bridge neural and symbolic components whose KG requirements frequently differ: what a neural component needs as input is rarely structured in the same way as what a symbolic reasoner expects, and mediating between them demands principled and automated re-engineering. 
@@ -137,26 +137,22 @@ The dominant response to KG diversity has been structural harmonisation: thirty 
 Yet cross-KG reuse remains expensive and brittle in practice, and the premise deserves scrutiny. 
 %We pose that a better question to ``how similar is KG A to KG B?'' is instead ''does KG A afford what community C needs for task T?''; a question that structural harmonisation cannot answer, and that current quality metrics do not formulate~\cite{wilson2023conceptual}.\todo{What about "what would it take for KG A to afford what community C needs for task T?" and "How to achieve that?" Not disagreeing, but what I feel missing is reuse as a transformation from KG source to KG target, justifying the FCA exercise. If we only have one KG, the whole method is pointless...}
 %
-We pose that the right question is not ``how similar is KG A to KG B?'' but rather: ``does KG A afford what community C needs for task T? And if not, what would it take, and at what cost, to get there?''. These are questions that structural harmonisation cannot answer and that current quality metrics do not even pose. They reframe reuse as a \emph{transformation problem}: given a source KG and a community with a task, what sequence of principled steps leads to a target that affords what is needed? Answering them requires not a mapping technique but a map of the space itself.
-
-What is missing is a principled account of how diverse KG modelling practices interplay, to integrate both the \emph{semantic side}, i.e. the domain meanings a KG encodes, and the \emph{pragmatic side}, i.e. what a KG affords to whom, for which task.  
+We pose that the right question is not ``how similar is KG A to KG B?'' but rather: ``does KG A afford what community C needs for task T? And if not, what would it take, and at what cost, to get there?''. 
+These are questions that structural harmonisation cannot answer and that current quality metrics do not even pose. 
+We reframe reuse as a \emph{transformation problem}: given a source KG and a community with a task, what sequence of principled steps leads to a target that affords what is needed? 
+Answering this question requires not a mapping technique but \textit{a map of the problem space} itself.
+What is missing is a principled account of how diverse KG modelling practices interplay, to integrate both the \emph{semantic side}, i.e. the domain meanings a KG encodes, and the \emph{pragmatic side}, i.e. what a KG affords for which task.  
 We propose the \emph{ontological continuum} as that missing conceptualisation.
 
 The contribution of this paper is \emph{conceptual} and \emph{terminological}. 
-We define the \textit{ontological continuum}: a characterisation framework, organised around two orthogonal distinctions, \emph{semantics versus pragmatics}, and \emph{properties versus affordances}, that provides a vocabulary for describing, comparing, navigating, and transforming KGs across the full range of modelling practices. 
-\end{inboth}
-\begin{onlyextended}
-We ground the vision through two case studies: one on provenance knowledge, showing how a single concern manifests differently across the continuum; and one on upper-level ontological commitment, showing how an early foundational choice cascades through the characterisation dimensions to determine downstream tooling and interoperability affordances and that the structure of those positions can be made explicit and formally ordered through rigorous methods, e.g. Formal Concept Analysis (FCA)~\cite{ganter1999formal,poelmans2013formal}. 
-We articulate open research challenges and we discuss what these entail.    
-\end{onlyextended}
+We define the \textit{ontological continuum}: a characterisation framework, organised around two orthogonal distinctions, \emph{semantics versus pragmatics}, and \emph{properties versus affordances}, that provides a vocabulary for describing, comparing, navigating, and potentially transforming KGs across the full range of modelling practices. 
 
-\begin{onlyshort}
 We ground the vision through a case study on provenance knowledge, 
 showing how a single concern manifests differently across the continuum 
 and how the structure of those positions can be made explicit and formally 
 ordered through Formal Concept Analysis (FCA)~\cite{ganter1999formal,poelmans2013formal}. 
 We articulate five open research challenges and discuss their implications.
-\end{onlyshort}
+\end{inboth}
 
 \begin{inboth}
 The paper is structured as follows. 
@@ -349,13 +345,13 @@ Like semantic affordances, these are relational: SPARQL federation is only an af
 \end{onlyextended}
 
 \begin{onlyshort}
-Any operational analysis of the continuum requires projection onto 
-a finite, discrete structure. With the four dimensions defined, 
+Any operational analysis of the continuum requires a projection onto 
+a finite, discrete structure. Given the four dimensions defined, 
 the features of each KG can be recorded per dimension, producing a 
 binary feature matrix: objects (KGs) crossed with attributes 
 (dimension features). Formal Concept Analysis 
-(FCA)~\cite{ganter1999formal} provides a principled method for 
-projecting these matrices into a mathematically ordered space: a 
+(FCA)~\cite{ganter1999formal} provides a formal method for 
+projecting these matrices into an ordered space: a 
 concept lattice in which each formal concept is defined by a 
 maximal set of objects sharing a common attribute set. In our 
 setting, each dimension yields a lattice that orders KGs by the 
@@ -379,79 +375,152 @@ Similarly, we can produce a unified lattice, by grouping all features together.
 
 
 \section{Case Study: Provenance Knowledge Across the Continuum\ppinfo{Starts at page 6, 0.5 the method + 0.5p each case study, 1.5}}
-\add{Our vision of the ontological continuum is grounded empirically: its structure is derived from observation of real-world KG engineering practices rather than stipulated from first principles. We therefore present two case studies to demonstrate that the continuum's characterisation framework can be instantiated concretely, i.e. that existing artefacts can be positioned within the continuum, and that the resulting structure is principled and interpretable. Each applies the shared methodology of
-Section~\ref{ssec:methodology} to a different problem, and each
-illuminates a different aspect of the continuum.}
 
-\add{
-The first case study examines \emph{provenance knowledge}: how a
-single concern manifests differently across ten real-world KGs, each of which represents a distinct approach to recording the origin, lineage, and epistemic status of data. Provenance models are genuinely diverse along all
-four characterisation dimensions, from a single lightweight property (\texttt{dc:source}) to a full ontological model of agents, activities, and entities in PROV-O, and provenance is a concern every KG
-must address, regardless of domain, hence it is particularly suitable to the characterisation offered by our framework.}
- 
-\add{The second case study examines \emph{upper-level ontological
-commitment}: how the choice of a foundational ontology, e.g. BFO, DOLCE, UFO, Gist, or no upper level at all,  propagates through the characterisation framework and determines what semantic and pragmatic affordances are
-available downstream. This case study focuses on two of the four
-characterisation dimensions, semantic affordances and pragmatic
-affordances, to illustrate the cascade effect of an early ontological commitment and to sketch the research programme that a full four-dimension analysis would require.
-}
+\begin{onlyshort}
+Provenance is the ideal concern for a worked example: 
+representations are genuinely diverse along all four 
+characterisation dimensions, from a single lightweight 
+property (\texttt{dc:source}) to a full ontological model 
+of agents, activities, and entities in PROV-O, and 
+provenance is a concern every KG must address regardless 
+of domain.
+\end{onlyshort}
 
-\add{ 
-Together, the two case studies demonstrate the continuum's practical value from complementary directions: the first shows variation along different positions within a single domain of concern; the second shows propagation along the downstream consequences of a foundational choice that constrains all subsequent positions.}
+\begin{onlyextended}
+Our vision of the ontological continuum is grounded 
+empirically: its structure is derived from observation of 
+real-world KG engineering practices rather than stipulated 
+from first principles. We present a case study on 
+\emph{provenance knowledge} to demonstrate that the 
+characterisation framework can be instantiated concretely, i.e. 
+that existing KGs can be positioned within the 
+continuum and that the resulting structure is principled 
+and interpretable. Provenance is the ideal concern: 
+representations are genuinely diverse along all four 
+dimensions, from a single lightweight property 
+(\texttt{dc:source}) to a full ontological model of 
+agents, activities, and entities in PROV-O, and provenance 
+is a concern every KG must address regardless of domain.
+\end{onlyextended}
 
-\subsection{Shared Methodology}\label{ssec:methodology}
-\add{
-The characterisation underlying both case studies is empirically derived rather than stipulated from first principles. For each dimension of the
-continuum, a set of representative artefacts is analysed one at a time: \emph{keywords} are assigned to each artefact per dimension, existing keywords are reused wherever possible, and any new keyword introduced is verified retrospectively against previously analysed artefacts to ensure terminological consistency across the full set. The result is a binary
-feature matrix for each dimension: objects (artefacts) crossed with attributes (keywords), from which a concept lattice is derived via FCA~\cite{ganter1999formal}. The lattice gives the continuum its ordered structure along each dimension: artefacts that share the densest, most specific attribute sets cluster at the bottom; those characterised by fewer, more general features appear toward the top.}
+\subsection{Methodology}\label{ssec:methodology}
 
-\add{The formal context produced, i.e. the choice of objects, attributes, and the incidence relation between them, is relative to the community and task that guide the analysis: a different community, or a different task, would select different attributes, produce a different formal context, and derive a different though equally principled concept
-lattice. The dependencies between attributes across dimensions (which semantic properties entail which pragmatic affordances, and which
-pragmatic choices foreclose which semantic commitments) are not yet formalised; making them explicit is the substance of
-Challenge~2 (Section~\ref{sec:challenges}). }
+\begin{inboth}
+The characterisation underlying this use case is empirically derived rather than 
+stipulated from first principles. For each dimension, a 
+set of representative KGs is analysed: 
+\emph{attributes} are assigned per dimension, existing 
+attributes are reused wherever possible, and any new attributes 
+introduced is verified retrospectively against previously 
+analysed KGs to ensure terminological consistency. The 
+result is a binary feature matrix for each dimension: 
+objects (KGs) crossed with attributes, from 
+which a concept lattice is derived via 
+FCA~\cite{ganter1999formal}. Artefacts sharing the 
+densest, most specific attribute sets cluster at the 
+bottom of the lattice; those characterised by fewer, more 
+general features appear toward the top.
+\end{inboth}
 
+\begin{onlyextended}
+The formal context produced, i.e. the choice of objects, 
+attributes, and the incidence relation between them, is 
+relative to the community and task that guide the 
+analysis: a different community, or a different task, 
+would select different attributes, produce a different 
+formal context, and derive a different though equally 
+principled concept lattice. The dependencies between 
+attributes across dimensions (which semantic properties 
+entail which pragmatic affordances, and which pragmatic 
+choices foreclose which semantic commitments) are not yet 
+formalised; making them explicit is the substance of 
+Challenge~2 (Section~\ref{sec:challenges}).
+\end{onlyextended}
 
+\subsection{Provenance Across the Continuum}
 
+\begin{onlyshort}
+The ten KGs span the continuum along all four dimensions. 
+\emph{Pragmatic properties} range from simple Dublin Core 
+annotations (Europeana, Google Data Commons) through named 
+graphs (Bio2RDF, DBpedia), RDF reification (British Museum 
+ResearchSpace), and the Wikidata statement model, to 
+RDF-Star (UniProt) and PROV-O's full 
+agent--activity--entity model (LOV, EU Open Data Portal, 
+Nanopublications). \emph{Semantic properties} scale 
+correspondingly: from dataset-level attribution and source 
+URLs to fine-grained authorship, data lineage, and 
+epistemic status at the assertion level. \emph{Pragmatic 
+affordances} follow from representational choices: SPARQL 
+querying is available throughout; OWL DL reasoning only 
+where PROV-O is deployed; SHACL validation where schema 
+constraints are defined. \emph{Semantic affordances} (attribution, reproducibility, audit trails, rights 
+management) are available only relative to communities 
+equipped to exploit them: the EU Open Data Portal's 
+PROV-O-based DCAT-AP affords regulatory compliance 
+tracking in ways that a \texttt{dc:source} annotation does 
+not; Nanopublications' three-graph structure affords 
+epistemic verification in ways that the Wikidata statement 
+model does not. The binary feature matrices and FCA 
+lattices for all four dimensions are provided in the 
+Appendix.
+\end{onlyshort}
 
-%%%%%5
+\begin{onlyextended}
+We analyse ten KGs, each representing a distinct approach 
+to provenance.
 
+\textbf{Europeana} uses the Europeana Data Model (EDM), 
+capturing provenance through OAI-ORE Aggregations that 
+record the original data provider, intermediaries, and 
+Europeana as aggregator, with Dublin Core metadata at the 
+core~\cite{haslhofer2011}.
 
-\subsection{Zooming into provenance}
+\textbf{Google Data Commons} extends Schema.org to attach 
+a provenance property to every triple, recording the 
+originating provider's URL as a first-class element of the 
+data model~\cite{datacommons,schemaorg}.
 
-\begin{itemize}
-    \item \textbf{Simple metadata annotations}: Dublin Core terms such as \texttt{dc:creator} and \texttt{dc:date} are widely used to attach provenance metadata at the dataset or document level, as in DBpedia dataset descriptions~\cite{dcterms}.
-    \item \textbf{Named graphs}: Provenance metadata can be associated with sets of triples by grouping them into named graphs, as adopted in Wikidata to attach references to groups of statements~\cite{wikidata}.
-    \item \textbf{RDF reification}: The standard RDF reification vocabulary (\texttt{rdf:Statement}) allows metadata to be attached to individual triples, and was widely used in early Linked Data deployments~\cite{rdf11}.
-    \item \textbf{RDF-Star}: A more compact mechanism for annotating individual triples by embedding a triple as the subject of another triple, now gaining adoption in newer KG deployments~\cite{rdfstar}.
-    \item \textbf{Wikidata model}: A bespoke meta-model using qualifiers and references attached to statements, representing a community-driven pragmatic solution distinct from standard RDF mechanisms~\cite{wikidata}.
-    \item \textbf{PROV-O}: A full ontological model of provenance, capturing agents, activities, entities and their relationships, adopted in scientific workflows and open science practices~\cite{provo}.
-    \item \textbf{Schema.org markup}: A lightweight, web-scale vocabulary used to annotate entities and datasets with provenance metadata such as source, creator, and licence, as adopted by Google Data Commons, which extends Schema.org to attach a provenance property to every triple in the graph~\cite{datacommons,schemaorg}.
-\end{itemize}
+\textbf{Bio2RDF} stores per-dataset provenance in 
+dedicated named graphs, using VoID, PROV, and Dublin Core 
+to describe conversion dates, licensing, and generating 
+scripts~\cite{callahan2013}.
 
-Ontological continuum dimensions in context:
+\textbf{The British Museum ResearchSpace} platform uses 
+RDF reification grounded in CIDOC-CRM to capture the 
+provenance of scholarly assertions about cultural heritage 
+objects~\cite{researchspace}.
 
-\begin{itemize}
-    \item \textbf{Semantic properties}: What provenance meaning is captured --- e.g.\ authorship, temporal information, lineage, trust, process descriptions.
-    \item \textbf{Semantic affordances}: What downstream tasks the provenance representation supports --- e.g.\ trust assessment, data quality evaluation, reproducibility, audit trails, attribution.
-    \item \textbf{Pragmatic properties}: The representational mechanism used --- simple metadata annotations, named graphs, RDF reification, RDF-Star, Wikidata model, PROV-O.
-    \item \textbf{Pragmatic affordances}: What interaction methods are supported --- e.g.\ SPARQL querying, SHACL validation, OWL reasoning.
-\end{itemize}
+\textbf{UniProt} has adopted RDF-Star to attach evidence 
+and provenance annotations to individual triples, 
+replacing a verbose and costly reification-based 
+approach~\cite{rdfstar,uniprot}.
 
-Examples for each approach:
+\textbf{Wikidata} provides fine-grained triple-level 
+provenance through a bespoke statement model of 
+qualifiers and references~\cite{vrandevcic2014,
+hernandez2015}.
 
-\begin{itemize}
-    \item \textbf{Europeana} uses the Europeana Data Model (EDM), which captures provenance through OAI-ORE Aggregations, recording the original data provider, intermediaries, and Europeana itself as aggregator, with Dublin Core elements at the core of the descriptive metadata~\cite{haslhofer2011}.
-    \item \textbf{Google Data Commons} extends the Schema.org vocabulary to attach a provenance property to every triple in the graph, recording the URL of the originating data provider as a first-class element of the data model~\cite{datacommons,schemaorg}.
-    \item \textbf{Bio2RDF} stores provenance metadata for each dataset in a dedicated named graph per SPARQL endpoint, using VoID, PROV, and Dublin Core to describe the date of conversion, licensing, and the script used to generate the dataset~\cite{callahan2013}.
-    \item \textbf{The British Museum ResearchSpace} platform uses RDF reification patterns grounded in the CIDOC Conceptual Reference Model (CRM) to capture the provenance of scholarly assertions about cultural heritage objects~\cite{researchspace}.
-    \item \textbf{UniProt} has adopted RDF-Star as a more compact and performant mechanism for attaching evidence and provenance annotations to individual triples in the knowledgebase, replacing a verbose and costly reification-based approach~\cite{rdfstar,uniprot}.
-    \item \textbf{Wikidata} uses a bespoke statement model in which every claim can be qualified and referenced using a dedicated meta-model of statements, qualifiers, and references, providing fine-grained provenance at the level of individual assertions~\cite{vrandevcic2014,hernandez2015}.
-    \item \textbf{The European Union Open Data Portal} captures provenance of published datasets through the DCAT Application Profile (DCAT-AP), which incorporates PROV-O via \texttt{prov:qualifiedAttribution} to express agent roles and data lineage~\cite{provo,dcatap}.
-    \item \textbf{DBpedia} organises its extracted Wikipedia data into named graphs per language and dataset, using PROV-O to record dataset-level provenance metadata including the extraction process and the originating source~\cite{dbpedia}.
-    \item \textbf{Linked Open Vocabularies (LOV)} tracks the provenance of vocabulary publications and their dependencies using PROV-O, recording authors, publishers, versioning history, and the agents responsible for curation within the vocabulary ecosystem~\cite{lov}.
-    \item \textbf{Nanopublications} treat provenance as a first-class structural concern: each nanopublication consists of three named graphs --- assertion, provenance, and publication info --- with PROV-O used within the provenance graph to capture authorship, temporal information, and the epistemic status of scientific claims~\cite{nanopub}.
-\end{itemize}
+\textbf{The EU Open Data Portal} captures dataset 
+provenance through DCAT-AP, incorporating PROV-O via 
+\texttt{prov:qualifiedAttribution} to express agent roles 
+and data lineage~\cite{provo,dcatap}.
 
+\textbf{DBpedia} organises Wikipedia-extracted data into 
+named graphs per language and dataset, using PROV-O to 
+record extraction process and originating 
+source~\cite{dbpedia}.
+
+\textbf{Linked Open Vocabularies (LOV)} tracks vocabulary 
+publication provenance using PROV-O, recording authors, 
+publishers, versioning history, and curation 
+agents~\cite{lov}.
+
+\textbf{Nanopublications} treat provenance as a structural 
+concern: each nanopublication comprises three named graphs:  assertion, provenance, and publication info, with 
+PROV-O capturing authorship, temporal data, and the 
+epistemic status of scientific claims~\cite{nanopub}.
+\end{onlyextended}
 
 %%%% Only extended version has the discussion separated
 \begin{onlyextended}
@@ -474,60 +543,75 @@ One of the goals of the continuum is to make these cross-dimension dependencies 
 % \add{It is worth noting that recently, a paper by Celino also proposes the notion of \emph{knowledge affordances}. Celino argues the utility of affordance-based characterisation within the information-seeking domain; the ontological continuum extends the same insight to knowledge engineering operations, where interoperability is constituted not by the ability to answer a query but by the operations that the formalisation, the conceptual model, and the upper-level commitment make available to a community. Information seeking is one affordance class the continuum supports; it is not the continuum framework's primary motivation or scope.
 % }
 
-\section{\iftoggle{extended}{}{Discussion and }Research Agenda\ppinfo{starts at p7.5, 1.25}}\label{sec:challenges}\todo{To cut half page}
-\begin{onlyshort}
-The concept lattice produced by FCA is not the continuum itself: it is a finite, domain-relative projection of it, sampling a specific population of KGs with binary feature judgements.
-The projection is finite by design: new KGs or new features may alter the structure, and the methodology accommodates iterative extension.
-It is also domain-relative: a lattice derived for provenance differs from one derived for bioinformatics or cultural heritage, because different communities give rise to different feature distributions.
-This is a feature of the approach rather than a limitation --- it means the framework can be instantiated for any domain by following the empirical procedure of Section~\ref{ssec:methodology}.
+\section{\iftoggle{extended}{}{Discussion and }Research 
+Agenda}\label{sec:challenges}
 
-The four characterisation dimensions are interdependent, and these dependencies have real consequences.
-Semantic commitments shape which pragmatic affordances are available: modelling provenance with PROV-O opens OWL reasoning while foreclosing some SPARQL-Star interaction patterns.
-Conversely, pragmatic choices constrain what semantic properties can be expressed: the Wikidata statement model enables fine-grained triple-level provenance but embeds it in a meta-model not directly interoperable with PROV-O.
-A key ambition of the continuum is to make these cross-dimension dependencies explicit and formalise their directionality --- replacing the informal notion of \emph{community suitability} with an operational one: rather than saying a KG is fit for a given community, we can say it exhibits a specific combination of properties and affords a specific set of uses, making fitness for purpose measurable rather than assumed.
+\begin{onlyshort}
+The concept lattice is not the continuum: it is a finite, 
+domain-relative projection, sampling a specific collection 
+of KGs with binary feature judgements. Different 
+communities generate different feature distributions, 
+so a lattice derived for provenance differs from one 
+derived for bioinformatics or cultural heritage, which is a 
+feature of the approach, not a limitation. The four 
+characterisation dimensions are interdependent: modelling 
+provenance with PROV-O opens OWL reasoning while 
+foreclosing some SPARQL-Star interaction patterns; the 
+Wikidata statement model enables fine-grained triple-level 
+provenance but embeds it in a meta-model not directly 
+interoperable with PROV-O. A key ambition is to make 
+these dependencies explicit, therefore replacing the informal 
+notion of \emph{community suitability} with an operational 
+one: rather than saying a KG is fit for a given community, 
+we can say it exhibits specific properties and affords 
+specific uses, making \emph{fitness for purpose} measurable 
+rather than assumed.
 \end{onlyshort}
 
 We propose the following challenges for the community:
 
-\paragraph{\textbf{Challenge 1: Characterising and formalising the dimensions}.}
-The concrete semantic and pragmatic properties and affordances that populate the $2\times2$ space must be derived empirically from real-world KGs and community practices.
-\begin{itemize}
-    \item What are the relevant dimensions, and how can they be operationalised across diverse domains?
-    \item How can community-relative fitness metrics be defined: given a task, what combination of features does a KG need to exhibit?
-    \item How can the informal notion of ``community'' be replaced with a formal, operational characterisation?
-\end{itemize}
+\paragraph{\textbf{Challenge 1: Characterising and 
+formalising the dimensions}.}
+The concrete semantic and pragmatic properties and 
+affordances that populate the four characterisation 
+dimensions must be derived empirically from real-world KGs 
+and community practices, with community-relative fitness 
+metrics defined in terms of the attribute combinations a 
+KG must exhibit for a given task.
 
-\paragraph{\textbf{Challenge 2: Formalising the dependencies across the continuum}.}
-Semantic commitments shape which pragmatic affordances are available, and pragmatic choices constrain what semantic properties can be expressed; making these dependencies explicit is essential for guided transformations.
-\begin{itemize}
-    \item How can the directionality and transitivity of cross-dimension constraints be identified and formalised?
-    \item How can a formal account of dependencies guide transformations, so that a target affordance determines the required properties across the dimensions?
-    \item How do upper-level ontology choices (BFO, DOLCE, UFO) cascade through the dimensions into pragmatic affordances and alignment compatibility?
-\end{itemize}
+\paragraph{\textbf{Challenge 2: Formalising the 
+dependencies across the continuum}.}
+Semantic commitments shape which pragmatic affordances are 
+available, and pragmatic choices constrain what semantic 
+properties can be expressed; making these dependencies 
+explicit (including how upper-level ontology choices 
+cascade into pragmatic affordances) is essential for 
+guided transformations.
 
-\paragraph{\textbf{Challenge 3: Enabling modular, context-aware reuse}.}
-Reuse requires extracting and applying fragments relevant to a given task from KGs that may differ substantially in ontological commitment, with explicit cost models for the adaptation involved.
-\begin{itemize}
-    \item How can dimension-aware query mechanisms translate user intent into KG-specific queries without full schema alignment?
-    \item How can the cost of adaptation be estimated: what is lost at each transformation step, and what effort does it require?
-\end{itemize}
+\paragraph{\textbf{Challenge 3: Enabling modular, 
+context-aware reuse}.}
+Reuse requires extracting and applying fragments relevant 
+to a given task from KGs that may differ substantially in 
+ontological commitment, with explicit cost models for the 
+adaptation involved.
 
-\paragraph{\textbf{Challenge 4: Supporting the co-evolution of interdependent KG engineering artefacts}.}
-Changes in ontological commitment propagate into mappings, queries, and documentation; the continuum provides the vocabulary to make these effects explicit, but tools are needed to act on them.
-\begin{itemize}
-    \item How do changes in one artefact propagate across the ecosystem, and how can this be tracked?
-    \item How can a ``what if'' analysis framework make the pragmatic consequences of semantic choices explicit before they are committed to?
-\end{itemize}
+\paragraph{\textbf{Challenge 4: Supporting the 
+co-evolution of interdependent KG engineering 
+artefacts}.}
+Changes in ontological commitment propagate into mappings, 
+queries, and documentation; the continuum provides the 
+vocabulary to track these effects, but tools are needed to 
+act on them before commitments are made.
 
-\paragraph{\textbf{Challenge 5: Developing human-in-the-loop strategies for users with varying expertise}.}
-GenAI can bridge the gap between the continuum as an expert framework and the needs of non-expert users, but only if it can navigate the continuum in a principled, explainable way.
-\begin{itemize}
-    \item How should KGs be designed and published so that their affordances are explicit and exploitable by automated tools?
-    \item How can bidirectional design be supported, helping users navigate trade-offs between semantic expressivity and pragmatic accessibility?
-    \item Would such a theory help explainability in agentic KE, by grounding transformation decisions in continuum dimensions, making costs explicit, and recording provenance?
-\end{itemize}
-
-
+\paragraph{\textbf{Challenge 5: Developing 
+human-in-the-loop strategies for users with varying 
+expertise}.}
+GenAI can bridge the gap between the continuum as an 
+expert framework and the needs of non-expert users, but 
+only if it can navigate the continuum in a principled, 
+explainable way --- grounding transformation decisions in 
+continuum dimensions, making costs explicit, and recording 
+provenance.
 
 % \begin{itemize}
 %     \item \textbf{Challenge 1:} Characterising and formalising the dimensions of diversity in KG modelling practices --- what are the relevant dimensions, and how can they be operationalised?

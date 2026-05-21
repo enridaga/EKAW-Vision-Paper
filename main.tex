@@ -26,6 +26,7 @@
 \newcommand{\del}[1]{\textcolor{deletedcolor}{\st{#1}}} % Requires soul package
 \newcommand{\edit}[1]{\textcolor{blue}{#1}}
 \usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta} 
 % Used for displaying a sample figure. If possible, figure files should
 % be included in EPS format.
 %
@@ -116,7 +117,7 @@ We articulate five open research challenges and invite the community to develop 
 \begin{inboth}
 Knowledge graphs have become critical for data integration across scientific, governmental, and commercial domains. 
 The diversity of KG modelling practices, ranging from lightweight vocabularies (e.g. Schema.org, Dublin Core) to richly axiomatised ontologies (e.g. Gene Ontology, SNOMED CT), reflects the breadth of problems and communities they serve.
-This diversity is an asset rather than a weakness: different communities~\footnote{A community is a group of agents with shared practices, expertise, and tasks: \emph{who} uses the knowledge and \emph{how}} and tasks genuinely require different representational choices, thus creating a rich and varied KG ecosystem. 
+This diversity is an asset rather than a weakness: different communities\footnote{A community is a group of agents with shared practices, expertise, and tasks: \emph{who} uses the knowledge and \emph{how}} and tasks genuinely require different representational choices, thus creating a rich and varied KG ecosystem. 
 The cost of this diversity, however, is in the reuse. 
 Adapting KG content across communities and tasks, e.g. repurposing a provenance model built for scientific workflows in an open data portal, integrating a statistical dataset with a CIDOC-CRM-based knowledge base, reusing ontological fragments defined under one foundational ontology in a setting aligned to another, remains expensive, brittle, and poorly understood.
 %Two convergent forces are making this cost acutely felt. 
@@ -197,7 +198,7 @@ completeness, the operative quality criterion.
 \end{sloppypar}\end{inboth}
 
 \begin{inboth}A methodological precedent is Fa\c{c}ade-X~\cite{asprino2023knowledge}, which derives a unified access mechanism for heterogeneous non-RDF data sources by empirically analysing their structural characteristics and abstracting a minimal-commitment meta-model, enabling SPARQL querying without schema harmonisation. 
-The stance is bottom-up and observation-first: the meta-model is abstracted from the structures data formats exhibit.\footnote{That this direction is gaining traction is signalled by the W3C Data Fa\c{c}ades Community Group~\cite{w3c:facadex}, which is actively developing standards in this space.}. 
+The stance is bottom-up and observation-first: the meta-model is abstracted from the structures data formats exhibit.\footnote{That this direction is gaining traction is signalled by the W3C Data Fa\c{c}ades Community Group~\cite{w3c:facadex}, which is actively developing standards in this space.} 
 \end{inboth}
 \begin{onlyextended}The ontological continuum adopts the same methodological stance, extending it from minimal-commitment access over heterogeneous data sources to the full space of KG modelling practices. 
 \end{onlyextended}
@@ -307,6 +308,59 @@ capture the interaction methods those mechanisms make available, e.g.:
 \end{onlyshort}
 
 \begin{onlyextended}
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+    font=\small,
+    cell/.style={
+        rectangle, draw, rounded corners=2pt, thick,
+        minimum width=4.3cm, minimum height=2.1cm,
+        align=center, inner sep=5pt, text width=4.0cm
+    },
+    solidlink/.style={-{Latex}, thick},
+    bilink/.style={{Latex}-{Latex}, thick},
+    diaglink/.style={-{Latex}, thin, dashed, black!55},
+    elab/.style={font=\scriptsize, fill=white, inner sep=2pt},
+    dlab/.style={font=\scriptsize\itshape, fill=white, inner sep=1.5pt, text=black!55}
+]
+% --- four cells ---
+\node[cell] (sp) at (-3.1, 2.0)
+    {{\bfseries Semantic properties}\\[2pt]{\scriptsize meanings encoded}\\[1pt]
+     {\scriptsize authorship, temporal info, data lineage, epistemic status}};
+\node[cell] (pp) at ( 3.1, 2.0)
+    {{\bfseries Pragmatic properties}\\[2pt]{\scriptsize representational mechanisms}\\[1pt]
+     {\scriptsize named graphs, reification, RDF-Star, PROV-O}};
+\node[cell] (sa) at (-3.1,-2.0)
+    {{\bfseries Semantic affordances}\\[2pt]{\scriptsize uses the meanings enable}\\[1pt]
+     {\scriptsize attribution, reproducibility, scholarly citation, rights mgmt}};
+\node[cell] (pa) at ( 3.1,-2.0)
+    {{\bfseries Pragmatic affordances}\\[2pt]{\scriptsize interactions mechanisms enable}\\[1pt]
+     {\scriptsize SPARQL, SHACL, OWL DL reasoning, federation}};
+
+% --- diagonals (dashed, thin) drawn first so solid arrows sit on top ---
+\draw[diaglink] (sp.south east) -- (pa.north west)
+    node[dlab, pos=0.28, sloped] {opens / forecloses};
+\draw[diaglink] (pp.south west) -- (sa.north east)
+    node[dlab, pos=0.28, sloped] {constrains expressivity};
+
+% --- vertical "enables" (solid) ---
+\draw[solidlink] (sp.south) -- (sa.north) node[elab, midway] {enables};
+\draw[solidlink] (pp.south) -- (pa.north) node[elab, midway] {enables};
+
+% --- horizontal (solid, double-headed) ---
+\draw[bilink] (sp.east) -- (pp.west) node[elab, midway] {shapes\,/\,constrains};
+\draw[bilink] (sa.east) -- (pa.west) node[elab, midway] {jointly determine fitness};
+\end{tikzpicture}
+\caption{The four characterisation dimensions as a 2$\times$2 of two
+orthogonal distinctions: \emph{semantic}\,/\,\emph{pragmatic} (columns)
+and \emph{property}\,/\,\emph{affordance} (rows). Solid vertical arrows:
+properties \emph{enable} affordances, relative to a community pursuing a
+task. Solid horizontal arrows: the two kinds of commitment interact at
+each level. Dashed diagonals: cross-dimension dependencies
+(Section~\ref{sec:discussion}, Challenge~2). Examples are drawn from the
+provenance case study.}
+\label{fig:four-dimensions}
+\end{figure}
 \subsection{Dimensions of the Continuum}
 Describing a KG's position in the continuum requires a vocabulary structured along four characterisation dimensions, defined by two orthogonal distinctions, each capturing a fundamental partition in what we can say about a KG.
 
@@ -351,11 +405,25 @@ In our setting, each dimension yields a lattice that orders KGs by the richness 
 \begin{onlyextended}
 \subsection{Discrete Projection in the Continuum}
 The ontological continuum is a theoretical construct; any operational analysis of such continuum needs to necessarily be a projection onto a finite, discrete structure. 
-With the four dimensions defined, we can analyse the features of each source KG as well as the target, desired KG, to produce a task-specific list, organised under those dimensions.
+With the four dimensions defined, we can analyse the features of each source KG as well as the target, desired KG, to produce a list, organised under those dimensions.
 %The characterisation framework provides the vocabulary; applying that vocabulary to a sample of real-world KGs produces
 The result would be a binary feature matrix for each of the four dimensions: objects (KGs) crossed with attributes (dimension features). 
-Formal Concept Analysis (FCA) \cite{ganter1999formal} provides a principled method for projecting these matrices into a mathematically ordered space.
-Given a binary attribute table, FCA derives a concept lattice: a partial order of formal concepts, each defined by a maximal set of objects sharing a common attribute set. 
+
+Formal Concept Analysis (FCA) \cite{ganter1999formal} provides a principled method for projecting these features into a mathematically ordered space.
+FCA is a 
+method for deriving a conceptual hierarchy from a binary table relating 
+objects to attributes. 
+Such a table, called a \emph{formal context}, 
+records which objects possess which attributes; from it, FCA computes a 
+set of \emph{formal concepts}, each a maximal pairing of a set of objects 
+with the set of attributes they all share. These concepts are partially 
+ordered by inclusion and organised into a \emph{concept lattice}, in which 
+more specific concepts (many shared attributes, few objects) sit below 
+more general ones (few shared attributes, many objects). The lattice makes 
+the implicit structure of the data explicit and navigable, which is why we 
+adopt it to order KGs by the features they exhibit.
+%Given a binary attribute table, FCA derives a concept lattice: a partial order of formal concepts, each defined by a maximal set of objects sharing a common attribute set. 
+
 In our setting, each dimension yields a lattice that orders KGs by the richness of their characterisation profile: KGs at the bottom of the lattice share the densest, most specific attribute sets; those toward the top are characterised by fewer, more general features. 
 Similarly, we can produce a unified lattice, by grouping all features together.
 
@@ -438,23 +506,19 @@ of agents, activities, and entities in PROV-O.
 \end{onlyshort}
 
 \begin{onlyextended}
-Our vision of the ontological continuum is grounded 
-empirically: its structure is derived from observation of 
-real-world KG engineering practices rather than stipulated 
-from first principles. 
 We present a case study on 
 \emph{provenance knowledge} to demonstrate that the 
 characterisation framework can be instantiated concretely, i.e. 
 that existing KGs can be positioned within the 
 continuum and that the resulting structure is principled 
 and interpretable. 
-Provenance is the ideal concern: 
+The representation of provenance provides an ideal use-case: 
 representations are genuinely diverse along all four 
 dimensions, from a single lightweight property 
 (\texttt{dc:source}) to a full ontological model of 
-agents, activities, and entities in PROV-O, and provenance 
-is a concern every KG must address regardless of domain.
+agents, activities, and entities in PROV-O.
 \end{onlyextended}
+
 \begin{inboth}
 We perform the analysis with the aid of a generative AI model (Claude Sonnet 4.7), supervising each step, as follows: 
 \emph{features} are assigned per dimension, existing 
@@ -466,7 +530,7 @@ objects (KGs) crossed with attributes (dimension+features), from which a concept
 FCA~\cite{ganter1999formal}. 
 Artefacts sharing the densest, most specific attribute sets cluster at the 
 bottom of the lattice; those characterised by fewer, more 
-general features appear toward the top.
+general features appear towards the top.
 \end{inboth}
 
 \begin{onlyextended}
@@ -483,18 +547,6 @@ choices foreclose which semantic commitments) are not yet
 formalised; making them explicit is the substance of 
 Challenge~2 (Section~\ref{sec:challenges}).
 \end{onlyextended}
-
-\begin{onlyshort}
-\begin{sloppypar}The ten KGs span the continuum along all four dimensions (see examples in Table~\ref{tab:provenance-combined}) with differences and similarities. 
-\emph{Semantic properties} span from dataset-level attribution and source URLs to fine-grained authorship, data lineage, and 
-epistemic status at the assertion level. 
-\emph{Semantic affordances} include attribution, reproducibility, audit trails, rights management: the EU Open Data Portal's PROV-O-based DCAT-AP affords regulatory compliance tracking in ways that a \texttt{dc:source} annotation does not; Nanopublications' and UniProt both support data quality assessment. 
-\emph{Pragmatic properties} range from simple Dublin Core annotations (Europeana, Google Data Commons) through named graphs (Bio2RDF, DBpedia), RDF reification (British Museum ResearchSpace), and the Wikidata statement model, to RDF-Star (UniProt) and PROV-O's full agent--activity--entity model (LOV, EU Open Data Portal, Nanopublications). 
-\emph{Pragmatic affordances} follow from representational choices: SPARQL querying is available throughout; OWL DL reasoning only where PROV-O is deployed; SHACL validation where schema constraints are defined. 
-
-A full account of the process, the binary feature matrices obtained, and the FCA lattices for all four dimensions are provided in the extended version~\cite{continuumex}.
-\end{sloppypar}
-\end{onlyshort}
 
 \begin{onlyextended}
 We analyse ten KGs, each representing a distinct approach 
@@ -551,6 +603,21 @@ PROV-O capturing authorship, temporal data, and the
 epistemic status of scientific claims~\cite{nanopub}.
 \end{onlyextended}
 
+
+\begin{inboth}
+\begin{sloppypar}The ten KGs span the continuum along all four dimensions (see Table~\ref{tab:provenance-combined}) with differences and similarities. 
+\emph{Semantic properties} span from dataset-level attribution and source URLs to fine-grained authorship, data lineage, and 
+epistemic status at the assertion level. 
+\emph{Semantic affordances} include attribution, reproducibility, audit trails, rights management: the EU Open Data Portal's PROV-O-based DCAT-AP affords regulatory compliance tracking in ways that a \texttt{dc:source} annotation does not; Nanopublications' and UniProt both support data quality assessment. 
+\emph{Pragmatic properties} range from simple Dublin Core annotations (Europeana, Google Data Commons) through named graphs (Bio2RDF, DBpedia), RDF reification (British Museum ResearchSpace), and the Wikidata statement model, to RDF-Star (UniProt) and PROV-O's full agent--activity--entity model (LOV, EU Open Data Portal, Nanopublications). 
+\emph{Pragmatic affordances} follow from representational choices: SPARQL querying is available throughout; OWL DL reasoning only where PROV-O is deployed; SHACL validation where schema constraints are defined. \end{sloppypar}
+\end{inboth}
+\begin{onlyshort}
+A full account of the process, the binary feature matrices obtained, and the FCA lattices for all four dimensions are provided in the extended version~\cite{continuumex}.
+\end{onlyshort}
+\begin{onlyextended}
+    [full account of the tables and figures in the appendices.]
+\end{onlyextended}
 %%%% Only extended version has the discussion separated
 \begin{onlyextended}
 \section{Discussion}\label{sec:discussion}

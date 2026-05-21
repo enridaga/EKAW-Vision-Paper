@@ -374,24 +374,30 @@ Similarly, we can produce a unified lattice, by grouping all features together.
 \begin{table}[t]
 \centering
 \small
-\caption{Ten provenance representations ordered by pragmatic commitment.
-Mechanism is the pragmatic property; the remaining columns show one
-discriminating feature per dimension: triple-level lineage
-(semantic property), reproducibility (semantic affordance), and
-OWL DL reasoning (pragmatic affordance). $\bullet$ denotes presence.}
+\caption{Ten provenance representations ordered by pragmatic
+commitment, characterised across the four dimensions by 42 distinct
+features in total (14 semantic properties, 10 semantic affordances,
+7 pragmatic properties, 11 pragmatic affordances). Per-KG richness
+ranges from 13 to 21 features; only two features are universal
+(\emph{attribution}, \emph{SPARQL}) and ten occur in a single KG.
+We show the pragmatic properties aligned with a selected feature for each of the other dimensions: triple-level lineage
+(\textit{semantic property}), reproducibility (semantic affordance), and OWL DL
+reasoning (pragmatic affordance). $\bullet$ denotes presence; the full
+feature matrices and FCA lattices appear in the extended
+version~\cite{continuumex}.}
 \label{tab:provenance-summary}
 \begin{tabular}{l l c c c}
 \toprule
-\textbf{KG} & \textbf{Mechanism} & \textbf{Triple-level} & \textbf{Reprod.} & \textbf{OWL DL} \\
- & \textbf{(pragm. property)} & \textbf{lineage} & & \textbf{reasoning} \\
+\textbf{KG} & \textbf{Pragmatic Properties} & \textbf{Triple-level} & \textbf{Reprod.} & \textbf{OWL DL} \\
+ & & \textbf{lineage} & & \textbf{reasoning} \\
 \midrule
-Europeana            & Dublin Core / OAI-ORE & & & \\
+Europeana            & Dublin Core, OAI-ORE & & & \\
 Google Data Commons  & Schema.org markup     & $\bullet$ & & \\
 Bio2RDF              & named graphs          & & $\bullet$ & \\
 British Museum (RS)  & RDF reification       & & & $\bullet$ \\
 Wikidata             & Wikidata stmt. model  & $\bullet$ & & \\
 UniProt              & RDF-Star              & $\bullet$ & $\bullet$ & \\
-DBpedia              & named graphs + PROV-O & & & \\
+DBpedia              & named graphs, PROV-O & & & \\
 EU Open Data Portal  & PROV-O (DCAT-AP)      & & $\bullet$ & $\bullet$ \\
 LOV                  & PROV-O                & & & \\
 Nanopublications     & PROV-O (3 graphs)     & $\bullet$ & $\bullet$ & $\bullet$ \\
@@ -485,9 +491,10 @@ PROV-O-based DCAT-AP affords regulatory compliance
 tracking in ways that a \texttt{dc:source} annotation does 
 not; Nanopublications' three-graph structure affords 
 epistemic verification in ways that the Wikidata statement 
-model does not. The binary feature matrices and FCA 
+model does not. 
+The binary feature matrices and FCA 
 lattices for all four dimensions are provided in the 
-Appendix.
+extended version~\cite{continuumex}.
 \end{sloppypar}
 \end{onlyshort}
 

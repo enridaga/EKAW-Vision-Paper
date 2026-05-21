@@ -370,46 +370,77 @@ Similarly, we can produce a unified lattice, by grouping all features together.
 
 \end{onlyextended}
 
+% \begin{onlyshort}
+% \begin{table}[t]
+% \centering
+% \small
+% \caption{Ten provenance representations ordered by pragmatic
+% commitment, characterised across the four dimensions by 42 distinct
+% features in total (14 semantic properties, 10 semantic affordances,
+% 7 pragmatic properties, 11 pragmatic affordances). Per-KG richness
+% ranges from 13 to 21 features; only two features are universal
+% (\emph{attribution}, \emph{SPARQL}) and ten occur in a single KG.
+% We show the pragmatic properties aligned with a selected feature for each of the other dimensions: triple-level lineage
+% (\textit{semantic property}), reproducibility (semantic affordance), and OWL DL
+% reasoning (pragmatic affordance). $\bullet$ denotes presence; the full
+% feature matrices and FCA lattices appear in the extended
+% version~\cite{continuumex}.}
+% \label{tab:provenance-summary}
+% \begin{tabular}{l l c c c}
+% \toprule
+% \textbf{KG} & \textbf{Pragmatic Properties} & \textbf{Triple-level} & \textbf{Reprod.} & \textbf{OWL DL} \\
+%  & & \textbf{lineage} & & \textbf{reasoning} \\
+% \midrule
+% Europeana            & Dublin Core, OAI-ORE & & & \\
+% Google Data Commons  & Schema.org markup     & $\bullet$ & & \\
+% Bio2RDF              & named graphs          & & $\bullet$ & \\
+% British Museum (RS)  & RDF reification       & & & $\bullet$ \\
+% Wikidata             & Wikidata stmt. model  & $\bullet$ & & \\
+% UniProt              & RDF-Star              & $\bullet$ & $\bullet$ & \\
+% DBpedia              & named graphs, PROV-O & & & \\
+% EU Open Data Portal  & PROV-O (DCAT-AP)      & & $\bullet$ & $\bullet$ \\
+% LOV                  & PROV-O                & & & \\
+% Nanopublications     & PROV-O (3 graphs)     & $\bullet$ & $\bullet$ & $\bullet$ \\
+% \bottomrule
+% \end{tabular}
+% \end{table}
+% \end{onlyshort}
+
 \begin{onlyshort}
 \begin{table}[t]
 \centering
 \small
-\caption{Ten provenance representations ordered by pragmatic
-commitment, characterised across the four dimensions by 42 distinct
-features in total (14 semantic properties, 10 semantic affordances,
-7 pragmatic properties, 11 pragmatic affordances). Per-KG richness
-ranges from 13 to 21 features; only two features are universal
+\caption{The four characterisation dimensions of the continuum, with
+selected provenance features for each. The analysis of the ten KGs
+yields 42 distinct features in total; two are universal across all ten
 (\emph{attribution}, \emph{SPARQL}) and ten occur in a single KG.
-We show the pragmatic properties aligned with a selected feature for each of the other dimensions: triple-level lineage
-(\textit{semantic property}), reproducibility (semantic affordance), and OWL DL
-reasoning (pragmatic affordance). $\bullet$ denotes presence; the full
-feature matrices and FCA lattices appear in the extended
-version~\cite{continuumex}.}
+The full feature matrices, and the FCA lattices used to sort the KGs
+by feature richness, appear in the extended version~\cite{continuumex}.}
 \label{tab:provenance-summary}
-\begin{tabular}{l l c c c}
+\begin{tabular}{@{}l l l@{}}
 \toprule
-\textbf{KG} & \textbf{Pragmatic Properties} & \textbf{Triple-level} & \textbf{Reprod.} & \textbf{OWL DL} \\
- & & \textbf{lineage} & & \textbf{reasoning} \\
+ & \textbf{Properties} & \textbf{Affordances} \\
+ & \footnotesize\textit{(intrinsic to the KG)} & \footnotesize\textit{(relative to community + task)} \\
 \midrule
-Europeana            & Dublin Core, OAI-ORE & & & \\
-Google Data Commons  & Schema.org markup     & $\bullet$ & & \\
-Bio2RDF              & named graphs          & & $\bullet$ & \\
-British Museum (RS)  & RDF reification       & & & $\bullet$ \\
-Wikidata             & Wikidata stmt. model  & $\bullet$ & & \\
-UniProt              & RDF-Star              & $\bullet$ & $\bullet$ & \\
-DBpedia              & named graphs, PROV-O & & & \\
-EU Open Data Portal  & PROV-O (DCAT-AP)      & & $\bullet$ & $\bullet$ \\
-LOV                  & PROV-O                & & & \\
-Nanopublications     & PROV-O (3 graphs)     & $\bullet$ & $\bullet$ & $\bullet$ \\
+\textbf{Semantic}  & authorship, temporal information,   & attribution, reproducibility, \\
+\footnotesize\textit{(meanings)}
+                   & data lineage, epistemic status,     & scholarly citation, rights \\
+                   & agent roles \emph{(14 total)}       & management \emph{(10 total)} \\
+\addlinespace
+\textbf{Pragmatic} & named graphs, RDF reification,      & SPARQL, SHACL validation, \\
+\footnotesize\textit{(mechanisms)}
+                   & RDF-Star, Wikidata model,           & OWL DL reasoning, SPARQL \\
+                   & PROV-O \emph{(7 total)}             & federation \emph{(11 total)} \\
 \bottomrule
 \end{tabular}
 \end{table}
 \end{onlyshort}
 
+
 \section{Case Study: Provenance Across the Continuum\ppinfo{Starts at page 6, 0.5 the method + 0.5p each case study, 1.5}}
 
 \begin{onlyshort}
-To demonstrate the feasibility of an ontological continuum, as we defined it, we consider the task of re-engineering provenance knowledge across ten KGs (see Table~\ref{tab:provenance-summary})\footnote{A common, simpler task would only consider a source KG and a target one. To show the generality of the approach, we analyse ten KGs. The full feature matrices and FCA lattices appear in the extended version~\cite{continuumex}.}.
+To demonstrate the feasibility of an ontological continuum, as we defined it, we consider the task of re-engineering provenance knowledge across ten KGs (see Table~\ref{tab:provenance-summary})\footnote{A common, simpler task would only consider a source KG and a target one. To show the generality of the approach, we analyse ten KGs.}.
 Provenance representations are diverse along all four 
 characterisation dimensions, from a single lightweight 
 property (\texttt{dc:source}) to a full ontological model 
@@ -437,17 +468,41 @@ agents, activities, and entities in PROV-O, and provenance
 is a concern every KG must address regardless of domain.
 \end{onlyextended}
 
+\begin{onlyshort}
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{The ten provenance KGs, with one example feature per
+dimension.}
+\label{tab:provenance-kgs}
+\begin{tabular}{@{}l l l l l@{}}
+\toprule
+ & \textbf{Sem. property} & \textbf{Sem. affordance} & \textbf{Prag. property} & \textbf{Prag. affordance} \\
+\midrule
+Europeana            & dataset lineage   & rights mgmt      & OAI-ORE          & multilingual access \\
+Google Data Comm.  & triple lineage    & data discovery   & Schema.org mark.      & NL query \\
+Bio2RDF              & licensing         & reproducibility  & named graphs     & linked data browsing \\
+British Museum (RS)  & epistemic status  & scholarly cit.\  & RDF reification  & OWL DL reasoning \\
+UniProt              & evidence type     & data quality     & RDF-Star         & SPARQL-Star \\
+Wikidata             & triple lineage    & cross-dataset    & Wikidata model   & SHACL \\
+EU Open Data Portal  & agent roles       & reproducibility  & PROV-O           & OWL DL reasoning \\
+DBpedia              & multilinguality   & cross-dataset    & named graphs     & SPARQL federation \\
+LOV                  & agent roles       & cross-portal     & PROV-O           & linked data browsing \\
+Nanopublications     & epistemic status  & data quality     & PROV-O & OWL DL reasoning \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{onlyshort}
 %\subsection{Methodology}\label{ssec:methodology}
 
 \begin{inboth}
 We perform the analysis as follows: 
 \emph{features} are assigned per dimension, existing 
-features are reused wherever possible, and any new features 
+features are reused wherever possible, and any new feature 
 introduced is verified retrospectively against previously 
 analysed KGs to ensure terminological consistency. 
-The 
-result is a binary feature matrix for each dimension: 
-objects (KGs) crossed with attributes, from which a concept lattice is derived via 
+The result is a binary feature matrix for each dimension: 
+objects (KGs) crossed with attributes (dimension+features), from which a concept lattice is derived via 
 FCA~\cite{ganter1999formal}. 
 Artefacts sharing the densest, most specific attribute sets cluster at the 
 bottom of the lattice; those characterised by fewer, more 
@@ -470,31 +525,14 @@ Challenge~2 (Section~\ref{sec:challenges}).
 \end{onlyextended}
 
 \begin{onlyshort}
-\begin{sloppypar}The ten KGs span the continuum along all four dimensions. 
-\emph{Pragmatic properties} range from simple Dublin Core 
-annotations (Europeana, Google Data Commons) through named 
-graphs (Bio2RDF, DBpedia), RDF reification (British Museum 
-ResearchSpace), and the Wikidata statement model, to 
-RDF-Star (UniProt) and PROV-O's full 
-agent--activity--entity model (LOV, EU Open Data Portal, 
-Nanopublications). \emph{Semantic properties} scale 
-correspondingly: from dataset-level attribution and source 
-URLs to fine-grained authorship, data lineage, and 
-epistemic status at the assertion level. \emph{Pragmatic 
-affordances} follow from representational choices: SPARQL 
-querying is available throughout; OWL DL reasoning only 
-where PROV-O is deployed; SHACL validation where schema 
-constraints are defined. \emph{Semantic affordances} (attribution, reproducibility, audit trails, rights 
-management) are available only relative to communities 
-equipped to exploit them: the EU Open Data Portal's 
-PROV-O-based DCAT-AP affords regulatory compliance 
-tracking in ways that a \texttt{dc:source} annotation does 
-not; Nanopublications' three-graph structure affords 
-epistemic verification in ways that the Wikidata statement 
-model does not. 
-The binary feature matrices and FCA 
-lattices for all four dimensions are provided in the 
-extended version~\cite{continuumex}.
+\begin{sloppypar}The ten KGs span the continuum along all four dimensions (see examples in Table~\ref{tab:provenance-kgs}) with differences and similarities. 
+\emph{Semantic properties} span from dataset-level attribution and source URLs to fine-grained authorship, data lineage, and 
+epistemic status at the assertion level. 
+\emph{Semantic affordances} include attribution, reproducibility, audit trails, rights management: the EU Open Data Portal's PROV-O-based DCAT-AP affords regulatory compliance tracking in ways that a \texttt{dc:source} annotation does not; Nanopublications' and UniProt both support data quality assessment. 
+\emph{Pragmatic properties} range from simple Dublin Core annotations (Europeana, Google Data Commons) through named graphs (Bio2RDF, DBpedia), RDF reification (British Museum ResearchSpace), and the Wikidata statement model, to RDF-Star (UniProt) and PROV-O's full agent--activity--entity model (LOV, EU Open Data Portal, Nanopublications). 
+\emph{Pragmatic affordances} follow from representational choices: SPARQL querying is available throughout; OWL DL reasoning only where PROV-O is deployed; SHACL validation where schema constraints are defined. 
+
+The binary feature matrices and FCA lattices for all four dimensions are provided in the extended version~\cite{continuumex}.
 \end{sloppypar}
 \end{onlyshort}
 
@@ -579,25 +617,13 @@ One of the goals of the continuum is to make these cross-dimension dependencies 
 Agenda}\label{sec:challenges}
 
 \begin{onlyshort}
-The concept lattice is not the continuum: it is a finite, 
-domain-relative projection, sampling a specific collection 
-of KGs with binary feature judgements. Different 
-communities generate different feature distributions, 
-so a lattice derived for provenance differs from one 
-derived for bioinformatics or cultural heritage, which is a 
-feature of the approach, not a limitation. The four 
-characterisation dimensions are interdependent: modelling 
-provenance with PROV-O opens OWL reasoning while 
-foreclosing some SPARQL-Star interaction patterns; the 
-Wikidata statement model enables fine-grained triple-level 
-provenance but embeds it in a meta-model not directly 
-interoperable with PROV-O. A key ambition is to make 
-these dependencies explicit, therefore replacing the informal 
-notion of \emph{community suitability} with an operational 
-one: rather than saying a KG is fit for a given community, 
-we can say it exhibits specific properties and affords 
-specific uses, making \emph{fitness for purpose} measurable 
-rather than assumed.
+The FCA lattice, as a finite, 
+domain-relative projection, sample a specific collection 
+of KGs with binary feature judgements. 
+Different tasks may produce different feature distributions, so a lattice derived for provenance differs from one derived for re-engineering scientific workflows data or cultural heritage collections. 
+However, we conjecture that such features' collection is finite. 
+We note how the four dimensions are interdependent: modelling provenance with PROV-O opens OWL reasoning while foreclosing some SPARQL-Star interaction patterns; the Wikidata statement model enables fine-grained triple-level provenance but embeds it in a meta-model not directly interoperable with PROV-O. 
+A key ambition is to make these dependencies explicit via the continuum analysis, therefore replacing the informal notion of \emph{community suitability} with an operational one: rather than saying a KG is fit for a given community, we can say it exhibits specific properties and affords specific uses, making \emph{fitness for purpose} measurable rather than assumed.
 \end{onlyshort}
 
 We propose the following challenges for the community:

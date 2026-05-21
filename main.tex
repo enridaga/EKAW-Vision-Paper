@@ -41,8 +41,8 @@
 
 %%% SET extended TO TRUE/FALSE
 \newtoggle{extended}
-%\toggletrue{extended} % or 
-\togglefalse{extended}
+\toggletrue{extended} % or 
+%\togglefalse{extended}
 
 % Content only in extended version
 \iftoggle{extended}{
@@ -203,7 +203,7 @@ A growing body of work applies GenAI and LLMs to knowledge engineering tasks, on
 They share, however, a common blind spot: they operate without a principled model of the KG space they are navigating.
 The historical lesson of semantic web services is instructive: OWL-S and related work modelled the semantic layer of service description well but left the pragmatic layer, i.e. how resources are composed and used in practice, unaddressed, and the initiative collapsed under that weight~\cite{martin2004owl,wang2012formal}. 
 The risk is not hypothetical. 
-One might assume that GenAI now delivers the flexibility that semantic web services lacked; but without a principled pragmatic framework, the same limitations apply \cite{payne-et-al2026}.
+One might assume that GenAI now delivers the flexibility that semantic web services lacked; but without a principled pragmatic framework, the same limitations apply~\cite{payne-et-al2026}.
 \end{inboth}
 
 \begin{inboth}\begin{sloppypar}
@@ -211,7 +211,7 @@ Foundation literature on affordances, e.g. Gibson's ecological
 affordances~\cite{gibson1977theory} and Norman's design 
 affordances~\cite{norman1999affordance}, has been extensively 
 applied in HCI and design, but has not systematically been adopted 
-in Knowledge and KG Engineering. Recently, Celino~\cite{celino2026} 
+in Knowledge and KG Engineering. Recently, Celino~\cite{celino2026affordances} 
 argued the utility of affordance-based characterisations within the 
 information-seeking domain, where affordances capture what a knowledge 
 source offers to an agent satisfying a query. In knowledge engineering, 
@@ -436,7 +436,6 @@ by feature richness, appear in the extended version~\cite{continuumex}.}
 \end{table}
 \end{onlyshort}
 
-
 \section{Case Study: Provenance Across the Continuum\ppinfo{Starts at page 6, 0.5 the method + 0.5p each case study, 1.5}}
 
 \begin{onlyshort}
@@ -467,35 +466,6 @@ dimensions, from a single lightweight property
 agents, activities, and entities in PROV-O, and provenance 
 is a concern every KG must address regardless of domain.
 \end{onlyextended}
-
-\begin{onlyshort}
-\input{Tables/combined_table}
-% \begin{table}[t]
-% \centering
-% \scriptsize
-% \caption{The ten provenance KGs, with one example feature per
-% dimension.}
-% \label{tab:provenance-kgs}
-% \begin{tabular}{@{}l l l l l@{}}
-% \toprule
-%  & \textbf{Sem. property} & \textbf{Sem. affordance} & \textbf{Prag. property} & \textbf{Prag. affordance} \\
-% \midrule
-% Europeana            & dataset lineage   & rights mgmt      & OAI-ORE          & multilingual access \\
-% Google Data Comm.  & triple lineage    & data discovery   & Schema.org mark.      & NL query \\
-% Bio2RDF              & licensing         & reproducibility  & named graphs     & linked data browsing \\
-% British Museum (RS)  & epistemic status  & scholarly cit.\  & RDF reification  & OWL DL reasoning \\
-% UniProt              & evidence type     & data quality     & RDF-Star         & SPARQL-Star \\
-% Wikidata             & triple lineage    & cross-dataset    & Wikidata model   & SHACL \\
-% EU Open Data Portal  & agent roles       & reproducibility  & PROV-O           & OWL DL reasoning \\
-% DBpedia              & multilinguality   & cross-dataset    & named graphs     & SPARQL federation \\
-% LOV                  & agent roles       & cross-portal     & PROV-O           & linked data browsing \\
-% Nanopublications     & epistemic status  & data quality     & PROV-O & OWL DL reasoning \\
-% \bottomrule
-% \end{tabular}
-% \end{table}
-\end{onlyshort}
-%\subsection{Methodology}\label{ssec:methodology}
-
 \begin{inboth}
 We perform the analysis as follows: 
 \emph{features} are assigned per dimension, existing 
@@ -526,7 +496,7 @@ Challenge~2 (Section~\ref{sec:challenges}).
 \end{onlyextended}
 
 \begin{onlyshort}
-\begin{sloppypar}The ten KGs span the continuum along all four dimensions (see examples in Table~\ref{tab:provenance-kgs}) with differences and similarities. 
+\begin{sloppypar}The ten KGs span the continuum along all four dimensions (see examples in Table~\ref{tab:provenance-combined}) with differences and similarities. 
 \emph{Semantic properties} span from dataset-level attribution and source URLs to fine-grained authorship, data lineage, and 
 epistemic status at the assertion level. 
 \emph{Semantic affordances} include attribution, reproducibility, audit trails, rights management: the EU Open Data Portal's PROV-O-based DCAT-AP affords regulatory compliance tracking in ways that a \texttt{dc:source} annotation does not; Nanopublications' and UniProt both support data quality assessment. 
@@ -569,8 +539,7 @@ approach~\cite{rdfstar,uniprot}.
 
 \textbf{Wikidata} provides fine-grained triple-level 
 provenance through a bespoke statement model of 
-qualifiers and references~\cite{vrandevcic2014,
-hernandez2015}.
+qualifiers and references~\cite{vrandevcic2014,hernandez2015}.
 
 \textbf{The EU Open Data Portal} captures dataset 
 provenance through DCAT-AP, incorporating PROV-O via 
@@ -604,10 +573,11 @@ Other projection methods are possible and may be preferable for different tasks;
 Two properties of the projection are worth stating explicitly. 
 First, the projection is finite: the lattices reflect only the KGs analysed and the features they exhibit; new KGs or new features may alter the structure, and the methodology is designed to accommodate iterative extension. Second, the projection is domain-relative: the lattice produced for a provenance-focused analysis differs from one produced for bioinformatics or cultural heritage, because different domain practices give rise to different feature distributions. The continuum itself is intended as a domain-general theoretical construct; its discrete projections are always domain-specific instantiations. This is a feature of the approach, not a limitation: it means the framework can be instantiated for any domain by following the empirical procedure described in Section 4, producing a lattice that reflects the actual structure of that domain's KG engineering practices rather than an abstract ideal.
 
-These four dimensions are interdependent.\todo{Enrico: move this paragraph to the discussion?}
+These four dimensions are interdependent.
 Semantic commitments shape which pragmatic affordances are available: a KG that models provenance using PROV-O opens OWL reasoning as a pragmatic affordance while foreclosing some SPARQL-Star interaction patterns. 
 Conversely, pragmatic choices constrain what semantic properties can be expressed: the adoption of the Wikidata statement model enables fine-grained triple-level provenance but embeds it in a bespoke meta-model not directly interoperable with PROV-O. 
 One of the goals of the continuum is to make these cross-dimension dependencies explicit; formalising their directionality and transitivity is itself a core research challenge (Challenge 2, Section~\ref{sec:challenges}). A key ambition of the framework is to replace the informal notion of \textit{``community suitability''} with an operational one: rather than saying a KG is fit for a given community, we can say it exhibits a specific combination of semantic and pragmatic properties and affords a specific set of uses, thus making fitness for purpose measurable rather than assumed.
+% \input{Tables/combined_table}
 \end{onlyextended}
 
 % Enrico: Commented to keep the content but it is a repetition from the related work (we may reprise in the discussion, if useful).
@@ -626,7 +596,7 @@ However, we conjecture that such features' collection is finite.
 We note how the four dimensions are interdependent: modelling provenance with PROV-O opens OWL reasoning while foreclosing some SPARQL-Star interaction patterns; the Wikidata statement model enables fine-grained triple-level provenance but embeds it in a meta-model not directly interoperable with PROV-O. 
 A key ambition is to make these dependencies explicit via the continuum analysis, therefore replacing the informal notion of \emph{community suitability} with an operational one: rather than saying a KG is fit for a given community, we can say it exhibits specific properties and affords specific uses, making \emph{fitness for purpose} measurable rather than assumed.
 \end{onlyshort}
-
+\input{Tables/combined_table}
 We propose the following challenges for the community:
 
 \paragraph{\textbf{Challenge 1: Characterising and 

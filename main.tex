@@ -41,8 +41,8 @@
 
 %%% SET extended TO TRUE/FALSE
 \newtoggle{extended}
-\toggletrue{extended} % or 
-%\togglefalse{extended}
+%\toggletrue{extended} % or 
+\togglefalse{extended}
 
 % Content only in extended version
 \iftoggle{extended}{
@@ -94,7 +94,7 @@ Knowledge graphs have become the primary vehicle for data integration and are cr
 Yet, the diversity of KG modelling practices, from lightweight vocabularies to richly axiomatised ontologies, makes integration and reuse expensive and brittle. 
 This challenge is particularly acute for GenAI-driven automation of knowledge engineering, which navigates the KG space without a principled map of it. 
 We introduce the \emph{ontological continuum} as that missing conceptualisation: a characterisation framework defined by two orthogonal distinctions: semantics versus pragmatics, and properties versus affordances, yielding four dimensions along which KGs can be described, compared, and transformed. 
-The methodological stance is empirical: the continuum is a theory of the existent, derived from observation of real-world KG engineering practices, and its structure can be made formally explicit, for example, through Formal Concept Analysis (FCA). 
+Our methodological stance is empirical: we propose the ontological continuum as a theory of the existent, derived from observation of real-world KG engineering practices, whose structure can be made formally explicit, for example, through Formal Concept Analysis (FCA). 
 We ground the vision in a case study on provenance knowledge and articulate five open research challenges for the community.   
 \end{onlyshort}
 \begin{onlyextended}
@@ -116,7 +116,6 @@ We articulate five open research challenges and invite the community to develop 
 \begin{inboth}
 Knowledge graphs have become critical for data integration across scientific, governmental, and commercial domains. 
 The diversity of KG modelling practices, ranging from lightweight vocabularies (e.g. Schema.org, Dublin Core) to richly axiomatised ontologies (e.g. Gene Ontology, SNOMED CT), reflects the breadth of problems and communities they serve.
-
 This diversity is an asset rather than a weakness: different communities~\footnote{A community is a group of agents with shared practices, expertise, and tasks: \emph{who} uses the knowledge and \emph{how}} and tasks genuinely require different representational choices, thus creating a rich and varied KG ecosystem. 
 The cost of this diversity, however, is in the reuse. 
 Adapting KG content across communities and tasks, e.g. repurposing a provenance model built for scientific workflows in an open data portal, integrating a statistical dataset with a CIDOC-CRM-based knowledge base, reusing ontological fragments defined under one foundational ontology in a setting aligned to another, remains expensive, brittle, and poorly understood.
@@ -155,13 +154,18 @@ ordered through Formal Concept Analysis (FCA)~\cite{ganter1999formal,poelmans201
 We articulate five open research challenges and discuss their implications.
 \end{inboth}
 
-\begin{inboth}
+\begin{onlyshort}
+The paper is structured as follows. 
+Section 2 surveys related work. 
+Section 3 introduces the ontological continuum: first as a theoretical construct, then as a characterisation framework, and finally as an empirically-derived discrete projection. Section 4 presents the provenance case study. 
+Section 5 discusses implications. Section 6 articulates open research challenges. 
+Section 7 concludes.
+\end{onlyshort}
+\begin{onlyextended}
 The paper is structured as follows. 
 Section 2 surveys related work. Section 3 introduces the ontological continuum: first as a theoretical construct (Section 3.1), then as a characterisation framework (Section 3.2), and finally as an empirically-derived discrete projection (Section 3.3). Section 4 presents the provenance case study. 
 Section 5 discusses implications. Section 6 articulates open research challenges. 
 Section 7 concludes.
-\end{inboth}
-\begin{onlyextended}
 Details on the case studies, including tables and diagrams of the FCA, are provided in the appendices.
 \end{onlyextended}
 

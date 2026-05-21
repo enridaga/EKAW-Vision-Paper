@@ -616,18 +616,86 @@ epistemic status at the assertion level.
 A full account of the process, the binary feature matrices obtained, and the FCA lattices for all four dimensions are provided in the extended version~\cite{continuumex}.
 \end{onlyshort}
 \begin{onlyextended}
-    [full account of the tables and figures in the appendices.]
+The complete feature matrices for the four dimensions are given in the
+appendix (Table~\ref{tab:provenance-combined} consolidates them; the
+per-dimension matrices appear in the appendix tables), and the four
+concept lattices derived from them are shown in
+Figures~\ref{fig:fca-semantic_properties}--\ref{fig:fca-pragmatic_affordances},
+each accompanied by a legend
+(Tables~\ref{tab:fca-semantic_properties}--\ref{tab:fca-pragmatic_affordances})
+listing, for every concept, the KGs it covers and the features they share.
+We read each lattice top-down, from the most general concept (few shared
+features, many KGs) to the most specific (many shared features, few KGs).
+
+\emph{Semantic properties} (Figure~\ref{fig:fca-semantic_properties},
+Table~\ref{tab:fca-semantic_properties}). No semantic property is shared by
+all ten KGs: the top concept has an empty intent, confirming that what a KG
+records \emph{about} provenance is the most variable dimension. The first
+splits are the recurring coarse descriptors --- \emph{data provider},
+\emph{authorship}, and \emph{temporal information}, each shared by seven KGs
+--- while the discriminating depth comes from \emph{triple-level lineage}
+(Google Data Commons, UniProt, Wikidata, Nanopublications) and the cluster
+of \emph{epistemic status}, \emph{evidence type}, and \emph{scholarly
+assertion} that pulls the assertion-level KGs (Wikidata, UniProt,
+Nanopublications, British Museum ResearchSpace) towards the bottom. Europeana
+sits apart, the only KG carrying \emph{aggregation chain}.
+
+\emph{Semantic affordances} (Figure~\ref{fig:fca-semantic_affordances},
+Table~\ref{tab:fca-semantic_affordances}). Here the top concept is non-empty:
+\emph{attribution} is afforded by every KG, the one universal semantic
+affordance. Below it the lattice separates the data-publishing affordances
+(\emph{data discovery}, \emph{rights management}, \emph{cross-portal
+interoperability}, clustering Europeana, EU ODP, LOV, DBpedia) from the
+scientific affordances (\emph{reproducibility}, \emph{data quality
+evaluation}, \emph{scholarly citation}, \emph{knowledge curation}, clustering
+UniProt, Wikidata, Nanopublications). The bottom concepts are the richest
+profiles: Wikidata and Nanopublications jointly afford citation, curation,
+and quality evaluation, the densest semantic-affordance signature in the set.
+
+\emph{Pragmatic properties} (Figure~\ref{fig:fca-pragmatic_properties},
+Table~\ref{tab:fca-pragmatic_properties}). This is the sparsest and most
+clearly separated lattice: most KGs sit on a single mechanism, so the
+concepts are almost disjoint. Six KGs occupy their own atoms ---
+\emph{OAI-ORE} (Europeana), \emph{Schema.org markup} (Google Data Commons),
+\emph{RDF reification} (British Museum ResearchSpace), \emph{RDF-Star}
+(UniProt), and the \emph{Wikidata model} (Wikidata) --- while \emph{PROV-O}
+is the one shared mechanism (EU ODP, DBpedia, LOV, Nanopublications), and
+\emph{named graphs} co-occurs with it for DBpedia and Nanopublications. The
+near-disjointness is itself the finding: the choice of provenance mechanism
+is where KGs diverge most decisively.
+
+\emph{Pragmatic affordances} (Figure~\ref{fig:fca-pragmatic_affordances},
+Table~\ref{tab:fca-pragmatic_affordances}). The pattern inverts: this is the
+densest lattice, with \emph{SPARQL} afforded universally (top concept) and a
+long chain of widely shared affordances --- \emph{SPARQL endpoint},
+\emph{bulk download}, \emph{linked data browsing}, \emph{REST API} ---
+beneath it. Discrimination comes only at the specialised end:
+\emph{OWL DL reasoning} (British Museum ResearchSpace, EU ODP,
+Nanopublications), \emph{SHACL} (Wikidata, EU ODP), \emph{SPARQL federation}
+(UniProt, Wikidata, DBpedia), and the singletons \emph{SPARQL-Star} (UniProt)
+and \emph{natural language query} (Google Data Commons).
+
+Read together, the four lattices make the central claim of the continuum
+concrete: a KG's position is not a single point but a profile across four
+orders that do not coincide. Wikidata sits low (most specific) in the
+semantic and the affordance lattices yet on an isolated atom in the
+pragmatic-properties lattice; the EU Open Data Portal is rich in pragmatic
+affordances and PROV-O-based properties but mid-depth in semantics. 
+These distinctions that locate a KG in the continuum and will determine which transformations separate it from each other.
 \end{onlyextended}
 %%%% Only extended version has the discussion separated
 \begin{onlyextended}
 \section{Discussion}\label{sec:discussion}
-
-The lattice is not the continuum: it is a discrete projection of it, sampling a finite population of KGs with binary feature judgements. 
+We discuss implications and lessons learnt from the ontological continuum case study exercise.
+A lattice itself is not \textit{the continuum}: it is a discrete projection of it, sampling a finite population of KGs with binary feature judgements. 
 It approximates the structure of the continuum in a principled way: the partial order reflects the actual co-occurrence structure of characterisation features across real-world KGs, derived bottom-up from observation rather than imposed top-down from a prior taxonomy. 
 Other projection methods are possible and may be preferable for different tasks; FCA is our choice here because it makes the ordering explicit and interpretable.
 
 Two properties of the projection are worth stating explicitly. 
-First, the projection is finite: the lattices reflect only the KGs analysed and the features they exhibit; new KGs or new features may alter the structure, and the methodology is designed to accommodate iterative extension. Second, the projection is domain-relative: the lattice produced for a provenance-focused analysis differs from one produced for bioinformatics or cultural heritage, because different domain practices give rise to different feature distributions. The continuum itself is intended as a domain-general theoretical construct; its discrete projections are always domain-specific instantiations. This is a feature of the approach, not a limitation: it means the framework can be instantiated for any domain by following the empirical procedure described in Section 4, producing a lattice that reflects the actual structure of that domain's KG engineering practices rather than an abstract ideal.
+First, the projection is finite: the lattices reflect only the KGs analysed and the features they exhibit; new KGs or new features may alter the structure, and the methodology is designed to accommodate iterative extension. 
+Second, the projection is task-relative: the lattice produced for a provenance-focused analysis differs from one produced for bioinformatics or cultural heritage metadata, and different community practices give rise to different feature distributions. 
+The continuum itself is intended as a task- and community-independent theoretical construct; its discrete projections may still be task-specific instantiations. 
+This is a feature of the approach, not a limitation: it means the framework can be instantiated for any community by following the empirical procedure described in Section 4, producing a lattice that reflects the actual structure of that domain's KG engineering practices rather than an abstract (or shared) ideal.
 
 These four dimensions are interdependent.
 Semantic commitments shape which pragmatic affordances are available: a KG that models provenance using PROV-O opens OWL reasoning as a pragmatic affordance while foreclosing some SPARQL-Star interaction patterns. 
@@ -756,9 +824,10 @@ We invite the community to pursue this as a shared research agenda.
 \clearpage
 \section*{Appendix: Provenance in the Continuum}
 
+[Introduction paragraph here]
 \subsection*{Tables}
 \input{./Tables/tables.tex}
-\input{./Tables/UpperOntologyTables.tex}
+%\input{./Tables/UpperOntologyTables.tex}
 
 \subsection*{FCA Lattices}
 \input{fca.tex}

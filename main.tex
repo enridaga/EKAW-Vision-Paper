@@ -44,8 +44,8 @@
 
 %%% SET extended TO TRUE/FALSE
 \newtoggle{extended}
-%\toggletrue{extended} % or 
-\togglefalse{extended}
+\toggletrue{extended} % or 
+%\togglefalse{extended}
 
 % Content only in extended version
 \iftoggle{extended}{
@@ -232,7 +232,7 @@ The stance is bottom-up and observation-first: the meta-model is abstracted from
 A growing body of work applies GenAI and LLMs to knowledge engineering tasks, ontology design, competency question engineering, SPARQL generation, and schema induction~\cite{garijo2024llms}, with important results. 
 They share, however, a common gap: they operate without a principled model of the KG space they are navigating.
 Ignoring this gap can be critical; the historical lesson of semantic web services is instructive: OWL-S, WSMO and related work modelled the semantic layer of service description well but left the pragmatic layer, i.e. how resources are composed and used in practice, unaddressed, and the initiative collapsed under that weight~\cite{cabral2004approaches,WSMO2006,owls2004,martin2004owls}. 
-The risk is not hypothetical. 
+% The risk is not hypothetical. 
 One might assume that GenAI now delivers the flexibility that semantic web services lacked; but without a principled pragmatic framework, the same limitations apply~\cite{payne-et-al2026}.
 \end{inboth}
 
@@ -248,7 +248,7 @@ in Knowledge and KG Engineering. Recently, Celino~\cite{celino2026ka}
 argued the utility of affordance-based characterisations within the 
 information-seeking domain, where affordances capture what a knowledge 
 source offers to an agent satisfying a query. We argue that in knowledge engineering, 
-interoperability has a broader remit: it is constituted not by the 
+interoperability has a broader remit: it is constituted not only by the 
 ability to answer a query but by the operations that a KG's 
 formalisation, conceptual model, and representational choices make 
 available to a community. No existing framework provides a principled account of how diverse KG modelling practices interplay at 
@@ -275,11 +275,11 @@ Positioning a single KG tells us where it sits; positioning a collection reveals
 space between them: which transformations are incremental, 
 which are costly, and which paths exist between a source and a 
 target.
-In particular, we do not claim a single linear ordering of KGs, such as a line from Dublin Core to PROV-O; a KG's position is a profile across several partial orders that need not coincide.
 
 We use the term \emph{continuum} in a conceptual, not a 
 mathematical, sense: the space is not given a priori but built empirically from observation of real-world practices, determined by the need to describe, compare, navigate, and transform KGs in principled ways. 
-Positions are points in a connected space: most KGs can be connected, but paths that cross certain epistemic boundaries require something stronger than incremental transformation: either an explicit mediation artefact or, in some cases, re-selection of the source itself: abandoning incremental transformation and choosing a different KG as the starting point.
+In particular, we do not claim a single linear ordering of KGs, such as a line from Dublin Core to PROV-O; a KG's position is a profile across several partial orders that need not coincide.
+Positions are points in a space that may not be fully connected: most KGs can be connected, but paths that cross certain epistemic boundaries may not be available and require abandoning incremental transformation and choosing a different KG as the starting point.
 \end{onlyshort}
 
 \begin{onlyextended}
@@ -299,17 +299,10 @@ This is a defining difference from prescriptive ontology methodologies: the cont
 % 
 
 \begin{onlyshort}
-Describing a KG's position requires a vocabulary structured along 
-two orthogonal distinctions. The \textbf{first distinction} separates 
-\emph{semantic} from \emph{pragmatic} features. 
-Semantic features 
-concern the meanings a KG encodes: the domain knowledge it makes 
-explicit, the concepts it commits to, the relations it asserts. 
-Pragmatic features concern the mechanisms by which a KG is 
-represented and operated on: the (meta-)models used to structure its 
-statements (e.g.\ RDF, OWL, RDF-Star, the Wikidata model) and the 
-interfaces through which it is queried, validated, or reasoned 
-over. 
+Describing a KG's position requires a vocabulary structured along two orthogonal distinctions. 
+The \textbf{first distinction} separates \emph{semantic} from \emph{pragmatic} features. 
+Semantic features concern the meanings a KG encodes: the domain knowledge it makes explicit, the concepts it commits to, the relations it asserts. 
+Pragmatic features concern the mechanisms by which a KG is represented and operated on: the (meta-)models used to structure its statements (e.g.\ RDF, OWL, RDF-Star, the Wikidata model) and the interfaces through which it is queried, validated, or reasoned over. 
 The \textbf{second distinction} separates \emph{properties} 
 from \emph{affordances}. 
 Properties are features intrinsic to the 
@@ -324,7 +317,7 @@ affordances~\cite{norman1999affordance} to KG engineering, where an affordance i
 %example, as in the case study in 
 %Section~\ref{sec:provenance}.
 
-The two distinctions together define four characterisation dimensions, illustrated here with provenance (Section~\ref{sec:provenance}): \emph{semantic properties} (e.g.\ authorship, lineage, epistemic status), \emph{semantic affordances} (e.g.\ attribution, reproducibility), \emph{pragmatic properties} (e.g.\ named graphs, reification, PROV-O), and \emph{pragmatic affordances} (e.g.\ SPARQL, SHACL, OWL~DL reasoning).
+We illustrate the two distinctions considering the case of provenance knowledge: \emph{semantic properties} (e.g.\ authorship, lineage, epistemic status), \emph{semantic affordances} (e.g.\ attribution, reproducibility), \emph{pragmatic properties} (e.g.\ named graphs, reification, PROV-O), and \emph{pragmatic affordances} (e.g.\ SPARQL, SHACL, OWL~DL reasoning).
 %The two distinctions together define four characterisation dimensions; we use provenance as an illustrative running example (Section~\ref{sec:provenance}). 
 %\emph{Semantic properties} capture a KG's domain knowledge: in 
 %the provenance context, authorship, temporal information, data 
@@ -424,19 +417,44 @@ Like semantic affordances, these are relational: SPARQL federation is only an af
 Each feature's dimension is determined by two questions, not by convention: whether it is semantic or pragmatic, and whether it is a property or an affordance.
 A feature is \emph{semantic} if it concerns what the KG says about a domain, and \emph{pragmatic} if it concerns how the KG is encoded and operated on.
 It is a \emph{property} if it can be read off the artefact in isolation, and an \emph{affordance} if realising it requires positing an agent and a task.
-This resolves the apparent arbitrariness of the borderline cases.
+%This resolves the apparent arbitrariness of the borderline cases.
 Named graphs, reification, RDF-Star, and PROV-O are representational mechanisms materialised in the data, present regardless of use, and are therefore pragmatic \emph{properties}.
 SPARQL querying, SHACL validation, and OWL DL reasoning are operations an agent performs, realised only when a community with the requisite tooling engages the KG for a task, and are therefore pragmatic \emph{affordances}.
 The same representational choice may be a property and at the same time ground affordances: PROV-O is a pragmatic property that enables OWL reasoning as a pragmatic affordance.
 Such cross-dimension co-occurrence is expected, not a flaw in the framework.
 Indeed, a mature continuum theory may reveal a systematic dependency structure between properties and affordances.
-
-Three boundary cases fix the framework's scope.
-First, the pragmatic dimension deliberately spans not only representation but the \emph{access surface} through which a KG is published: bulk download, linked data browsing, and multilingual access are pragmatic affordances, because fitness for a task depends on how a KG is made available, not only on how it is encoded.
-The same test keeps these affordances distinct from their underlying properties: \emph{multilinguality}, the multilingual content a graph carries, is a semantic property, whereas \emph{multilingual access}, the ability to retrieve that content by language, is a pragmatic affordance.
-Second, structural and topological features, such as size, coverage, and level of detail, are intrinsic properties admitted by the same test; the provenance case study foregrounds representational properties, but the dimension is open to them.
-Third, because affordances are relational and features are assigned by an analyst, applying the framework carries a degree of subjectivity; this is mitigated by recording each analysis as an explicit formal context, which makes every feature judgement inspectable and open to revision.
 \end{inboth}
+
+\begin{onlyshort}
+\begin{table}[t]
+\centering
+\small
+\caption{The four characterisation dimensions, with selected provenance features for each (42 in total across the ten KGs); full feature matrices and FCA lattices appear in the extended version~\cite{continuumex}.}\vspace{-0.2cm}
+%\caption{The four characterisation dimensions of the continuum, with
+%selected provenance features for each. The analysis of the ten KGs
+%yields 42 distinct features in total; two are universal across all ten
+%(\emph{attribution}, \emph{SPARQL}) and ten occur in a single KG.
+%The full feature matrices, and the FCA lattices used to sort the KGs
+%by feature richness, appear in the extended version of this paper~\cite{continuumex}.}
+\label{tab:provenance-summary}
+\begin{tabular}{@{}l l l@{}}
+\toprule
+ & \textbf{Properties} & \textbf{Affordances} \\
+ & \footnotesize\textit{(intrinsic to the KG)} & \footnotesize\textit{(relative to community + task)} \\
+\midrule
+\textbf{Semantic}  & authorship, temporal information,   & attribution, reproducibility, \\
+\footnotesize\textit{(meanings)}
+                   & data lineage, epistemic status,     & scholarly citation, rights \\
+                   & agent roles \emph{(14 total)}       & management \emph{(10 total)} \\
+\addlinespace
+\textbf{Pragmatic} & named graphs, RDF reification,      & SPARQL, SHACL validation, \\
+\footnotesize\textit{(mechanisms)}
+                   & RDF-Star, Wikidata model,           & OWL DL reasoning, SPARQL \\
+                   & PROV-O \emph{(7 total)}             & federation \emph{(11 total)} \\
+\bottomrule
+\end{tabular}\vspace{{-0.3cm}}
+\end{table}
+\end{onlyshort}
 
 \begin{onlyshort}
 Any operational analysis of the continuum requires a projection onto 
@@ -513,38 +531,6 @@ Similarly, we can produce a unified lattice, by grouping all features together.
 % \end{tabular}
 % \end{table}
 % \end{onlyshort}
-
-\begin{onlyshort}
-\begin{table}[t]
-\centering
-\small
-\caption{The four characterisation dimensions, with selected provenance features for each (42 in total across the ten KGs); full feature matrices and FCA lattices appear in the extended version~\cite{continuumex}.}\vspace{-0.2cm}
-%\caption{The four characterisation dimensions of the continuum, with
-%selected provenance features for each. The analysis of the ten KGs
-%yields 42 distinct features in total; two are universal across all ten
-%(\emph{attribution}, \emph{SPARQL}) and ten occur in a single KG.
-%The full feature matrices, and the FCA lattices used to sort the KGs
-%by feature richness, appear in the extended version of this paper~\cite{continuumex}.}
-\label{tab:provenance-summary}
-\begin{tabular}{@{}l l l@{}}
-\toprule
- & \textbf{Properties} & \textbf{Affordances} \\
- & \footnotesize\textit{(intrinsic to the KG)} & \footnotesize\textit{(relative to community + task)} \\
-\midrule
-\textbf{Semantic}  & authorship, temporal information,   & attribution, reproducibility, \\
-\footnotesize\textit{(meanings)}
-                   & data lineage, epistemic status,     & scholarly citation, rights \\
-                   & agent roles \emph{(14 total)}       & management \emph{(10 total)} \\
-\addlinespace
-\textbf{Pragmatic} & named graphs, RDF reification,      & SPARQL, SHACL validation, \\
-\footnotesize\textit{(mechanisms)}
-                   & RDF-Star, Wikidata model,           & OWL DL reasoning, SPARQL \\
-                   & PROV-O \emph{(7 total)}             & federation \emph{(11 total)} \\
-\bottomrule
-\end{tabular}\vspace{{-0.3cm}}
-\end{table}
-\end{onlyshort}
-
 \begin{onlyshort}\vspace{-0.2cm}\end{onlyshort}
 \section{Case Study: Provenance Across the Continuum\ppinfo{Starts at page 6, 0.5 the method + 0.5p each case study, 1.5}}\label{sec:provenance}\begin{onlyshort}\vspace{-0.2cm}\end{onlyshort}
 
@@ -589,10 +575,6 @@ FCA~\cite{ganter1999formal}.
 Artefacts sharing the densest, most specific attribute sets cluster at the 
 bottom of the lattice; those characterised by fewer, more 
 general features appear towards the top.
-
-The feature vocabulary is derived empirically during the analysis, reusing terms across KGs for consistency, not from a pre-existing controlled vocabulary.
-We conjecture that the two kinds of feature generalise differently: semantic features are relative to the subject domain, here provenance, yet tend to recur across the communities that share it, whereas pragmatic features are largely subject-domain-independent standards whose selection is nonetheless specific to a KG's ecosystem.
-A general account of which features are domain-independent, and its implications for reuse, is left to future work.
 %The feature vocabulary is derived empirically during the analysis, reusing terms across KGs for consistency, rather than being drawn from a pre-existing controlled vocabulary.
 %We conjecture that the two kinds of feature generalise differently: semantic features are relative to the subject domain, here provenance, yet tend to recur across the communities that share it, whereas pragmatic features are largely subject-domain-independent standards whose selection is nonetheless specific to a KG's ecosystem.
 %Settling in general which features are domain-independent, and drawing out its implications for reuse, is beyond the scope of this vision and is left to future work.
@@ -678,13 +660,17 @@ epistemic status of scientific claims~\cite{nanopub}.
 %All ten KGs are published in RDF; some additionally commit to richer formalisms --- OWL vocabularies such as PROV-O and CIDOC-CRM, or RDF-Star (UniProt) and the Wikidata statement model --- and it is these commitments, rather than RDF alone, that determine which reasoning and validation affordances (e.g.\ OWL DL reasoning, SHACL) are available.
 %\emph{Pragmatic affordances} follow from representational choices: SPARQL querying is available throughout; OWL DL reasoning only where PROV-O is deployed; SHACL validation where schema constraints are defined. A full account of the process, the binary feature matrices obtained, and the FCA lattices for four dimensions are provided in~\cite{continuumex}.
 The ten KGs span the continuum along all four dimensions (see Table~\ref{tab:provenance-combined}).
+The feature vocabulary is derived empirically during the analysis, reusing terms across KGs for consistency, not from a pre-existing controlled vocabulary.
 Semantic content ranges from dataset-level attribution and source URLs to fine-grained authorship, lineage, and epistemic status at the assertion level, and the affordances it enables differ accordingly: the EU Open Data Portal's PROV-O-based DCAT-AP affords regulatory compliance tracking that a \texttt{dc:source} annotation does not, while Nanopublications and UniProt support data quality assessment.
 Pragmatic mechanisms range from simple Dublin Core annotations to PROV-O's full agent--activity--entity model; all ten KGs are published in RDF, but it is the richer commitments layered on top (OWL vocabularies such as PROV-O and CIDOC-CRM, or RDF-Star and the Wikidata statement model) rather than RDF alone, that determine which reasoning and validation affordances (e.g.\ OWL DL reasoning, SHACL) are available.
-A full account of the process, the binary feature matrices, and the FCA lattices for the four dimensions is provided in~\cite{continuumex}.\end{sloppypar}
+
+We conjecture that the two kinds of feature generalise differently: semantic features are relative to the subject domain, here provenance, yet tend to recur across the communities that share it, whereas pragmatic features are largely subject-domain-independent standards whose selection is nonetheless specific to a KG's ecosystem.
+A general account of which features are domain-independent, and its implications for reuse, is left to future work.\end{sloppypar}
 \end{inboth}
-% \begin{onlyshort}
+\begin{onlyshort}
+A full account of the process, the binary feature matrices, and the FCA lattices for the four dimensions are provided in the extended version~\cite{continuumex}.
 % A full account of the process, the binary feature matrices obtained, and the FCA lattices for all four dimensions are provided in the extended version~\cite{continuumex}.
-% \end{onlyshort}
+\end{onlyshort}
 \begin{onlyextended}
 The complete feature matrices for the four dimensions are given in the
 appendix (Table~\ref{tab:provenance-combined} consolidates them; the
@@ -784,6 +770,14 @@ The continuum may inform a reuse decision, but its remit is to make its realisat
 
 \begin{onlyshort}\vspace{-0.2cm}\end{onlyshort}\section{\iftoggle{extended}{Research Agenda}{Discussion and Outlook}}\label{sec:challenges}\begin{onlyshort}\vspace{-0.2cm}\end{onlyshort}
 
+\begin{inboth}
+The exemplary case study helps clarifying the framework's scope.
+First, the pragmatic dimension deliberately spans not only representation but the \emph{access surface} through which a KG is published: bulk download, linked data browsing, and multilingual access are pragmatic affordances, because fitness for a task depends on how a KG is made available, not only on how it is encoded.
+The same test keeps these affordances distinct from their underlying properties: \emph{multilinguality}, the multilingual content a graph carries, is a semantic property, whereas \emph{multilingual access}, the ability to retrieve that content by language, is a pragmatic affordance.
+Second, structural and topological features, such as size, coverage, and level of detail, are intrinsic properties admitted by the same test; the provenance case study foregrounds representational properties, but the dimension is open to them.
+Third, because affordances are relational and features are assigned by an analyst, applying the framework carries a degree of subjectivity; this is mitigated by recording each analysis as an explicit formal context, which makes every feature judgement inspectable and open to revision.    
+\end{inboth}
+
 \begin{onlyshort}
 %The FCA lattice, as a finite, domain-relative projection, samples a specific collection of KGs with binary feature judgements. 
 %Different tasks may produce different feature distributions, so a lattice derived for a provenance integration task differs from one derived for re-engineering scientific workflows data or cultural heritage collections' metadata. 
@@ -797,8 +791,9 @@ As a finite, domain-relative projection, the FCA lattice samples a specific coll
 Different tasks naturally yield different feature distributions: a lattice for provenance integration differs from one for scientific workflow or cultural heritage metadata.
 The four dimensions are interdependent: modelling provenance with PROV-O, for instance, opens OWL reasoning while foreclosing some SPARQL-Star interaction patterns.
 A key ambition is to make these dependencies explicit, replacing the informal notion of \emph{community suitability} with an operational one: rather than calling a KG fit for a community, we say it exhibits specific properties and affords specific uses, turning \emph{fitness for purpose} from an assumed judgement into an explicit, checkable combination, though which combination a given task requires remains an empirical question, not one the feature clustering settles on its own.
-The continuum is not intended to make the reuse decision itself: whether a community adopts a given KG may rest on factors beyond its semantic and pragmatic characterisation, including perceptions, preferences, and trust.
-Its purpose is rather to operationalise re-engineering once that decision is made, characterising systematically the distinctions between a source and a target KG and the transformation that connects them.
+
+The continuum may help evaluating a reuse decision based on non-functional needs: whether a community adopts a given KG may rest on factors beyond its semantic and pragmatic characterisation, including perceptions, preferences, and trust.
+However, its purpose is rather to operationalise re-engineering once that decision is made, characterising systematically the distinctions between a source and a target KG and the transformation that connects them.
 \end{onlyshort}
 
 \noindent We propose the following challenges for the community:

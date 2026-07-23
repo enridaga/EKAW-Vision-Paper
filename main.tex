@@ -93,16 +93,20 @@ School of Computer Science and Informatics, University of Liverpool, UK
 
 % A full account of the process, the binary feature matrices obtained, and the FCA lattices for four dimensions are provided in~\cite{continuumex}.
 
+\begin{onlyshort}
 \begin{abstract}
-\begin{onlyshort}\vspace{-0.3cm}
+\vspace{-0.3cm}
 Knowledge graphs have become the primary vehicle for data integration and are critical to modern AI. 
 Yet, the diversity of KG modelling practices, from lightweight vocabularies to richly axiomatised ontologies, makes integration and reuse expensive and brittle. 
 This challenge is particularly acute for GenAI-driven automation of knowledge engineering, which navigates the KG space without precise directions. 
 We introduce the \emph{ontological continuum}: a task-relative navigation framework defined by two orthogonal distinctions: semantics versus pragmatics, and properties versus affordances, yielding four dimensions along which KGs can be described, compared, and transformed.
 Our methodological stance is empirical: we propose the ontological continuum as a theory of the existent, derived from observation of real-world KG engineering practices, whose structure can be made formally explicit, for example, through Formal Concept Analysis (FCA). 
 We ground the vision in a case study on provenance knowledge and articulate five open research challenges for the community.   
-\vspace{-0.3cm}\end{onlyshort}
-\begin{onlyextended}
+\vspace{-0.3cm}
+\end{abstract}
+\end{onlyshort}
+
+\begin{onlyextended} \begin{abstract}
 Knowledge graphs have become the primary vehicle for data integration and are critical to the success of modern AI — but the diversity of KG modelling practices, from lightweight vocabularies to richly axiomatised ontologies, makes integration and reuse expensive and brittle. 
 This challenge is particularly acute in neuro-symbolic AI, where bridging neural and symbolic components depends on the ability to re-engineer KGs to fit new requirements; GenAI now offers unprecedented automation capability, but without a principled understanding of the KG engineering space, such automation remains conceptually ungrounded. 
 
@@ -111,12 +115,14 @@ The methodological stance is empirical: rather than prescribing how KGs should b
 We ground the vision through a case study on provenance knowledge, showing how a single concern manifests differently across the continuum.
 %; and one on upper-level ontological commitment, showing how an early foundational choice cascades through the characterisation dimensions to determine downstream tooling and interoperability affordances. 
 We articulate five open research challenges and invite the community to develop the ontological continuum as a shared research agenda.
-\end{onlyextended}
 \end{abstract}
+\end{onlyextended}
 %
 %
-%
-\section{Introduction\ppinfo{1}}\begin{onlyshort}\vspace{-0.2cm}\end{onlyshort}
+
+\section{Introduction\ppinfo{1}}\begin{onlyshort} \vspace{-0.2cm}
+\end{onlyshort}
+
 
 \begin{inboth}
 Knowledge graphs have become critical for data integration across scientific, governmental, and commercial domains. 
@@ -180,7 +186,8 @@ Section 7 concludes.
 Details on the case studies, including tables and diagrams of the FCA, are provided in the appendices.
 \end{onlyextended}
 
-\section{Background and Related Work\ppinfo{starts at p3, 1.5}}\begin{onlyshort}\vspace{-0.2cm}\end{onlyshort}
+\section{Background and Related Work\ppinfo{starts at p3, 1.5}}\begin{onlyshort}\vspace{-0.2cm}
+\end{onlyshort}
 \label{sec:background}
 
 %The KG ecosystem is rich and diverse --- from lightweight vocabularies to richly axiomatised ontologies --- and this diversity is both healthy and necessary. Yet it comes at a cost.
@@ -258,6 +265,8 @@ automation without a map of the space they are navigating.
 \end{sloppypar}
 \end{inboth}
 
+
+%%%%%
 %%%%%%%%%%%%%
 \section{The Ontological Continuum: A Vision\ppinfo{ends at p5: 1.5}}\begin{onlyshort}\vspace{-0.2cm}\end{onlyshort}
 
@@ -531,7 +540,9 @@ Similarly, we can produce a unified lattice, by grouping all features together.
 % \end{tabular}
 % \end{table}
 % \end{onlyshort}
-\begin{onlyshort}\vspace{-0.2cm}\end{onlyshort}
+
+\begin{onlyshort}\vspace{-0.2cm}
+\end{onlyshort}
 \section{Case Study: Provenance Across the Continuum\ppinfo{Starts at page 6, 0.5 the method + 0.5p each case study, 1.5}}\label{sec:provenance}\begin{onlyshort}\vspace{-0.2cm}\end{onlyshort}
 
 \begin{onlyshort}
@@ -768,7 +779,10 @@ The continuum may inform a reuse decision, but its remit is to make its realisat
 % \add{It is worth noting that recently, a paper by Celino also proposes the notion of \emph{knowledge affordances}. Celino argues the utility of affordance-based characterisation within the information-seeking domain; the ontological continuum extends the same insight to knowledge engineering operations, where interoperability is constituted not by the ability to answer a query but by the operations that the formalisation, the conceptual model, and the upper-level commitment make available to a community. Information seeking is one affordance class the continuum supports; it is not the continuum framework's primary motivation or scope.
 % }
 
-\begin{onlyshort}\vspace{-0.2cm}\end{onlyshort}\section{\iftoggle{extended}{Research Agenda}{Discussion and Outlook}}\label{sec:challenges}\begin{onlyshort}\vspace{-0.2cm}\end{onlyshort}
+\begin{onlyshort}\vspace{-0.2cm}
+\end{onlyshort}
+\section{\iftoggle{extended}{Research Agenda}{Discussion and Outlook}}\label{sec:challenges}\begin{onlyshort}\vspace{-0.2cm}
+\end{onlyshort}
 
 \begin{inboth}
 The exemplary case study helps clarifying the framework's scope.
@@ -806,7 +820,8 @@ dimensions must be derived empirically from real-world KGs
 and community practices, with community-relative fitness 
 metrics defined in terms of the attribute combinations a 
 KG must exhibit for a given task.
-However, we conjecture that such list of features is finite.\begin{onlyshort}\footnote{Features are task- and community-relative projections onto a bounded vocabulary, so each application yields a finite set even if the theoretical total is open; which of them are domain-independent, and which domain- or ecosystem-specific, remains an open question.}\end{onlyshort}
+However, we conjecture that such list of features is finite.\begin{onlyshort}\footnote{Features are task- and community-relative projections onto a bounded vocabulary, so each application yields a finite set even if the theoretical total is open; which of them are domain-independent, and which domain- or ecosystem-specific, remains an open question.}
+\end{onlyshort}
 \begin{onlyextended}
 Features are community- and task-relative projections onto a bounded vocabulary, so any given application generates a finite feature set even if the total theoretical set is open. 
 A related open question is which of these features are domain-independent, and therefore reusable across subject domains and communities, and which are specific to a domain or ecosystem; the semantic--pragmatic distinction suggests a starting conjecture, but a general account remains open.
@@ -883,6 +898,8 @@ The timing is right: GenAI offers the automation capability, neuro-symbolic AI c
 We invite the community to pursue this shared research agenda.
 \end{inboth}
 \input{Tables/combined_table}
+
+
 
 %\include{VallisNotes}
 
